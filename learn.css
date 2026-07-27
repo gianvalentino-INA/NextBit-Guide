@@ -28,6 +28,8 @@
     gap: 8px;
     transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
     width: 200px;
+    min-width: 0;
+    /* Allows container to shrink inside flex parents */
 }
 
 .nav-search-form:focus-within {
@@ -58,6 +60,8 @@
     font-family: inherit;
     font-size: 13px;
     width: 100%;
+    min-width: 0;
+    /* Prevents text overflow bug */
 }
 
 .nav-search-input::placeholder {
@@ -216,19 +220,19 @@
         font-size: 16px;
     }
 
-    /* OPTION 2: Expand navbar actions to give search bar maximum width */
     .navbar-action {
         width: 100%;
         justify-content: flex-end;
-        gap: 8px;
+        gap: 6px;
     }
 
     .nav-search-form {
         display: flex;
-        flex: 1;
-        /* Automatically expands to take available space */
-        max-width: 220px;
-        padding: 6px 12px;
+        flex: 1 1 auto;
+        max-width: 160px;
+        /* Reduced to fit mobile navbar */
+        padding: 5px 10px;
+        gap: 6px;
     }
 
     .filter-container {
@@ -247,5 +251,23 @@
     .learn-grid {
         grid-template-columns: 1fr;
         gap: 20px;
+    }
+}
+
+/* Extra small mobile screens (iPhone / Android portrait) */
+@media (max-width: 480px) {
+    .nav-search-form {
+        max-width: 110px;
+        /* Tight search box size so submit button stays inside */
+        padding: 4px 8px;
+    }
+
+    .nav-search-form:focus-within {
+        width: 130px;
+        /* Controlled expansion on phone focus */
+    }
+
+    .nav-search-input {
+        font-size: 11px;
     }
 }
