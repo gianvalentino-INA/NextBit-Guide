@@ -1,0 +1,251 @@
+/* ==========================================================================
+   LEARN PAGE SPECIFIC STYLES
+   - Imports base variables and reset from styles.css
+   - Liquid glass navbar search input
+   - Mint checklist filter buttons
+   - 3-Column desktop grid, 1-Column mobile responsive grid
+   - Lightweight card hover animations with glowing drop-shadow
+   ========================================================================== */
+@import url('styles.css');
+
+.learn-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 130px 24px 80px 24px;
+    /* Clearance for fixed glass dock */
+}
+
+/* --------------------------------------------------------------------------
+   1. NAVBAR GLASS SEARCH BAR INTEGRATION
+   -------------------------------------------------------------------------- */
+.nav-search-form {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 999px;
+    padding: 6px 14px;
+    gap: 8px;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    width: 200px;
+}
+
+.nav-search-form:focus-within {
+    background: rgba(255, 255, 255, 0.14);
+    border-color: var(--mint-300);
+    box-shadow: 0 0 12px rgba(95, 221, 172, 0.25);
+    width: 240px;
+    /* Subtle smooth expansion on focus */
+}
+
+.nav-search-icon {
+    width: 16px;
+    height: 16px;
+    color: var(--gray-500);
+    flex-shrink: 0;
+    transition: color 0.25s ease;
+}
+
+.nav-search-form:focus-within .nav-search-icon {
+    color: var(--mint-300);
+}
+
+.nav-search-input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--gray-50);
+    font-family: inherit;
+    font-size: 13px;
+    width: 100%;
+}
+
+.nav-search-input::placeholder {
+    color: var(--gray-500);
+}
+
+/* --------------------------------------------------------------------------
+   2. LEARN PAGE HEADER
+   -------------------------------------------------------------------------- */
+.learn-header {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 40px auto;
+}
+
+.section-tag {
+    display: inline-block;
+    background: rgba(95, 221, 172, 0.2);
+    color: #0d6342;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    margin-bottom: 16px;
+}
+
+.learn-title {
+    font-size: 42px;
+    font-weight: 800;
+    color: var(--gray-900);
+    margin-bottom: 14px;
+    letter-spacing: -0.8px;
+    line-height: 1.2;
+}
+
+.learn-subtitle {
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--gray-600);
+}
+
+/* --------------------------------------------------------------------------
+   3. CATEGORY FILTER BUTTONS (MINT CHECKLIST STYLE)
+   -------------------------------------------------------------------------- */
+.filter-section {
+    margin-bottom: 48px;
+}
+
+.filter-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.filter-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #FFFFFF;
+    color: var(--gray-600);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
+    border-radius: 999px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.filter-btn .check-icon {
+    width: 0;
+    height: 16px;
+    opacity: 0;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.filter-btn:hover {
+    color: var(--gray-900);
+    border-color: var(--mint-300);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+/* Active State: Turns mint and displays checklist icon */
+.filter-btn.active {
+    background-color: var(--mint-300);
+    color: var(--gray-900);
+    border-color: var(--mint-300);
+    box-shadow: 0 6px 18px rgba(95, 221, 172, 0.35);
+}
+
+.filter-btn.active .check-icon {
+    width: 16px;
+    opacity: 1;
+}
+
+/* --------------------------------------------------------------------------
+   4. 3-COLUMN CARDS GRID & HOVER ANIMATION
+   -------------------------------------------------------------------------- */
+.learn-grid-section {
+    width: 100%;
+}
+
+.learn-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 Columns on Desktop */
+    gap: 28px;
+}
+
+/* Card hover animation with drop shadow */
+.learn-grid .card-link {
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.learn-grid .card--dark {
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+        box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+        border-color 0.35s ease;
+}
+
+.learn-grid .card-link:hover .card--dark {
+    transform: translateY(-8px);
+    border-color: rgba(95, 221, 172, 0.5);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35),
+        0 0 20px rgba(95, 221, 172, 0.15);
+    /* Mint glow drop shadow */
+}
+
+/* --------------------------------------------------------------------------
+   5. RESPONSIVE MEDIA QUERIES (TABLET & MOBILE)
+   -------------------------------------------------------------------------- */
+@media (max-width: 992px) {
+    .learn-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 Columns on Tablet */
+    }
+}
+
+@media (max-width: 768px) {
+    .learn-container {
+        padding-top: 110px;
+    }
+
+    .learn-title {
+        font-size: 32px;
+    }
+
+    .learn-subtitle {
+        font-size: 16px;
+    }
+
+    /* OPTION 2: Expand navbar actions to give search bar maximum width */
+    .navbar-action {
+        width: 100%;
+        justify-content: flex-end;
+        gap: 8px;
+    }
+
+    .nav-search-form {
+        display: flex;
+        flex: 1;
+        /* Automatically expands to take available space */
+        max-width: 220px;
+        padding: 6px 12px;
+    }
+
+    .filter-container {
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 8px;
+        flex-wrap: nowrap;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .filter-btn {
+        flex-shrink: 0;
+    }
+
+    /* 1 Column on Mobile View */
+    .learn-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}

@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Installing Claude Code Into Your Linux System - NextBit</title>
+
+    <!-- STYLESHEETS -->
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="claude.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- FLOATING GLASS NAVBAR -->
+    <header class="glass-dock">
+        <nav>
+            <input type="checkbox" id="menu-toggle" class="menu-toggle" hidden>
+
+            <div class="navbar-left">
+                <label for="menu-toggle" class="menu-btn" aria-label="Toggle Navigation Menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </label>
+
+                <a href="../../index.html" class="logo-link">
+                    <img src="../../Logo/logo.png" alt="NextBit Logo" class="navbar-logo">
+                </a>
+
+                <ul class="navbar-links">
+                    <li><a href="../../index.html" class="navbar-link">Home</a></li>
+                    <li><a href="../../learn.html" class="navbar-link active">Learn</a></li>
+                    <li><a href="../../chatbot.html" class="navbar-link">Chatbot</a></li>
+                    <li><a href="../../about.html" class="navbar-link">About</a></li>
+                    <li><a href="https://trakteer.id/NextBit" class="navbar-link" target="_blank"
+                            rel="noopener">Donate</a></li>
+                </ul>
+            </div>
+
+            <div class="navbar-action">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSePyFmZLFE-JLAPPpzzbfqEi7tIMhIK_mMEFpfXV8yfVe1FYw/viewform"
+                    class="submit-btn" target="_blank" rel="noopener">Submit</a>
+                <a href="../../learn.html" class="navbar-icon" aria-label="Search">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- MAIN TUTORIAL CONTAINER -->
+    <main class="tutorial-page-container">
+
+        <article class="tutorial-article">
+
+            <!-- HEADER BLOCK -->
+            <header class="tutorial-header">
+                <h1 class="tutorial-title">Installing Claude Code Into Your Linux System</h1>
+
+                <p class="tutorial-author">
+                    By <a href="../../about.html" class="author-link">Gian Valentino Ampang</a>
+                </p>
+
+                <div class="category-wrapper">
+                    <span class="category-badge">SysAdmin</span>
+                </div>
+            </header>
+
+            <!-- INTRO BANNER IMAGE (SAME FOLDER) -->
+            <div class="tutorial-media-box intro-image-box">
+                <img src="../../Image/claude.avif" alt="Claude Code Linux Setup Banner" class="tutorial-img">
+            </div>
+
+            <!-- TUTORIAL CONTENT BODY -->
+            <div class="tutorial-body">
+
+                <!-- INTRODUCTION SECTION -->
+                <section class="tutorial-intro">
+                    <h2 class="section-heading">Introduction</h2>
+
+                    <p class="content-text">
+                        <strong>Claude Code</strong> is an AI-powered agentic coding assistant developed by Anthropic.
+                        Operating directly inside your terminal, IDE, or desktop environment, it can analyze codebases,
+                        edit files, execute shell commands, and manage Git workflows—all using plain language
+                        instructions.
+                    </p>
+
+                    <div class="callout-box info">
+                        <strong>Free Tier Tip:</strong> While using Claude Code directly through Anthropic's official
+                        API can get expensive, you can run it 100% free on Linux by routing it through OpenRouter's free
+                        model tier.
+                    </div>
+                </section>
+
+                <!-- STEP 1 -->
+                <section class="tutorial-step">
+                    <h2 class="step-title">Step 1: Update Your System and Install Dependencies</h2>
+
+                    <p class="content-text">
+                        Before installing Claude Code, ensure your package manager is up to date and that Node.js and
+                        npm are installed on your system.
+                    </p>
+
+                    <h3 class="subsection-heading">1. Update Package Managers</h3>
+                    <p class="content-text">Choose the command corresponding to your Linux distribution:</p>
+
+                    <div class="terminal-box">
+                        <div class="terminal-bar">
+                            <div class="terminal-dots"><span class="dot red"></span><span
+                                    class="dot yellow"></span><span class="dot green"></span></div>
+                            <span class="terminal-title">bash — Debian / Ubuntu</span>
+                        </div>
+                        <pre
+                            class="terminal-content"><code><span class="prompt">$</span> sudo apt update && sudo apt upgrade -y</code></pre>
+                    </div>
+
+                    <div class="terminal-box">
+                        <div class="terminal-bar">
+                            <div class="terminal-dots"><span class="dot red"></span><span
+                                    class="dot yellow"></span><span class="dot green"></span></div>
+                            <span class="terminal-title">bash — Fedora</span>
+                        </div>
+                        <pre
+                            class="terminal-content"><code><span class="prompt">$</span> sudo dnf update && sudo dnf upgrade -y</code></pre>
+                    </div>
+
+                    <div class="terminal-box">
+                        <div class="terminal-bar">
+                            <div class="terminal-dots"><span class="dot red"></span><span
+                                    class="dot yellow"></span><span class="dot green"></span></div>
+                            <span class="terminal-title">bash — Arch Linux</span>
+                        </div>
+                        <pre class="terminal-content"><code><span class="prompt">$</span> sudo pacman -Syu</code></pre>
+                    </div>
+
+                    <div class="terminal-box">
+                        <div class="terminal-bar">
+                            <div class="terminal-dots"><span class="dot red"></span><span
+                                    class="dot yellow"></span><span class="dot green"></span></div>
+                            <span class="terminal-title">bash — openSUSE</span>
+                        </div>
+                        <pre
+                            class="terminal-content"><code><span class="prompt">$</span> sudo zypper refresh && sudo zypper update -y</code></pre>
+                    </div>
+
+                    <h3 class="subsection-heading">2. Install Node.js and npm</h3>
+                    <p class="content-text">If you do not have Node.js and npm installed yet, run the appropriate
+                        command for your system:</p>
+
+                    <div class="terminal-box">
+                        <div class="terminal-bar">
+                            <div class="terminal-dots"><span class="dot red"></span><span
+                                    class="dot yellow"></span><span class="dot green"></span></div>
+                            <span class="terminal-title">bash — Install Node.js & npm</span>
+                        </div>
+                        <pre class="terminal-content"><code><span class="comment"># Debian / Ubuntu</span>
+<span class="prompt">$</span> sudo apt install nodejs npm -y
+
+<span class="comment"># Fedora</span>
+<span class="prompt">$</span> sudo dnf install nodejs npm -y
+
+<span class="comment"># Arch Linux</span>
+<span class="prompt">$</span> sudo pacman -S nodejs npm
+
+<span class="comment"># openSUSE</span>
+<span class="prompt">$</span> sudo zypper install nodejs npm -y</code></pre>
+                    </div>
+
+                    <h3 class="subsection-heading">3. Install Claude Code</h3>
+                    <p class="content-text">Run the official installation script:</p>
+
+                    <div class="tutorial-media-box step-image-box">
+                        <img src="install.avif" alt="Installing Claude Code script" class="tutorial-img">
+                    </div>
+
+                    <div class="terminal-box">
+                        <div class="terminal-bar">
+                            <div class="terminal-dots"><span class="dot red"></span><span
+                                    class="dot yellow"></span><span class="dot green"></span></div>
+                            <span class="terminal-title">bash — Install script</span>
+                        </div>
+                        <pre
+                            class="terminal-content"><code><span class="prompt">$</span> curl -fsSL https://claude.ai/install.sh | bash</code></pre>
+                    </div>
+
+                    <p class="content-text">Once the installation finishes, add the binary path to your shell profile so
+                        your system can locate the <code>claude</code> executable:</p>
+
+                    <div class="terminal-box">
+                        <div class="terminal-bar">
+                            <div class="terminal-dots"><span class="dot red"></span><span
+                                    class="dot yellow"></span><span class="dot green"></span></div>
+                            <span class="terminal-title">bash — Export environment PATH</span>
+                        </div>
+                        <pre class="terminal-content"><code><span class="prompt">$</span> echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
+<span class="prompt">$</span> source ~/.bashrc</code></pre>
+                    </div>
+
+                    <div class="callout-box info">
+                        <strong>Tip:</strong> You can verify where Claude Code was installed by running:
+                        <code>which claude</code>
+                    </div>
+                </section>
+
+                <!-- STEP 2 -->
+                <section class="tutorial-step">
+                    <h2 class="step-title">Step 2: Obtain a Free OpenRouter API Key</h2>
+
+                    <div class="tutorial-media-box step-image-box">
+                        <img src="api-key.avif" alt="OpenRouter Key Generation Dashboard" class="tutorial-img">
+                    </div>
+
+                    <ul class="directive-list">
+                        <li>Go to <strong>OpenRouter.ai</strong> and create a free account (or log in).</li>
+                        <li>Navigate to your Account Dashboard and click <strong>Get API Keys</strong>.</li>
+                        <li>Click <strong>Create Key</strong>, give it a name, and copy the generated API key
+                            immediately.</li>
+                    </ul>
+
+                    <div class="callout-box warning">
+                        <strong>Important:</strong> Save your API key somewhere secure (like a password manager). You
+                        will not be able to view full key details again after closing the window.
+                    </div>
+
+                    <p class="content-text">
+                        Using the <code>openrouter/free</code> endpoint allows OpenRouter to automatically route your
+                        requests to available free models (such as <code>nvidia/nemotron-3-ultra</code> or others) and
+                        rotate them if daily limits are reached.
+                    </p>
+                </section>
+
+                <!-- STEP 3 -->
+                <section class="tutorial-step">
+                    <h2 class="step-title">Step 3: Configure Claude Code to Use OpenRouter</h2>
+
+                    <p class="content-text">
+                        Now, direct Claude Code to route requests through OpenRouter by adding the necessary environment
+                        variables to your configuration file.
+                    </p>
+
+                    <p class="content-text">Open your bash configuration file in a text editor:</p>
+
+                    <div class="terminal-box">
+                        <div class="terminal-bar">
+                            <div class="terminal-dots"><span class="dot red"></span><span
+                                    class="dot yellow"></span><span class="dot green"></span></div>
+                            <span class="terminal-title">bash — Open bashrc</span>
+                        </div>
+                        <pre class="terminal-content"><code><span class="prompt">$</span> nano ~/.bashrc</code></pre>
+                    </div>
+
+                    <p class="content-text">Scroll to the bottom of the file and paste the following block:</p>
+
+                    <div class="terminal-box">
+                        <div class="terminal-bar">
+                            <div class="terminal-dots"><span class="dot red"></span><span
+                                    class="dot yellow"></span><span class="dot green"></span></div>
+                            <span class="terminal-title">bash — OpenRouter Config</span>
+                        </div>
+                        <pre class="terminal-content"><code><span class="comment"># ==========================================</span>
+<span class="comment"># OpenRouter Free Model Configuration for Claude Code</span>
+<span class="comment"># ==========================================</span>
+export ANTHROPIC_BASE_URL="https://openrouter.ai/api"
+export ANTHROPIC_AUTH_TOKEN="sk-or-v1-YOUR-OPENROUTER-KEY-HERE"
+export ANTHROPIC_API_KEY=""
+
+<span class="comment"># Set primary model to OpenRouter's free tier</span>
+export ANTHROPIC_MODEL="openrouter/free"
+
+<span class="comment"># Route background agents to the free model tier</span>
+export ANTHROPIC_DEFAULT_SONNET_MODEL="openrouter/free"
+export ANTHROPIC_DEFAULT_HAIKU_MODEL="openrouter/free"</code></pre>
+                    </div>
+
+                    <p class="content-text">
+                        <em>(Be sure to replace <code>sk-or-v1-YOUR-OPENROUTER-KEY-HERE</code> with your actual
+                            key)</em>.
+                    </p>
+
+                    <p class="content-text">Save and exit the editor (<code>Ctrl + O</code>, <code>Enter</code>, then
+                        <code>Ctrl + X</code> in nano).
+                    </p>
+
+                    <p class="content-text">Reload your configuration to apply the changes:</p>
+
+                    <div class="terminal-box">
+                        <div class="terminal-bar">
+                            <div class="terminal-dots"><span class="dot red"></span><span
+                                    class="dot yellow"></span><span class="dot green"></span></div>
+                            <span class="terminal-title">bash — Reload environment</span>
+                        </div>
+                        <pre class="terminal-content"><code><span class="prompt">$</span> source ~/.bashrc</code></pre>
+                    </div>
+                </section>
+
+                <!-- STEP 4 -->
+                <section class="tutorial-step">
+                    <h2 class="step-title">Step 4: Run Claude Code</h2>
+
+                    <div class="tutorial-media-box step-image-box">
+                        <img src="run.avif" alt="Launching Claude Code Terminal" class="tutorial-img">
+                    </div>
+
+                    <p class="content-text">Navigate to your target project directory and launch Claude Code:</p>
+
+                    <div class="terminal-box">
+                        <div class="terminal-bar">
+                            <div class="terminal-dots"><span class="dot red"></span><span
+                                    class="dot yellow"></span><span class="dot green"></span></div>
+                            <span class="terminal-title">bash — Launch agent</span>
+                        </div>
+                        <pre class="terminal-content"><code><span class="prompt">$</span> cd /path/to/your/project
+<span class="prompt">$</span> claude</code></pre>
+                    </div>
+
+                    <p class="content-text">You can now interact with and maintain your project using plain English
+                        instructions right from your terminal.</p>
+
+                    <div class="callout-box warning">
+                        <strong>Caution:</strong> AI agents are not perfect and can occasionally make errors. Always
+                        review shell commands generated by Claude Code before executing them.
+                    </div>
+                </section>
+
+            </div>
+        </article>
+
+        <!-- RECOMMENDATION SECTION (DARK MINT CARDS) -->
+        <section class="recommendation-section">
+            <h2 class="recommendation-heading">Recommendation</h2>
+
+            <div class="recommendation-grid">
+                <a href="../ssh/ssh.html" class="card-link">
+                    <article class="card card--dark-mint">
+                        <div class="card-img-wrapper">
+                            <img src="../../Image/ssh.avif" alt="Secure SSH Server" class="card-img">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <span class="card-category">DevOps</span>
+                                <time datetime="2026-07-20">July 20, 2026</time>
+                            </div>
+                            <h3 class="card-title">How to Set Up a Secure SSH Server</h3>
+                            <p class="card-desc">Step-by-step guide to configuring OpenSSH, public keys, and firewall
+                                rules for ultimate server security.</p>
+                        </div>
+                    </article>
+                </a>
+
+                <a href="../office/office.html" class="card-link">
+                    <article class="card card--dark-mint">
+                        <div class="card-img-wrapper">
+                            <img src="../../Image/office.avif" alt="Install Office Guide" class="card-img">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <span class="card-category">Setup</span>
+                                <time datetime="2026-07-15">July 15, 2026</time>
+                            </div>
+                            <h3 class="card-title">Installing Microsoft Office For Free</h3>
+                            <p class="card-desc">Equip your desktop with essential office suites, PDF editors, and
+                                productivity tools for daily work.</p>
+                        </div>
+                    </article>
+                </a>
+
+                <a href="../dualboot/dualboot.html" class="card-link">
+                    <article class="card card--dark-mint">
+                        <div class="card-img-wrapper">
+                            <img src="../../Image/dual.avif" alt="Dual Boot Linux Setup" class="card-img">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <span class="card-category">Setup</span>
+                                <time datetime="2026-06-28">June 28, 2026</time>
+                            </div>
+                            <h3 class="card-title">Dual-Booting Windows & Linux Safely</h3>
+                            <p class="card-desc">Partition your drive, configure GRUB bootloader, and avoid common data
+                                loss pitfalls when dual booting.</p>
+                        </div>
+                    </article>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER SECTION -->
+    <footer>
+        <div class="footer-top">
+            <div class="foot-logo">
+                <img src="../../Logo/logo.png" alt="NextBit Logo">
+                <p class="foot-tagline">Free, community-made skills to learn and how-to guides for everything.</p>
+            </div>
+            <div class="foot-columns">
+                <div class="foot-col">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="../../learn.html">Learn</a></li>
+                        <li><a href="../../chatbot.html">Chatbot</a></li>
+                        <li><a href="https://trakteer.id/NextBit" target="_blank" rel="noopener">Donate</a></li>
+                        <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSePyFmZLFE-JLAPPpzzbfqEi7tIMhIK_mMEFpfXV8yfVe1FYw/viewform"
+                                target="_blank" rel="noopener">Submit a tutorial</a></li>
+                    </ul>
+                </div>
+                <div class="foot-col">
+                    <h4>Info</h4>
+                    <ul>
+                        <li><a href="../../about.html">About</a></li>
+                        <li><a href="mailto:contact@nextbit.org">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="foot-col">
+                    <h4>Follow</h4>
+                    <ul>
+                        <li><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a></li>
+                        <li><a href="https://github.com" target="_blank" rel="noopener">GitHub</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <hr class="footer-divider">
+        <p class="footer-copyright">&copy; 2026 NextBit. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,259 @@
+/* ==========================================================================
+   ABOUT PAGE SPECIFIC STYLES
+   - High contrast dark charcoal & black typography for maximum readability
+   - Service cards grid ("What We Do?")
+   - Feature blocks for "Our Approach" & "Where We Work"
+   ========================================================================== */
+@import url('styles.css');
+
+.about-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 130px 24px 80px 24px;
+}
+
+/* --------------------------------------------------------------------------
+   1. HERO / WHO WE ARE
+   -------------------------------------------------------------------------- */
+.about-hero {
+    text-align: center;
+    max-width: 820px;
+    margin: 0 auto 70px auto;
+}
+
+.section-tag {
+    display: inline-block;
+    background: rgba(95, 221, 172, 0.22);
+    color: #0d6342;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    margin-bottom: 16px;
+}
+
+.about-title {
+    font-size: 42px;
+    font-weight: 800;
+    color: #111816;
+    margin-bottom: 20px;
+    letter-spacing: -0.8px;
+    line-height: 1.2;
+}
+
+.about-lead {
+    font-size: 20px;
+    line-height: 1.6;
+    font-weight: 600;
+    color: #1A201E;
+    margin-bottom: 28px;
+}
+
+.about-bio-box {
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: var(--radius-lg);
+    padding: 32px 36px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.about-bio-box p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #2B322F;
+}
+
+.about-bio-box strong {
+    color: #111816;
+}
+
+/* --------------------------------------------------------------------------
+   2. WHAT WE DO (SERVICES CARDS GRID)
+   -------------------------------------------------------------------------- */
+.services-section {
+    margin-bottom: 70px;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title {
+    font-size: 32px;
+    font-weight: 800;
+    color: #111816;
+    margin-bottom: 10px;
+    letter-spacing: -0.5px;
+}
+
+.section-desc {
+    font-size: 16px;
+    font-weight: 500;
+    color: #2B322F;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+}
+
+.about-card {
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: var(--radius-lg);
+    padding: 28px 24px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.about-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.09);
+    border-color: rgba(95, 221, 172, 0.6);
+}
+
+.card-badge {
+    align-self: flex-start;
+    background: #EAF0EE;
+    color: #111816;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    margin-bottom: 16px;
+}
+
+.card-icon {
+    font-size: 32px;
+    margin-bottom: 14px;
+}
+
+.about-card h3 {
+    font-size: 19px;
+    font-weight: 700;
+    color: #111816;
+    margin-bottom: 10px;
+}
+
+.about-card p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #2B322F;
+}
+
+/* --------------------------------------------------------------------------
+   3. OUR APPROACH & WHERE WE WORK
+   -------------------------------------------------------------------------- */
+.approach-section {
+    margin-bottom: 40px;
+}
+
+.approach-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 28px;
+}
+
+.approach-card,
+.location-card {
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: var(--radius-lg);
+    padding: 32px 28px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.approach-card:hover,
+.location-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.09);
+    border-color: rgba(95, 221, 172, 0.6);
+}
+
+.approach-card h2,
+.location-card h2 {
+    font-size: 22px;
+    font-weight: 800;
+    color: #111816;
+    margin-bottom: 12px;
+    letter-spacing: -0.3px;
+}
+
+.approach-card p,
+.location-card p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #2B322F;
+}
+
+.cta-box {
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.cta-text {
+    font-size: 15px;
+    font-weight: 700;
+    color: #111816 !important;
+    margin-bottom: 16px;
+}
+
+.cta-btn {
+    display: inline-block;
+    background: var(--mint-300);
+    color: #111816;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 10px 22px;
+    border-radius: 999px;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 14px rgba(95, 221, 172, 0.35);
+}
+
+.cta-btn:hover {
+    background: var(--mint-200);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(95, 221, 172, 0.45);
+}
+
+/* --------------------------------------------------------------------------
+   4. RESPONSIVE MEDIA QUERIES
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+    .about-container {
+        padding-top: 110px;
+    }
+
+    .about-title {
+        font-size: 32px;
+    }
+
+    .about-lead {
+        font-size: 17px;
+    }
+
+    .about-bio-box,
+    .approach-card,
+    .location-card {
+        padding: 24px;
+    }
+}

@@ -1,0 +1,173 @@
+/* ==========================================================================
+   CHATBOT PAGE SPECIFIC STYLES
+   ========================================================================== */
+
+/* Lock window height so the main page never creates a scrollbar */
+html,
+body.chat-body-page {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #121514;
+    color: var(--gray-50, #f9fafb);
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-app-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 800px;
+    height: 100vh;
+    margin: 0 auto;
+    padding: 95px 20px 20px 20px;
+    /* Distance from top nav */
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.chat-app-title {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--gray-50, #f9fafb);
+    margin-bottom: 16px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+/* Internal scrollable message container */
+.chat-messages {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    overflow-y: auto;
+    margin-bottom: 16px;
+    padding-right: 8px;
+    scroll-behavior: smooth;
+}
+
+/* Minimalist scrollbar styling */
+.chat-messages::-webkit-scrollbar {
+    width: 6px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 4px;
+}
+
+.message {
+    max-width: 80%;
+    padding: 14px 18px;
+    border-radius: 18px;
+    font-size: 15px;
+    line-height: 1.5;
+    word-break: break-word;
+}
+
+.message--bot {
+    align-self: flex-start;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--gray-50, #f9fafb);
+    border-bottom-left-radius: 4px;
+}
+
+.message--user {
+    align-self: flex-end;
+    background: var(--mint-300, #4ade80);
+    color: var(--gray-900, #0f172a);
+    font-weight: 500;
+    border-bottom-right-radius: 4px;
+}
+
+/* MARKDOWN STYLING INSIDE BOT BUBBLES */
+.message p {
+    margin: 4px 0;
+}
+
+.message p:first-child {
+    margin-top: 0;
+}
+
+.message p:last-child {
+    margin-bottom: 0;
+}
+
+.message ul,
+.message ol {
+    margin: 8px 0;
+    padding-left: 20px;
+}
+
+.message li {
+    margin-bottom: 4px;
+}
+
+.message strong {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.message code {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 13px;
+}
+
+/* INPUT AREA PINNED AT BOTTOM */
+.chat-input-area {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(26, 29, 28, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 999px;
+    padding: 8px 10px 8px 22px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    flex-shrink: 0;
+    box-sizing: border-box;
+}
+
+.chat-input-field {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--gray-50, #f9fafb);
+    font-size: 15px;
+    font-family: inherit;
+}
+
+.chat-input-field::placeholder {
+    color: var(--gray-500, #6b7280);
+}
+
+.chat-send-btn {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background-color: var(--mint-300, #4ade80);
+    color: var(--gray-900, #0f172a);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.chat-send-btn:hover {
+    background-color: var(--mint-200, #86efac);
+    transform: scale(1.05);
+}

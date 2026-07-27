@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NextBit AI Assistant</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="chatbot.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- MARKDOWN PARSER FOR RICH TEXT / BULLET POINTS -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+
+<body class="chat-body-page">
+
+    <!-- FLOATING GLASS DOCK HEADER -->
+    <header class="glass-dock">
+        <nav>
+            <input type="checkbox" id="menu-toggle" class="menu-toggle" hidden>
+
+            <div class="navbar-left">
+                <label for="menu-toggle" class="menu-btn" aria-label="Toggle Navigation Menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </label>
+
+                <a href="index.html" class="logo-link">
+                    <img src="Logo/logo.png" alt="NextBit Logo" class="navbar-logo">
+                </a>
+
+                <ul class="navbar-links">
+                    <li><a href="index.html" class="navbar-link">Home</a></li>
+                    <li><a href="learn.html" class="navbar-link">Learn</a></li>
+                    <li><a href="chatbot.html" class="navbar-link active">Chatbot</a></li>
+                    <li><a href="about.html" class="navbar-link">About</a></li>
+                    <li><a href="https://trakteer.id/NextBit" class="navbar-link" target="_blank"
+                            rel="noopener">Donate</a></li>
+                </ul>
+            </div>
+
+            <div class="navbar-action">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSePyFmZLFE-JLAPPpzzbfqEi7tIMhIK_mMEFpfXV8yfVe1FYw/viewform"
+                    class="submit-btn" target="_blank" rel="noopener">Submit</a>
+                <a href="learn.html" class="navbar-icon" aria-label="Search">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- CHATBOT MAIN WRAPPER -->
+    <main class="chat-app-wrapper">
+        <h1 class="chat-app-title">NextBit AI Assistant</h1>
+
+        <div class="chat-messages" id="chatMessages">
+            <div class="message message--bot">
+                Hello! I'm the NextBit AI Assistant. Ask me anything about Linux, Networking, SysAdmin, DevOps, or our
+                tutorials!
+            </div>
+        </div>
+
+        <form class="chat-input-area" id="chatForm">
+            <input type="text" class="chat-input-field" id="chatInput" placeholder="Ask NextBit Assistant..." required
+                autocomplete="off">
+            <button type="submit" class="chat-send-btn" aria-label="Send message">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="12" y1="19" x2="12" y2="5"></line>
+                    <polyline points="5 12 12 5 19 12"></polyline>
+                </svg>
+            </button>
+        </form>
+    </main>
+
+    <!-- COMPLETE FRONTEND JAVASCRIPT -->
+    <script>
+        const chatForm = document.getElementById('chatForm');
+        const chatInput = document.getElementById('chatInput');
+        const chatMessages = document.getElementById('chatMessages');
+
+        chatForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const message = chatInput.value.trim();
+            if (!message) return;
+
+            // 1. Add user message
+            appendMessage(message, 'user');
+            chatInput.value = '';
+
+            // 2. Add temporary bot thinking state
+            const botBubble = appendMessage('Thinking...', 'bot');
+
+            try {
+                // 3. Send fetch request to local Node server
+                const response = await fetch('http://localhost:1140/api/chat', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ userMessage: message })
+                });
+
+                const data = await response.json();
+
+                // 4. Render markdown formatted response & scroll down
+                const rawReply = data.reply || "No response received.";
+                botBubble.innerHTML = (typeof marked !== 'undefined') ? marked.parse(rawReply) : rawReply;
+                scrollToBottom();
+
+            } catch (error) {
+                console.error('Connection Error:', error);
+                botBubble.textContent = '⚠️ Could not reach server. Make sure "node server.js" is running in PowerShell.';
+                scrollToBottom();
+            }
+        });
+
+        function appendMessage(text, sender) {
+            const msgDiv = document.createElement('div');
+            msgDiv.classList.add('message', sender === 'user' ? 'message--user' : 'message--bot');
+
+            if (sender === 'bot' && text !== 'Thinking...') {
+                msgDiv.innerHTML = (typeof marked !== 'undefined') ? marked.parse(text) : text;
+            } else {
+                msgDiv.textContent = text;
+            }
+
+            chatMessages.appendChild(msgDiv);
+            scrollToBottom();
+            return msgDiv;
+        }
+
+        function scrollToBottom() {
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+    </script>
+
+</body>
+
+</html>

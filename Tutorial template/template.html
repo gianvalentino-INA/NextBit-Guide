@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Tutorial Title] - NextBit</title>
+
+    <!-- STYLESHEETS -->
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="template.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- FLOATING GLASS NAVBAR -->
+    <header class="glass-dock">
+        <nav>
+            <input type="checkbox" id="menu-toggle" class="menu-toggle" hidden>
+
+            <div class="navbar-left">
+                <label for="menu-toggle" class="menu-btn" aria-label="Toggle Navigation Menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </label>
+
+                <a href="../../index.html" class="logo-link">
+                    <img src="../../Logo/logo.png" alt="NextBit Logo" class="navbar-logo">
+                </a>
+
+                <ul class="navbar-links">
+                    <li><a href="../../index.html" class="navbar-link">Home</a></li>
+                    <li><a href="../../learn.html" class="navbar-link active">Learn</a></li>
+                    <li><a href="../../chatbot.html" class="navbar-link">Chatbot</a></li>
+                    <li><a href="../../about.html" class="navbar-link">About</a></li>
+                    <li><a href="https://trakteer.id/NextBit" class="navbar-link" target="_blank" rel="noopener">Donate</a></li>
+                </ul>
+            </div>
+
+            <div class="navbar-action">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSePyFmZLFE-JLAPPpzzbfqEi7tIMhIK_mMEFpfXV8yfVe1FYw/viewform" class="submit-btn" target="_blank" rel="noopener">Submit</a>
+                <a href="../../learn.html" class="navbar-icon" aria-label="Search">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- MAIN TUTORIAL CONTAINER -->
+    <main class="tutorial-page-container">
+
+        <article class="tutorial-article">
+
+            <!-- HEADER BLOCK -->
+            <header class="tutorial-header">
+                <h1 class="tutorial-title">[Insert Tutorial Title Here]</h1>
+
+                <p class="tutorial-author">
+                    By <a href="../../about.html" class="author-link">[Author Name]</a>
+                </p>
+
+                <div class="category-wrapper">
+                    <span class="category-badge">[Category Name]</span>
+                </div>
+            </header>
+
+            <!-- INTRO BANNER IMAGE -->
+            <div class="tutorial-media-box intro-image-box">
+                <img src="banner.avif" alt="[Tutorial Title Banner]" class="tutorial-img">
+            </div>
+
+            <!-- TUTORIAL CONTENT BODY -->
+            <div class="tutorial-body">
+
+                <!-- INTRODUCTION SECTION -->
+                <section class="tutorial-intro">
+                    <h2 class="section-heading">Introduction</h2>
+                    
+                    <p class="content-text">
+                        Write a compelling intro paragraph explaining what this tool, process, or setup is and why the reader should care about learning it. You can highlight inline code like <code>command-name</code> or bold text like <strong>key terminology</strong>.
+                    </p>
+
+                    <div class="callout-box info">
+                        <strong>Pro Tip / Note:</strong> Highlight an important background detail, shortcut, or prerequisite here.
+                    </div>
+                </section>
+
+                <!-- STEP 1 TEMPLATE -->
+                <section class="tutorial-step">
+                    <h2 class="step-title">Step 1: [First Action Step]</h2>
+
+                    <p class="content-text">
+                        Explain the first step clearly. Break down what command or configuration the user needs to execute next.
+                    </p>
+
+                    <h3 class="subsection-heading">1. Sub-task Title (Optional)</h3>
+                    <p class="content-text">Sub-description text explaining distribution-specific options or initial checks.</p>
+
+                    <!-- TERMINAL BOX COMPONENT -->
+                    <div class="terminal-box">
+                        <div class="terminal-bar">
+                            <div class="terminal-dots">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <span class="terminal-title">bash — terminal header text</span>
+                        </div>
+                        <pre class="terminal-content"><code><span class="comment"># Optional comment line explaining the command</span>
+<span class="prompt">$</span> sudo apt update && sudo apt upgrade -y</code></pre>
+                    </div>
+
+                    <div class="callout-box info">
+                        <strong>Tip:</strong> Quick tip box related to Step 1.
+                    </div>
+                </section>
+
+                <!-- STEP 2 TEMPLATE WITH IMAGE & LIST -->
+                <section class="tutorial-step">
+                    <h2 class="step-title">Step 2: [Second Action Step]</h2>
+
+                    <div class="tutorial-media-box step-image-box">
+                        <img src="step2-image.avif" alt="Step 2 Illustration" class="tutorial-img">
+                    </div>
+
+                    <p class="content-text">
+                        Description for the second step. You can list multiple instructions or configuration steps below:
+                    </p>
+
+                    <ul class="directive-list">
+                        <li><strong>Action item 1:</strong> Detail what needs to be clicked, copied, or changed.</li>
+                        <li><strong>Action item 2:</strong> Detail secondary configurations or settings.</li>
+                        <li><strong>Action item 3:</strong> Highlight expected outputs or save procedures.</li>
+                    </ul>
+
+                    <div class="callout-box warning">
+                        <strong>Warning:</strong> Caution users about potential mistakes, security risks, or lockout scenarios.
+                    </div>
+                </section>
+
+            </div>
+        </article>
+
+        <!-- RECOMMENDATION SECTION (DARK MINT CARDS) -->
+        <section class="recommendation-section">
+            <h2 class="recommendation-heading">Recommendation</h2>
+
+            <div class="recommendation-grid">
+                <a href="../ssh/ssh.html" class="card-link">
+                    <article class="card card--dark-mint">
+                        <div class="card-img-wrapper">
+                            <img src="../../Image/ssh.avif" alt="Secure SSH Server" class="card-img">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <span class="card-category">DevOps</span>
+                                <time datetime="2026-07-20">July 20, 2026</time>
+                            </div>
+                            <h3 class="card-title">How to Set Up a Secure SSH Server</h3>
+                            <p class="card-desc">Step-by-step guide to configuring OpenSSH, public keys, and firewall rules for ultimate server security.</p>
+                        </div>
+                    </article>
+                </a>
+
+                <a href="../claude/claude.html" class="card-link">
+                    <article class="card card--dark-mint">
+                        <div class="card-img-wrapper">
+                            <img src="../../Image/claude.avif" alt="Claude Code Guide" class="card-img">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <span class="card-category">SysAdmin</span>
+                                <time datetime="2026-07-18">July 18, 2026</time>
+                            </div>
+                            <h3 class="card-title">Installing Claude Code Into Your Linux System</h3>
+                            <p class="card-desc">Learn how to set up and configure Claude Code in your terminal for AI-assisted workflow automation.</p>
+                        </div>
+                    </article>
+                </a>
+
+                <a href="../office/office.html" class="card-link">
+                    <article class="card card--dark-mint">
+                        <div class="card-img-wrapper">
+                            <img src="../../Image/office.avif" alt="Install Office Guide" class="card-img">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <span class="card-category">Setup</span>
+                                <time datetime="2026-07-15">July 15, 2026</time>
+                            </div>
+                            <h3 class="card-title">Installing Microsoft Office For Free</h3>
+                            <p class="card-desc">Equip your desktop with essential office suites, PDF editors, and productivity tools for daily work.</p>
+                        </div>
+                    </article>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER SECTION -->
+    <footer>
+        <div class="footer-top">
+            <div class="foot-logo">
+                <img src="../../Logo/logo.png" alt="NextBit Logo">
+                <p class="foot-tagline">Free, community-made skills to learn and how-to guides for everything.</p>
+            </div>
+            <div class="foot-columns">
+                <div class="foot-col">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="../../learn.html">Learn</a></li>
+                        <li><a href="../../chatbot.html">Chatbot</a></li>
+                        <li><a href="https://trakteer.id/NextBit" target="_blank" rel="noopener">Donate</a></li>
+                        <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSePyFmZLFE-JLAPPpzzbfqEi7tIMhIK_mMEFpfXV8yfVe1FYw/viewform" target="_blank" rel="noopener">Submit a tutorial</a></li>
+                    </ul>
+                </div>
+                <div class="foot-col">
+                    <h4>Info</h4>
+                    <ul>
+                        <li><a href="../../about.html">About</a></li>
+                        <li><a href="mailto:contact@nextbit.org">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="foot-col">
+                    <h4>Follow</h4>
+                    <ul>
+                        <li><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a></li>
+                        <li><a href="https://github.com" target="_blank" rel="noopener">GitHub</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <hr class="footer-divider">
+        <p class="footer-copyright">&copy; 2026 NextBit. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>

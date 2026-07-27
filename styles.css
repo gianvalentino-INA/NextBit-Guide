@@ -1,14 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
-
+/* ==========================================================================
+   1. VARIABLES & GLOBAL RESET
+   ========================================================================== */
 :root {
   --mint-300: #5FDDAC;
-  --gray-50:  #F9FAFA;
+  --mint-200: #96EBC9;
+  --gray-50: #F9FAFA;
   --gray-900: #1A1D1C;
+  --gray-500: #9AA19E;
+  --gray-600: #6B726F;
 
   --font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-
   --radius-md: 8px;
-  --radius-full: 999px;
+  --radius-lg: 16px;
 }
 
 * {
@@ -17,16 +20,41 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--font-family);
+  background-color: #F9FAFA;
+  color: var(--gray-900);
   overflow-x: hidden;
 }
 
-header {
-  background-color: var(--gray-900);
-  min-height: 32px; 
-  padding: 0 24px;
-  width: 100%;
+/* ==========================================================================
+   2. MACOS FLOATING LIQUID GLASS DOCK
+   ========================================================================== */
+header.glass-dock {
+  position: fixed;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 32px);
+  max-width: 1200px;
+  height: 64px;
+
+  /* Translucent Liquid Glass Effect */
+  background: rgba(22, 25, 24, 0.65);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 20px;
+  box-shadow: 0 12px 32px 0 rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.18);
+
+  z-index: 1000;
+  padding: 0 20px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 header nav {
@@ -34,17 +62,29 @@ header nav {
   align-items: center;
   justify-content: space-between;
   height: 100%;
+  width: 100%;
+  position: relative;
 }
 
-/* LEFT SECTION */
 .navbar-left {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 24px;
+}
+
+.menu-btn {
+  display: none;
+  cursor: pointer;
+  color: var(--gray-50);
+}
+
+.menu-btn svg {
+  width: 24px;
+  height: 24px;
 }
 
 .navbar-logo {
-  height: 85px;
+  height: 38px;
   width: auto;
   display: block;
 }
@@ -52,221 +92,258 @@ header nav {
 .navbar-links {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 16px;
   list-style: none;
 }
 
-/* LINKS */
-.navbar-link,
-.navbar-link:visited {
-  font-family: 'Inter', sans-serif;
-  font-size: 16px;
+.navbar-link {
+  font-size: 15px;
   font-weight: 500;
   color: var(--gray-50);
   text-decoration: none;
-  padding-bottom: 4px;
-  transition: color 0.3s ease;
+  padding: 8px 14px;
+  border-radius: 12px;
+  transition: all 0.25s ease;
 }
 
 .navbar-link:hover {
   color: var(--mint-300);
+  background: rgba(255, 255, 255, 0.06);
 }
 
-/* RIGHT SECTION */
+.navbar-link.active {
+  color: var(--mint-300);
+  background: rgba(95, 221, 172, 0.12);
+}
+
 .navbar-action {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 12px;
 }
 
-.navbar-icon,
-.profile-btn {
+.submit-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--mint-300);
+  color: var(--gray-900);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(95, 221, 172, 0.25);
+  transition: all 0.25s ease;
+}
+
+.submit-btn:hover {
+  background-color: var(--mint-200);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(95, 221, 172, 0.35);
+}
+
+.navbar-icon {
   color: var(--gray-50);
-  background: transparent;
-  border: none;
-  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0;
-  transition: color 0.3s ease;
+  padding: 8px;
+  border-radius: var(--radius-md);
+  transition: all 0.25s ease;
 }
 
-.navbar-icon svg,
-.profile-btn svg {
+.navbar-icon svg {
   width: 20px;
   height: 20px;
-  display: block;
 }
 
 .navbar-icon:hover {
   color: var(--mint-300);
+  background-color: rgba(255, 255, 255, 0.08);
 }
 
-/* SUBMIT BUTTON */
-.submit-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: #5FDDAC;
-  color: var(--gray-50);
-  font-size: 14px;
-  font-weight: 500;
-  padding: 8px 16px;
-  border-radius: 8px;
-  border: none;
-  text-decoration: none;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.submit-btn:hover {
-  background: #96EBC9;
-}
-
-/* Hero background */
+/* ==========================================================================
+   3. HERO SECTION (CUSTOM DARK + BLURRED BG)
+   ========================================================================== */
 .hero {
   position: relative;
+  width: 100%;
   min-height: 500px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 0 24px;
-  overflow: hidden;   /* keeps the blurred edges from spilling outside the box */
+  padding: 130px 24px 70px 24px;
+  overflow: hidden;
+  background-color: #121514;
+  border-radius: 0;
 }
 
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url('Assets/hero-bg.jpg');
-  background-size: cover;
-  background-position: center;
-  filter: blur(6px) brightness(0.5);   /* blur + darken together */
-  transform: scale(1.1);   /* slightly zoomed so blurred edges don't show gaps */
+
+  background: linear-gradient(rgba(18, 21, 20, 0.65), rgba(18, 21, 20, 0.75)),
+    url('Assets/hero-bg.jpg') center/cover no-repeat;
+
+  filter: blur(10px) brightness(0.8);
+  transform: scale(1.08);
   z-index: 0;
-}
-
-.hero h1,
-.hero p,
-.hero-search {
-  position: relative;
-  z-index: 1;
-}
-
-.hero-search {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  max-width: 560px;
-  margin: 24px auto 0;   /* reduced from 48px */
-}
-
-.hero-search-icon {
-  position: absolute;
-  left: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 20px;
-  height: 20px;
-  color: #9AA19E;
-  pointer-events: none;
-}
-
-.hero-search input {
-  width: 100%;
-  padding: 16px 20px 16px 52px;
-  border: none;
-  border-radius: 999px;
-  font-size: 16px;
-  font-family: var(--font-family);
-  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.20);
-  outline: none;
-}
-
-.hero-title {
-  font-family: 'Inter', sans-serif;
-  color: var(--gray-50);
-  font-size: 40px;
-  font-weight: 600;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-.hero-sub {
-  font-family: 'Inter', sans-serif;
-  color: var(--gray-50);
-  font-size: 18px;
-  font-weight: 600;
-  margin-top: 16px;   /* increased from 8px */
-}
-
-.hero {
-  position: relative;
-  height: 500px;   /* set this to match your actual hero photo's height */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  overflow: hidden;
 }
 
 .hero-text {
   position: relative;
   z-index: 1;
-  margin-top: -80px;
-  padding-top: 0px;   /* fixed distance from top of hero, adjust to taste */
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
+  max-width: 800px;
 }
 
+.hero-title {
+  color: #FFFFFF;
+  font-size: 46px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+  text-shadow: 0px 4px 20px rgba(0, 0, 0, 0.6);
+}
+
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 28px;
+  padding: 14px 32px;
+  background-color: var(--mint-300);
+  color: var(--gray-900);
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 999px;
+  box-shadow: 0 8px 24px rgba(95, 221, 172, 0.3);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-cta svg {
+  transition: transform 0.25s ease;
+}
+
+.hero-cta:hover {
+  background-color: var(--mint-200);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 12px 32px rgba(95, 221, 172, 0.4);
+}
+
+.hero-cta:hover svg {
+  transform: translateX(4px);
+}
+
+/* ==========================================================================
+   4. TUTORIAL SECTION & SCROLL ANIMATIONS
+   ========================================================================== */
 .tutorial {
+  background-color: #F9FAFA;
+  padding: 80px 24px;
+  width: 100%;
   text-align: center;
-  padding: 60px 24px;
 }
 
 .tut-title {
-  font-size: 30px;
+  font-size: 34px;
   font-weight: 700;
   color: var(--gray-900);
-  margin-bottom: 8px;
+  margin-bottom: 12px;
 }
 
 .tut-sub {
   font-size: 16px;
-  color: #6B726F;
-  max-width: 500px;
-  margin: 0 auto;   /* centers the paragraph block itself since it has a max-width */
+  color: var(--gray-900);
+  max-width: 620px;
+  margin: 0 auto 48px auto;
+  line-height: 1.5;
 }
 
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   5. TUTORIAL CARDS (BORDER MATCHES CARD BACKGROUND)
+   ========================================================================== */
 .tut-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  margin-top: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 28px;
+  text-align: left;
+}
+
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
 }
 
 .card {
-  border-radius: 12px;
+  border-radius: var(--radius-lg);
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
-.card img {
+.card--dark {
+  background-color: #1A1D1C;
+  color: var(--gray-50);
+
+  /* Border color set exactly to card background color */
+  border: 2px solid #1A1D1C;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.card--dark:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.3);
+}
+
+.card-img-wrapper {
   width: 100%;
-  height: 200px;
+  height: 190px;
+  overflow: hidden;
+  background-color: #2A2D2C;
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  display: block;
-  background: #D3D1C7;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Image Zoom-In Effect on Hover */
+.card:hover .card-img {
+  transform: scale(1.08);
 }
 
 .card-content {
   padding: 20px;
-  text-align: left;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .card-meta {
@@ -277,121 +354,88 @@ header nav {
 }
 
 .card-category {
+  background: var(--mint-300);
+  color: var(--gray-900);
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-weight: 600;
   font-size: 12px;
-  font-weight: 500;
+}
+
+time {
+  color: var(--gray-500);
+  font-size: 12px;
 }
 
 .card-title {
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 8px;
-  line-height: 1.3;
+  line-height: 1.35;
 }
 
 .card-desc {
   font-size: 14px;
+  color: var(--gray-500);
   line-height: 1.5;
+  margin-top: auto;
 }
 
-/* Dark variant */
-.card--dark {
-  background: #1A1D1C;
-}
-
-.card--dark .card-meta,
-.card--dark .card-desc {
-  color: #9AA19E;
-}
-
-.card--dark .card-category {
-  color: var(--mint-300);
-}
-
-.card--dark .card-title {
-  color: var(--gray-50);
-}
-
-/* Light variant */
-.card--light {
-  background: #FFFFFF;
-  border: 1px solid #E1E4E3;
-}
-
-.card--light .card-meta,
-.card--light .card-desc {
-  color: #6B726F;
-}
-
-.card--light .card-category {
-  color: #16B87D;
-}
-
-.card--light .card-title {
-  color: #1A1D1C;
-}
-
-.featured-grid .card {
-  display: flex;
-  flex-direction: row;
-}
-
-.featured-grid .card img {
-  width: 45%;
-  height: auto;
-  object-fit: cover;
-}
-
-.featured-grid .card-content {
-  flex: 1;
-  padding: 24px;
-}
-
-.featured-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-  padding: 0 24px;
-  margin-top: 40px;
-}
-
+/* ==========================================================================
+   6. EVENLY SPACED DESKTOP & MOBILE FOOTER
+   ========================================================================== */
 footer {
-  background: var(--gray-900);
-  padding: 60px 24px 24px;
+  background-color: #161817;
+  color: var(--gray-50);
+  padding: 60px 24px 32px 24px;
+  margin-top: 80px;
 }
 
 .footer-top {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr 1fr;
-  gap: 32px;
   max-width: 1200px;
   margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.foot-brand {
+  max-width: 320px;
 }
 
 .foot-logo img {
-  height: 32px;
-  margin-bottom: 12px;
-}
-
-.footer-name {
-  display: none;   /* hide, since logo image already shows the name — remove this line if you want both */
+  height: 64px;
+  width: auto;
+  margin-bottom: -12px;
+  margin-top: -25px;
+  margin-left: -20px;
 }
 
 .foot-tagline {
-  color: #9AA19E;
+  color: var(--gray-500);
   font-size: 14px;
-  line-height: 1.5;
-  margin-top: 12px;
+  line-height: 1.6;
 }
 
+/* Spreads columns evenly across remaining footer width */
 .foot-columns {
-  display: contents;   /* lets the 3 .foot-col divs act as direct grid children of .footer-top */
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  max-width: 650px;
 }
 
-.foot-heading {
+.foot-col h4 {
   color: var(--gray-50);
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 600;
   margin-bottom: 16px;
+
+  /* Matches category tag color accents */
+  border-bottom: 2px solid var(--mint-300);
+  display: inline-block;
+  padding-bottom: 4px;
 }
 
 .foot-col ul {
@@ -403,10 +447,10 @@ footer {
 }
 
 .foot-col a {
-  color: #9AA19E;
-  font-size: 14px;
+  color: var(--gray-500);
   text-decoration: none;
-  transition: color 0.3s ease;
+  font-size: 14px;
+  transition: color 0.2s ease;
 }
 
 .foot-col a:hover {
@@ -414,14 +458,110 @@ footer {
 }
 
 .footer-divider {
-  border: none;
-  border-top: 1px solid #242726;
   max-width: 1200px;
-  margin: 40px auto 24px;
+  margin: 40px auto 24px auto;
+  border: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .footer-copyright {
   text-align: center;
-  color: #6B726F;
   font-size: 13px;
+  color: var(--gray-500);
+}
+
+/* ==========================================================================
+   7. MOBILE RESPONSIVE
+   ========================================================================== */
+@media (max-width: 768px) {
+  header.glass-dock {
+    top: 12px;
+    width: calc(100% - 24px);
+    padding: 0 14px;
+  }
+
+  .menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .navbar-links {
+    display: none;
+    position: absolute;
+    top: calc(100% + 12px);
+    left: 0;
+    width: 220px;
+
+    background: rgba(22, 25, 24, 0.65) !important;
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 20px;
+    padding: 12px 8px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+
+    flex-direction: column;
+    gap: 4px;
+    z-index: 1001;
+  }
+
+  .menu-toggle:checked~.navbar-left .navbar-links {
+    display: flex;
+    animation: popoverSlideIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  @keyframes popoverSlideIn {
+    from {
+      opacity: 0;
+      transform: translateY(-8px) scale(0.96);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  .navbar-link {
+    width: 100%;
+    display: block;
+    padding: 10px 16px;
+    border-radius: 12px;
+  }
+
+  .hero-title {
+    font-size: 32px;
+  }
+
+  .hero-cta {
+    font-size: 16px;
+    padding: 12px 24px;
+  }
+
+  /* Responsive Footer Stacking & Layout */
+  .footer-top {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .foot-brand {
+    max-width: 100%;
+  }
+
+  .foot-columns {
+    width: 100%;
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .foot-columns {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
 }
