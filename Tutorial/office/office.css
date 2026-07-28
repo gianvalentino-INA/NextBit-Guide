@@ -1,0 +1,417 @@
+/* ==========================================================================
+   NEXTBIT TUTORIAL STYLESHEET - OFFICE TUTORIAL
+   Light Body (#F9FAFA) & Dark Mint Cards (#14231E)
+   ========================================================================== */
+
+body {
+    background-color: #F9FAFA !important;
+    color: #1F2937;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.tutorial-page-container {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 120px 24px 80px 24px;
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.tutorial-article {
+    width: 100%;
+    margin: 0 auto 60px auto;
+    display: block !important;
+}
+
+/* --------------------------------------------------------------------------
+   1. HEADER & META SECTION
+   -------------------------------------------------------------------------- */
+.tutorial-header {
+    text-align: left;
+    margin-bottom: 32px;
+}
+
+.tutorial-title {
+    font-size: 32px;
+    font-weight: 600;
+    color: #111827;
+    letter-spacing: -0.4px;
+    line-height: 1.3;
+    margin: 0 0 12px 0;
+}
+
+.tutorial-author {
+    font-size: 20px;
+    font-weight: 300;
+    color: #4B5563;
+    margin: 0 0 18px 0;
+}
+
+.tutorial-author .author-link {
+    color: #059669;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.tutorial-author .author-link:hover {
+    color: #047857;
+    text-decoration: underline;
+}
+
+.category-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 32px;
+}
+
+.category-badge {
+    background-color: #5FDDAC;
+    color: #042F2E;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 6px 18px;
+    border-radius: 20px;
+    display: inline-block;
+    text-transform: capitalize;
+}
+
+/* --------------------------------------------------------------------------
+   2. MEDIA & IMAGES
+   -------------------------------------------------------------------------- */
+.tutorial-media-box {
+    margin: 0 auto;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #E5E7EB;
+    border: 1px solid #E5E7EB;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.intro-image-box {
+    max-width: 1015px;
+    width: 100%;
+    aspect-ratio: 1015 / 536;
+    max-height: 536px;
+    margin-bottom: 40px;
+}
+
+.step-image-box {
+    max-width: 900px;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    max-height: 480px;
+    margin-top: 20px;
+    margin-bottom: 24px;
+}
+
+.tutorial-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* --------------------------------------------------------------------------
+   3. TEXT & CONTENT
+   -------------------------------------------------------------------------- */
+.tutorial-body {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.section-heading {
+    font-size: 26px;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 16px;
+}
+
+.subsection-heading {
+    font-size: 20px;
+    font-weight: 600;
+    color: #111827;
+    margin: 28px 0 16px 0;
+}
+
+.content-text {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.7;
+    color: #374151;
+    margin-bottom: 24px;
+}
+
+.tutorial-body code {
+    background: #E5E7EB;
+    color: #0F766E;
+    padding: 3px 8px;
+    border-radius: 6px;
+    font-size: 17px;
+    font-family: 'Fira Code', monospace;
+    border: 1px solid #D1D5DB;
+}
+
+.directive-list {
+    margin: 0 0 28px 0;
+    padding-left: 24px;
+}
+
+.directive-list li {
+    font-size: 18px;
+    line-height: 1.75;
+    color: #374151;
+    margin-bottom: 14px;
+}
+
+.directive-list strong {
+    color: #111827;
+}
+
+/* CALLOUT BOXES */
+.callout-box {
+    padding: 18px 22px;
+    border-radius: 10px;
+    margin: 28px 0;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.callout-box.info {
+    background: #ECFDF5;
+    border-left: 4px solid #10B981;
+    color: #065F46;
+}
+
+.callout-box.warning {
+    background: #FEF2F2;
+    border-left: 4px solid #EF4444;
+    color: #991B1B;
+}
+
+/* --------------------------------------------------------------------------
+   4. TERMINAL / BASH BOX COMPONENT
+   -------------------------------------------------------------------------- */
+.terminal-box {
+    background-color: #0D1117;
+    border: 1px solid #30363D;
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 20px 0 28px 0;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.terminal-bar {
+    background-color: #161B22;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #30363D;
+}
+
+.terminal-dots {
+    display: flex;
+    gap: 6px;
+    margin-right: 12px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.dot.red {
+    background-color: #FF5F56;
+}
+
+.dot.yellow {
+    background-color: #FFBD2E;
+}
+
+.dot.green {
+    background-color: #27C93F;
+}
+
+.terminal-title {
+    font-size: 13px;
+    color: #8B949E;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+}
+
+.terminal-content {
+    margin: 0;
+    padding: 20px 22px;
+    overflow-x: auto;
+    font-family: 'Fira Code', monospace;
+    font-size: 15px;
+    line-height: 1.65;
+    color: #E6EDF3;
+}
+
+.terminal-content code {
+    background: transparent;
+    border: none;
+    padding: 0;
+    color: inherit;
+}
+
+.terminal-content .prompt {
+    color: #5FDDAC;
+    font-weight: 600;
+    user-select: none;
+    margin-right: 6px;
+}
+
+.terminal-content .comment {
+    color: #8B949E;
+    font-style: italic;
+}
+
+/* --------------------------------------------------------------------------
+   5. STEP SECTIONS
+   -------------------------------------------------------------------------- */
+.tutorial-step {
+    margin-top: 52px;
+    padding-top: 40px;
+    border-top: 1px solid #E5E7EB;
+}
+
+.step-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 16px;
+}
+
+/* --------------------------------------------------------------------------
+   6. DARK MINT RECOMMENDATION CARDS
+   -------------------------------------------------------------------------- */
+.recommendation-section {
+    width: 100%;
+    max-width: 1080px;
+    margin: 80px auto 0 auto;
+    padding-top: 40px;
+    border-top: 1px solid #E5E7EB;
+}
+
+.recommendation-heading {
+    font-size: 26px;
+    font-weight: 700;
+    color: #111827;
+    text-align: center;
+    margin-bottom: 36px;
+}
+
+.recommendation-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.recommendation-grid .card-link {
+    text-decoration: none;
+    display: block;
+    height: 100%;
+}
+
+.recommendation-grid .card--dark-mint {
+    background-color: #14231E !important;
+    border-radius: 16px;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(95, 221, 172, 0.25);
+    box-shadow: 0 8px 24px rgba(10, 41, 28, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.recommendation-grid .card-link:hover .card--dark-mint {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 32px rgba(10, 41, 28, 0.3);
+    border-color: #5FDDAC;
+}
+
+.recommendation-grid .card-img-wrapper {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    background: #0A1411;
+}
+
+.recommendation-grid .card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.recommendation-grid .card-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.recommendation-grid .card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: #8DA89D;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+/* FIXED CATEGORY PILL TEXT */
+.recommendation-grid .card-category {
+    background-color: #5FDDAC !important;
+    color: #042F2E !important;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 700;
+    display: inline-block;
+    line-height: 1.2;
+}
+
+.recommendation-grid .card-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #FFFFFF !important;
+    margin-bottom: 8px;
+    line-height: 1.35;
+}
+
+.recommendation-grid .card-desc {
+    font-size: 14px;
+    line-height: 1.55;
+    color: #A3C2B5 !important;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 992px) {
+    .recommendation-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .tutorial-page-container {
+        padding-top: 100px;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .tutorial-title {
+        font-size: 26px;
+    }
+
+    .recommendation-grid {
+        grid-template-columns: 1fr;
+    }
+}
