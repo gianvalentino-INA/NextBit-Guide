@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Install an Operating System - NextBit</title>
+
+    <!-- STYLESHEETS -->
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="os.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- FLOATING GLASS NAVBAR -->
+    <header class="glass-dock">
+        <nav>
+            <input type="checkbox" id="menu-toggle" class="menu-toggle" hidden>
+
+            <div class="navbar-left">
+                <label for="menu-toggle" class="menu-btn" aria-label="Toggle Navigation Menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </label>
+
+                <a href="../../index.html" class="logo-link">
+                    <img src="../../Logo/logo.png" alt="NextBit Logo" class="navbar-logo">
+                </a>
+
+                <ul class="navbar-links">
+                    <li><a href="../../index.html" class="navbar-link">Home</a></li>
+                    <li><a href="../../learn.html" class="navbar-link active">Learn</a></li>
+                    <li><a href="../../chatbot.html" class="navbar-link">Chatbot</a></li>
+                    <li><a href="../../about.html" class="navbar-link">About</a></li>
+                    <li><a href="https://trakteer.id/NextBit" class="navbar-link" target="_blank"
+                            rel="noopener">Donate</a></li>
+                </ul>
+            </div>
+
+            <div class="navbar-action">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSePyFmZLFE-JLAPPpzzbfqEi7tIMhIK_mMEFpfXV8yfVe1FYw/viewform"
+                    class="submit-btn" target="_blank" rel="noopener">Submit</a>
+                <a href="../../learn.html" class="navbar-icon" aria-label="Search">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- MAIN TUTORIAL CONTAINER -->
+    <main class="tutorial-page-container">
+
+        <article class="tutorial-article">
+
+            <!-- HEADER BLOCK -->
+            <header class="tutorial-header">
+                <h1 class="tutorial-title">How to Install an Operating System</h1>
+
+                <p class="tutorial-author">
+                    By <a href="https://www.linkedin.com/in/gian-valentino/" class="author-link">Gian Valentino
+                        Ampang</a>
+                </p>
+
+                <div class="category-wrapper">
+                    <span class="category-badge">Setup</span>
+                </div>
+            </header>
+
+            <!-- INTRO BANNER IMAGE -->
+            <div class="tutorial-media-box intro-image-box">
+                <img src="../../Image/os.avif" alt="How to Install an Operating System Banner" class="tutorial-img">
+            </div>
+
+            <!-- TUTORIAL CONTENT BODY -->
+            <div class="tutorial-body">
+
+                <!-- INTRODUCTION -->
+                <section class="tutorial-intro">
+                    <h2 class="section-heading">Introduction</h2>
+
+                    <p class="content-text">
+                        Is your PC or laptop starting to feel sluggish during everyday use? Don't worry! Your device will run like brand new after you follow this tutorial. All you need is a USB drive (at least 8 GB), the right operating system, and a few minutes to follow these steps.
+                    </p>
+                </section>
+
+                <!-- STEP 1 -->
+                <section class="tutorial-step">
+                    <h2 class="step-title">Step 1: Preparing Your USB Drive</h2>
+
+                    <!-- STEP 1 IMAGE BANNER -->
+                    <div class="tutorial-media-box step-image-box">
+                        <img src="ventoy.avif" alt="Step 1: Preparing Your USB Drive" class="tutorial-img">
+                    </div>
+
+                    <p class="content-text">
+                        First, head over to <code>ventoy.net</code> to download the Ventoy software. Ventoy makes your USB drive bootable and allows you to store multiple operating system ISOs (such as Windows and various Linux distributions) on a single drive.
+                    </p>
+
+                    <ul class="directive-list">
+                        <li>Once the download is complete, extract the Ventoy folder and open it.</li>
+                        <li>Run the <code>Ventoy2Disk.exe</code> file.</li>
+                        <li>Select your plugged-in USB drive from the drop-down list and click <strong>Install</strong>.</li>
+                    </ul>
+
+                    <div class="callout-box warning">
+                        <strong>CAUTION:</strong> Installing Ventoy will completely reformat your USB drive and erase all existing data on it. Make sure to back up any important files to another storage device before proceeding.
+                    </div>
+
+                    <p class="content-text">
+                        Accept the prompts to begin the formatting process. Once the installation is complete, click <strong>Update</strong> to ensure Ventoy is running the latest version. Close the Ventoy application and move on to the next step.
+                    </p>
+                </section>
+
+                <!-- STEP 2 -->
+                <section class="tutorial-step">
+                    <h2 class="step-title">Step 2: Choosing and Downloading the OS Image (ISO)</h2>
+
+                    <!-- STEP 2 IMAGE BANNER -->
+                    <div class="tutorial-media-box step-image-box">
+                        <img src="dual.avif" alt="Step 2: Choosing and Downloading the OS Image" class="tutorial-img">
+                    </div>
+
+                    <p class="content-text">
+                        In this step, you need to make an important decision: <strong>Windows vs. Linux?</strong>
+                    </p>
+
+                    <!-- OS COMPARISON TABLE -->
+                    <div class="comparison-table-wrapper">
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th>Feature</th>
+                                    <th>Windows</th>
+                                    <th>Linux</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Best For</strong></td>
+                                    <td>General compatibility, familiarity, &amp; hassle-free gaming</td>
+                                    <td>Older/low-end devices, full control, &amp; lightweight performance</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>User Experience</strong></td>
+                                    <td>Plug-and-play, easy out-of-the-box experience</td>
+                                    <td>Requires a learning curve and occasional tinkering</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Hardware Support</strong></td>
+                                    <td>Works automatically with almost all hardware</td>
+                                    <td>Requires checking component compatibility (e.g., Wi-Fi cards)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="callout-box info">
+                        <strong>NOTE:</strong> For this tutorial, we will use <strong>Windows 11</strong> as our primary example.
+                    </div>
+
+                    <h3 class="subsection-heading">How to Download the Windows ISO:</h3>
+
+                    <ul class="directive-list">
+                        <li>Open your web browser, search for <em>Windows 11 ISO</em>, and click the official <code>microsoft.com</code> link.</li>
+                        <li>Scroll down to the <strong>"Download Windows 11 Disk Image (ISO) for x64 devices"</strong> section.</li>
+                        <li>Under <em>Select Download</em>, choose <strong>Windows 11 (multi-edition ISO for x64 devices)</strong> and click <strong>Download</strong>.</li>
+                        <li>Once downloaded, cut and paste the ISO file directly into your Ventoy USB drive.</li>
+                    </ul>
+
+                    <div class="callout-box info">
+                        <strong>NOTE:</strong> Copy the ISO directly to the root of the Ventoy USB drive and not the VTOYEFI folder from the USB.
+                    </div>
+                </section>
+
+                <!-- STEP 3 -->
+                <section class="tutorial-step">
+                    <h2 class="step-title">Step 3: The Installation Process</h2>
+
+                    <!-- STEP 3 IMAGE BANNER -->
+                    <div class="tutorial-media-box step-image-box">
+                        <img src="fed.avif" alt="Step 3: The Installation Process" class="tutorial-img">
+                    </div>
+
+                    <p class="content-text">
+                        Shut down your PC or laptop. Turn the device back on while repeatedly pressing your <strong>BIOS key</strong>.
+                    </p>
+
+                    <div class="callout-box info">
+                        <strong>NOTE:</strong> The BIOS key varies depending on your device manufacturer, but common keys include <code>F2</code>, <code>Delete</code>, <code>F10</code>, <code>Esc</code>, or <code>F12</code>.
+                    </div>
+
+                    <p class="content-text">
+                        Once inside the BIOS menu, locate the <strong>Boot</strong> tab (if you don't see it, check under Advanced Settings). Change <strong>Boot Option 1</strong> to your Ventoy USB drive. Save your settings and reboot your system.
+                    </p>
+
+                    <p class="content-text">
+                        Once the Ventoy menu loads, use the arrow keys to select your desired ISO file (e.g., Windows 11 or Linux) and press <strong>Enter</strong>.
+                    </p>
+
+                    <h3 class="subsection-heading">Windows Installation Steps</h3>
+                    <ul class="directive-list">
+                        <li>Choose your language and keyboard layout (default is US).</li>
+                        <li>Click <strong>Install Windows 11</strong>.</li>
+                        <li>Accept the license agreement.</li>
+                    </ul>
+
+                    <div class="callout-box warning">
+                        <strong>CAUTION:</strong> Custom/Clean installation will delete your files, applications, and settings on the target drive partition. Ensure your important data is backed up.
+                    </div>
+
+                    <ul class="directive-list">
+                        <li>On the drive partitioning screen, select the target drive partition, delete older partitions if necessary, click <strong>Next</strong>, and let the installation complete.</li>
+                        <li>Complete the initial setup screen (account creation, regional settings, etc.).</li>
+                    </ul>
+
+                    <h3 class="subsection-heading">Linux Installation Steps (Example: Fedora)</h3>
+                    <ul class="directive-list">
+                        <li>Select the Fedora ISO from the Ventoy menu and boot into the environment.</li>
+                        <li>Wait for the initial system commands to run until you enter the Live Boot desktop.</li>
+                    </ul>
+
+                    <div class="callout-box info">
+                        <strong>NOTE:</strong> Use the Live Desktop environment to test your hardware components—especially Wi-Fi cards, touchpads, and webcams—to confirm everything works out-of-the-box before installing.
+                    </div>
+
+                    <ul class="directive-list">
+                        <li>Double-click the <strong>Install to Hard Drive</strong> app on the desktop.</li>
+                        <li>Follow the step-by-step installer to configure your target drive, username, and system options.</li>
+                    </ul>
+                </section>
+
+                <!-- STEP 4 -->
+                <section class="tutorial-step">
+                    <h2 class="step-title">Step 4: Windows Activation</h2>
+
+                    <!-- STEP 4 IMAGE BANNER -->
+                    <div class="tutorial-media-box step-image-box">
+                        <img src="massgrave.avif" alt="Step 4: Windows Activation" class="tutorial-img">
+                    </div>
+
+                    <p class="content-text">
+                        If you do not have a digital license linked to your Microsoft account, you can remove the activation watermark using the open-source MAS tool.
+                    </p>
+
+                    <p class="content-text">
+                        Open <strong>PowerShell</strong> on your newly installed Windows system and run the following command:
+                    </p>
+
+                    <div class="terminal-box">
+                        <div class="terminal-bar">
+                            <div class="terminal-dots">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <span class="terminal-title">powershell — administrator</span>
+                        </div>
+                        <pre class="terminal-content"><code><span class="prompt">PS&gt;</span> irm https://get.activated.win | iex</code></pre>
+                    </div>
+
+                    <p class="content-text">
+                        Follow the on-screen prompt to complete the process.
+                    </p>
+
+                    <div class="callout-box info">
+                        <strong>DISCLAIMER:</strong> MAS (Massgrave) is a community-maintained, third-party script used to activate Windows products. Use third-party activation scripts at your own discretion in accordance with software terms of service.
+                    </div>
+                </section>
+
+            </div>
+        </article>
+
+        <!-- RECOMMENDATION SECTION (DARK MINT CARDS) -->
+        <section class="recommendation-section">
+            <h2 class="recommendation-heading">Recommendation</h2>
+
+            <div class="recommendation-grid">
+                <a href="../ssh/ssh.html" class="card-link">
+                    <article class="card card--dark-mint">
+                        <div class="card-img-wrapper">
+                            <img src="../../Image/ssh.avif" alt="Secure SSH Server" class="card-img">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <span class="card-category">DevOps</span>
+                                <time datetime="2026-07-20">July 20, 2026</time>
+                            </div>
+                            <h3 class="card-title">How to Set Up a Secure SSH Server</h3>
+                            <p class="card-desc">Step-by-step guide to configuring OpenSSH, public keys, and firewall rules for ultimate server security.</p>
+                        </div>
+                    </article>
+                </a>
+
+                <a href="../speed/speed.html" class="card-link">
+                    <article class="card card--dark-mint">
+                        <div class="card-img-wrapper">
+                            <img src="../../Image/speed.avif" alt="Speed Up Your Computer" class="card-img">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <span class="card-category">Performance</span>
+                                <time datetime="2026-07-25">July 25, 2026</time>
+                            </div>
+                            <h3 class="card-title">How to Speed Up Your Computer</h3>
+                            <p class="card-desc">Optimize your system performance with proven tweaks, cleanup routines, and configuration tips for a faster PC.</p>
+                        </div>
+                    </article>
+                </a>
+
+                <a href="../office/office.html" class="card-link">
+                    <article class="card card--dark-mint">
+                        <div class="card-img-wrapper">
+                            <img src="../../Image/office.avif" alt="Install Office Guide" class="card-img">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <span class="card-category">Setup</span>
+                                <time datetime="2026-07-15">July 15, 2026</time>
+                            </div>
+                            <h3 class="card-title">How to Update Microsoft Office</h3>
+                            <p class="card-desc">Equip your desktop with essential office suites, Visio, and productivity tools for daily work.</p>
+                        </div>
+                    </article>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER SECTION -->
+    <footer>
+        <div class="footer-top">
+            <div class="foot-logo">
+                <img src="../../Logo/logo.png" alt="NextBit Logo">
+                <p class="foot-tagline">Free, community-made skills to learn and how-to guides for everything.</p>
+            </div>
+            <div class="foot-columns">
+                <div class="foot-col">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="../../learn.html">Learn</a></li>
+                        <li><a href="../../chatbot.html">Chatbot</a></li>
+                        <li><a href="https://trakteer.id/NextBit" target="_blank" rel="noopener">Donate</a></li>
+                        <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSePyFmZLFE-JLAPPpzzbfqEi7tIMhIK_mMEFpfXV8yfVe1FYw/viewform"
+                                target="_blank" rel="noopener">Submit a tutorial</a></li>
+                    </ul>
+                </div>
+                <div class="foot-col">
+                    <h4>Info</h4>
+                    <ul>
+                        <li><a href="../../about.html">About</a></li>
+                        <li><a href="mailto:contact@nextbit.org">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="foot-col">
+                    <h4>Follow</h4>
+                    <ul>
+                        <li><a href="https://www.instagram.com/nextbit.bpp?utm_source=qr&igsh=MWIwdHZra21zcWJocA=="
+                                target="_blank" rel="noopener">Instagram</a></li>
+                        <li><a href="https://github.com/gianvalentino-INA" target="_blank" rel="noopener">GitHub</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <hr class="footer-divider">
+        <p class="footer-copyright">&copy; 2026 NextBit. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>
