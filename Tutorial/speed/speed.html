@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Speed Up a Slow PC (Without Buying New Hardware) - NextBit</title>
+
+    <!-- STYLESHEETS -->
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="speed.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- FLOATING GLASS NAVBAR -->
+    <header class="glass-dock">
+        <nav>
+            <input type="checkbox" id="menu-toggle" class="menu-toggle" hidden>
+
+            <div class="navbar-left">
+                <label for="menu-toggle" class="menu-btn" aria-label="Toggle Navigation Menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </label>
+
+                <a href="../../index.html" class="logo-link">
+                    <img src="../../Logo/logo.png" alt="NextBit Logo" class="navbar-logo">
+                </a>
+
+                <ul class="navbar-links">
+                    <li><a href="../../index.html" class="navbar-link">Home</a></li>
+                    <li><a href="../../learn.html" class="navbar-link active">Learn</a></li>
+                    <li><a href="../../chatbot.html" class="navbar-link">Chatbot</a></li>
+                    <li><a href="../../about.html" class="navbar-link">About</a></li>
+                </ul>
+            </div>
+
+            <div class="navbar-action">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSePyFmZLFE-JLAPPpzzbfqEi7tIMhIK_mMEFpfXV8yfVe1FYw/viewform" class="submit-btn" target="_blank" rel="noopener">Submit</a>
+                <a href="../../learn.html" class="navbar-icon" aria-label="Search">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- MAIN TUTORIAL CONTAINER -->
+    <main class="tutorial-page-container">
+
+        <article class="tutorial-article">
+
+            <!-- HEADER BLOCK -->
+            <header class="tutorial-header">
+                <h1 class="tutorial-title">How to Speed Up a Slow PC (Without Buying New Hardware)</h1>
+
+                <p class="tutorial-author">
+                    By <a href="https://www.linkedin.com/in/gian-valentino/" class="author-link" target="_blank" rel="noopener">Gian Valentino</a>
+                </p>
+
+                <div class="category-wrapper">
+                    <span class="category-badge">Systems</span>
+                </div>
+            </header>
+
+            <!-- INTRO BANNER IMAGE -->
+            <div class="tutorial-media-box intro-image-box">
+                <img src="../../Image/speed.webp" alt="How to Speed Up a Slow PC" class="tutorial-img">
+            </div>
+
+            <!-- TUTORIAL CONTENT BODY -->
+            <div class="tutorial-body">
+
+                <!-- INTRODUCTION SECTION -->
+                <section class="tutorial-intro">
+                    <p class="content-text">
+                        Is your Windows 10 or 11 device feeling sluggish? Over time, background processes, pre-installed bloatware, and non-optimal system settings can accumulate and drag down performance.
+                    </p>
+                    <p class="content-text">
+                        This guide will walk you through safe, effective steps to optimize and debloat your operating system using free, open-source tools and built-in Windows utilities.
+                    </p>
+
+                    <!-- DISCLAIMER CALLOUT -->
+                    <div class="callout-box warning">
+                        <strong>Disclaimer:</strong> Executing PowerShell scripts and modifying advanced system settings can alter core OS behaviors. Although the tools and methods listed below are widely trusted, always create a System Restore Point or back up critical files before proceeding. You perform these steps at your own risk.
+                    </div>
+                </section>
+
+                <!-- STEP 1 -->
+                <section class="tutorial-step">
+                    <h2 class="step-title">Step 1: Debloat Windows with Win11Debloat</h2>
+
+                     <div class="tutorial-media-box step-image-box">
+                        <img src="winbloat.avif" alt="Step 1: Debloating Windows" class="tutorial-img">
+                    </div>
+
+                    <p class="content-text">
+                        Windows comes pre-installed with numerous apps and services that consume background system resources. Win11Debloat, an open-source tool developed by Raphire, safely removes unnecessary pre-installed applications and telemetry from both Windows 11 and Windows 10.
+                    </p>
+
+                    <p class="content-text">
+                        Open PowerShell (search for PowerShell in the Start menu).
+                    </p>
+
+                    <p class="content-text">
+                        Copy and paste the following command, then press Enter:
+                    </p>
+
+                    <div class="terminal-box">
+                        <div class="terminal-bar">
+                            <div class="terminal-dots">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <span class="terminal-title">PowerShell</span>
+                        </div>
+                        <pre class="terminal-content"><code><span class="prompt">PS&gt;</span> &amp; ([scriptblock]::Create((irm "https://debloat.raphi.re/")))</code></pre>
+                    </div>
+
+                    <p class="content-text">
+                        The script will download and launch a graphical setup window offering two main modes:
+                    </p>
+
+                    <ul class="directive-list">
+                        <li><strong>Default:</strong> Safely removes standard bloatware while keeping core essential tools intact.</li>
+                        <li><strong>Custom:</strong> Gives granular control over which specific apps and registry tweaks to apply.</li>
+                    </ul>
+
+                    <div class="callout-box info">
+                        <strong>Note:</strong> For most users, choosing the Default option is recommended. It strikes a safe balance between reclaiming performance and maintaining system stability.
+                    </div>
+                </section>
+
+                <!-- STEP 2 -->
+                <section class="tutorial-step">
+                    <h2 class="step-title">Step 2: Enable the Ultimate Performance Power Plan</h2>
+
+                     <div class="tutorial-media-box step-image-box">
+                        <img src="powerplan.avif" alt="Step 2: Enabling Ultimate Performance Power Plan" class="tutorial-img">
+                    </div>
+
+                    <p class="content-text">
+                        Windows includes a hidden power scheme designed to minimize micro-latencies by keeping the CPU operating at higher performance states without aggressive power-saving throttles.
+                    </p>
+
+                    <p class="content-text">
+                        Open PowerShell as Administrator (right-click PowerShell and choose Run as administrator).
+                    </p>
+
+                    <p class="content-text">
+                        Run the following command:
+                    </p>
+
+                    <div class="terminal-box">
+                        <div class="terminal-bar">
+                            <div class="terminal-dots">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <span class="terminal-title">PowerShell</span>
+                        </div>
+                        <pre class="terminal-content"><code><span class="prompt">PS&gt;</span> powercfg -duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61</code></pre>
+                    </div>
+
+                    <p class="content-text">
+                        Open Control Panel &gt; Hardware and Sound &gt; Power Options.
+                    </p>
+
+                    <p class="content-text">
+                        Select Ultimate Performance from the list of plans.
+                    </p>
+
+                    <div class="callout-box warning">
+                        <strong>Note &amp; Caution:</strong>
+                        <ul class="directive-list" style="margin-top: 10px; margin-bottom: 0;">
+                            <li><strong>Laptops:</strong> This setting is not recommended for laptops running on battery power, as it significantly increases battery drain and heat output.</li>
+                            <li><strong>Hardware Longevity:</strong> Keeping your CPU at peak clock speeds continuously can lead to slightly higher resting temperatures. Ensure your device has adequate cooling.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- STEP 3 -->
+                <section class="tutorial-step">
+                    <h2 class="step-title">Step 3: Manage Startup Applications</h2>
+
+                     <div class="tutorial-media-box step-image-box">
+                        <img src="startup.avif" alt="Step 3: Managing Startup Applications" class="tutorial-img">
+                    </div>
+
+                    <p class="content-text">
+                        Unnecessary startup programs increase boot times and run silently in the background, consuming RAM and CPU cycles.
+                    </p>
+
+                    <p class="content-text">
+                        Press Ctrl + Shift + Esc to open Task Manager.
+                    </p>
+
+                    <p class="content-text">
+                        Click the Startup apps icon (or tab) on the left sidebar.
+                    </p>
+
+                    <p class="content-text">
+                        Review the list of enabled programs and disable non-essential applications from running at startup.
+                    </p>
+
+                    <p class="content-text">
+                        <strong>Recommended to Disable for Most Users:</strong>
+                    </p>
+
+                    <ul class="directive-list">
+                        <li>Microsoft Teams</li>
+                        <li>Microsoft OneDrive (if not actively used for cloud sync)</li>
+                        <li>Phone Link</li>
+                        <li>Xbox App Services</li>
+                        <li>Edge / Web Browsers background launchers</li>
+                    </ul>
+                </section>
+
+                <!-- STEP 4 -->
+                <section class="tutorial-step">
+                    <h2 class="step-title">Step 4: System Hygiene &amp; SSD Optimization</h2>
+
+                     <div class="tutorial-media-box step-image-box">
+                        <img src="storage.avif" alt="Step 1: Uninstalling Old Office Applications" class="tutorial-img">
+                    </div>
+
+                    <p class="content-text">
+                        Automating basic disk cleanup and verifying TRIM support ensures your drive maintains optimal read/write speeds over time.
+                    </p>
+
+                    <h3 class="subsection-heading">A. Enable Storage Sense</h3>
+
+                    <p class="content-text">
+                        Go to Settings &gt; System &gt; Storage.
+                    </p>
+
+                    <p class="content-text">
+                        Toggle Storage Sense to ON.
+                    </p>
+
+                    <p class="content-text">
+                        Storage Sense automatically frees up space by clearing temporary files, system logs, and empty recycle bin contents when disk space gets low.
+                    </p>
+
+                    <h3 class="subsection-heading">B. Verify SSD TRIM Status</h3>
+
+                    <p class="content-text">
+                        TRIM allows your operating system to inform the SSD which data blocks are no longer needed, preserving drive health and write performance.
+                    </p>
+
+                    <p class="content-text">
+                        Open PowerShell as Administrator.
+                    </p>
+
+                    <p class="content-text">
+                        Run the following command:
+                    </p>
+
+                    <div class="terminal-box">
+                        <div class="terminal-bar">
+                            <div class="terminal-dots">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <span class="terminal-title">PowerShell</span>
+                        </div>
+                        <pre class="terminal-content"><code><span class="prompt">PS&gt;</span> fsutil behavior query DisableDeleteNotify</code></pre>
+                    </div>
+
+                    <p class="content-text">
+                        <strong>Interpreting the Output:</strong>
+                    </p>
+
+                    <ul class="directive-list">
+                        <li><strong>DisableDeleteNotify = 0:</strong> TRIM is active and working properly.</li>
+                        <li><strong>DisableDeleteNotify = 1:</strong> TRIM is disabled. (To enable it, run <code>fsutil behavior set DisableDeleteNotify 0</code>).</li>
+                    </ul>
+                </section>
+
+                <!-- STEP 5 -->
+                <section class="tutorial-step">
+                    <h2 class="step-title">Step 5: Optimize Gaming &amp; GPU Settings</h2>
+                     
+                    <div class="tutorial-media-box step-image-box">
+                        <img src="nvidia.webp" alt="Step 5: Optimizing Gaming & GPU Settings" class="tutorial-img">
+                    </div>
+
+                    <p class="content-text">
+                        Fine-tuning your graphics stack minimizes input lag and prioritizes system resources for active full-screen applications.
+                    </p>
+
+                    <h3 class="subsection-heading">A. Enable Hardware-Accelerated GPU Scheduling (HAGS)</h3>
+
+                    <p class="content-text">
+                        Navigate to Settings &gt; System &gt; Display &gt; Graphics.
+                    </p>
+
+                    <p class="content-text">
+                        Click Default graphics settings.
+                    </p>
+
+                    <p class="content-text">
+                        Toggle Hardware-accelerated GPU scheduling to ON (requires a system restart).
+                    </p>
+
+                    <h3 class="subsection-heading">B. Windows Gaming Features</h3>
+
+                    <ul class="directive-list">
+                        <li><strong>Game Mode:</strong> Ensure this is ON (Settings &gt; Gaming &gt; Game Mode). It prevents Windows Update from installing drivers in the background and prioritizes CPU threads for games.</li>
+                        <li><strong>Background Captures:</strong> Set this to OFF (Settings &gt; Gaming &gt; Captures). Disabling constant video encoding in the background reclaims significant hardware overhead.</li>
+                    </ul>
+
+                    <h3 class="subsection-heading">C. GPU Control Panel Tweaks</h3>
+
+                    <p class="content-text">
+                        <strong>NVIDIA Users:</strong>
+                    </p>
+
+                    <ul class="directive-list">
+                        <li>Open NVIDIA Control Panel &gt; Manage 3D Settings.</li>
+                        <li>Set Power Management Mode to Prefer maximum performance.</li>
+                        <li>Set Low Latency Mode to On or Ultra.</li>
+                    </ul>
+
+                    <p class="content-text">
+                        <strong>AMD Users:</strong>
+                    </p>
+
+                    <ul class="directive-list">
+                        <li>Open AMD Software: Adrenalin Edition &gt; Gaming &gt; Graphics.</li>
+                        <li>Enable Radeon Anti-Lag.</li>
+                        <li>Set the global profile to Performance.</li>
+                    </ul>
+                </section>
+
+                <!-- CONCLUSION -->
+                <section class="tutorial-step">
+                    <h2 class="step-title">Conclusion</h2>
+
+                    <p class="content-text">
+                        By removing unnecessary bloatware, configuring power profiles, reducing startup overhead, and optimizing your GPU settings, your Windows machine will operate significantly faster and feel much more responsive.
+                    </p>
+                </section>
+
+            </div>
+        </article>
+
+        <!-- RECOMMENDATION SECTION (DARK MINT CARDS) -->
+        <section class="recommendation-section">
+            <h2 class="recommendation-heading">Recommendation</h2>
+
+            <div class="recommendation-grid">
+                <a href="../ssh/ssh.html" class="card-link">
+                    <article class="card card--dark-mint">
+                        <div class="card-img-wrapper">
+                            <img src="../../Image/ssh.avif" alt="Claude Code Guide" class="card-img"
+                                onerror="this.src='../../Image/ssh.avif'">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <span class="card-category">DevOps</span>
+                                <time datetime="2026-07-20">July 20, 2026</time>
+                            </div>
+                            <h3 class="card-title">How to Set Up & Harden a Secure SSH Server</h3>
+                            <p class="card-desc">A step-by-step guide to configuring OpenSSH, key-based authentication, and modern cryptographic rules for server security.</p>
+                        </div>
+                    </article>
+                </a>
+
+                <a href="Tutorial/bot/bot.html" class="card-link">
+                    <article class="card card--dark-mint">
+                        <div class="card-img-wrapper">
+                            <img src="../../Image/bot.avif" alt="Setting Up Alert Bot" class="card-img"
+                                onerror="this.src='../../Image/bot.avif'">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <span class="card-category">DevOps</span>
+                                <time datetime="2026-06-28">June 28, 2026</time>
+                            </div>
+                            <h3 class="card-title">Automating Real-Time Telegram Alerts for SSH Logins on Linux</h3>
+                            <p class="card-desc">Secure your VPS by triggering instant Telegram notifications whenever a user logs into your server via SSH.</p>
+                        </div>
+                    </article>
+                </a>
+
+                <a href="Tutorial/speed/speed.html" class="card-link">
+                    <article class="card card--dark-mint">
+                        <div class="card-img-wrapper">
+                            <img src="../../Image/speed.avif" alt="Speed Up Your Computer" class="card-img"
+                                onerror="this.src='../../Image/speed.avif'">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <span class="card-category">Systems</span>
+                                <time datetime="2026-07-05">July 05, 2026</time>
+                            </div>
+                            <h3 class="card-title">How to Speed Up a Slow PC (Without Buying New Hardware)</h3>
+                            <p class="card-desc">Practical system optimizations, startup management, and background service tweaks to restore your computer's speed.</p>
+                        </div>
+                    </article>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER SECTION -->
+    <footer>
+        <div class="footer-top">
+            <div class="foot-logo">
+                <img src="../../Logo/logo.png" alt="NextBit Logo">
+                <p class="foot-tagline">Free, community-made skills to learn and how-to guides for everything.</p>
+            </div>
+            <div class="foot-columns">
+                <div class="foot-col">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="../../learn.html">Learn</a></li>
+                        <li><a href="../../chatbot.html">Chatbot</a></li>
+                        <li><a href="https://trakteer.id/NextBit" target="_blank" rel="noopener">Donate</a></li>
+                        <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSePyFmZLFE-JLAPPpzzbfqEi7tIMhIK_mMEFpfXV8yfVe1FYw/viewform" target="_blank" rel="noopener">Submit a tutorial</a></li>
+                    </ul>
+                </div>
+                <div class="foot-col">
+                    <h4>Info</h4>
+                    <ul>
+                        <li><a href="../../about.html">About</a></li>
+                        <li><a href="mailto:contact@nextbit.org">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="foot-col">
+                    <h4>Follow</h4>
+                    <ul>
+                        <li><a href="https://www.instagram.com/nextbit.bpp?utm_source=qr&igsh=MWIwdHZra21zcWJocA==" target="_blank" rel="noopener">Instagram</a></li>
+                        <li><a href="https://github.com/gianvalentino-INA" target="_blank" rel="noopener">GitHub</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <hr class="footer-divider">
+        <p class="footer-copyright">&copy; 2026 NextBit. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>
