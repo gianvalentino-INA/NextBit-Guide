@@ -139,8 +139,6 @@ header nav {
 
 .submit-btn:hover {
   background-color: var(--mint-200);
-  transform: translateY(-1px);
-  box-shadow: 0 6px 16px rgba(95, 221, 172, 0.35);
 }
 
 .navbar-icon {
@@ -310,13 +308,13 @@ header nav {
   border: 2px solid #1A1D1C;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-    border-color 0.3s ease,
-    box-shadow 0.3s ease;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .card--dark:hover {
-  transform: translateY(-6px);
+  transform: translateY(-4px);
   box-shadow: 0 16px 36px rgba(0, 0, 0, 0.3);
 }
 

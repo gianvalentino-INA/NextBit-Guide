@@ -124,7 +124,7 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: #FFFFFF;
+    background: #F9fafa;
     color: var(--gray-600);
     border: 1px solid rgba(0, 0, 0, 0.1);
     padding: 10px 20px;
@@ -147,7 +147,6 @@
 .filter-btn:hover {
     color: var(--gray-900);
     border-color: var(--mint-300);
-    transform: translateY(-2px);
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
 }
 
@@ -156,7 +155,6 @@
     background-color: var(--mint-300);
     color: var(--gray-900);
     border-color: var(--mint-300);
-    box-shadow: 0 6px 18px rgba(95, 221, 172, 0.35);
 }
 
 .filter-btn.active .check-icon {
@@ -184,9 +182,9 @@
 }
 
 .learn-grid .card--dark {
-    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-        box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-        border-color 0.35s ease;
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+        box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+        border-color 0.2s ease;
 }
 
 .learn-grid .card-link:hover .card--dark {
