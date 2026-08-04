@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Set Up SSH Login Alerts with a Telegram Bot - NextBit</title>
+    <link rel="icon" type="image/png" href="../../Logo/logo.png">
+
+    <!-- STYLESHEETS -->
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="bot.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- FLOATING GLASS NAVBAR -->
+    <header class="glass-dock">
+        <nav>
+            <input type="checkbox" id="menu-toggle" class="menu-toggle" hidden>
+
+            <div class="navbar-left">
+                <label for="menu-toggle" class="menu-btn" aria-label="Toggle Navigation Menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </label>
+
+                <a href="../../index.html" class="logo-link">
+                    <img src="../../Logo/logo.png" alt="NextBit Logo" class="navbar-logo">
+                </a>
+
+                <ul class="navbar-links">
+                    <li><a href="../../index.html" class="navbar-link">Home</a></li>
+                    <li><a href="../../learn.html" class="navbar-link active">Learn</a></li>
+                    <li><a href="../../chatbot.html" class="navbar-link">Chatbot</a></li>
+                    <li><a href="../../about.html" class="navbar-link">About</a></li>
+                </ul>
+            </div>
+
+            <div class="navbar-action">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSePyFmZLFE-JLAPPpzzbfqEi7tIMhIK_mMEFpfXV8yfVe1FYw/viewform" class="submit-btn" target="_blank" rel="noopener">Submit</a>
+                <a href="../../learn.html" class="navbar-icon" aria-label="Search">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- MAIN TUTORIAL CONTAINER -->
+    <main class="tutorial-page-container">
+
+        <article class="tutorial-article">
+
+            <!-- HEADER BLOCK -->
+            <header class="tutorial-header">
+                <h1 class="tutorial-title">How to Set Up SSH Login Alerts with a Telegram Bot</h1>
+
+                <p class="tutorial-author">
+                    By <a href="https://www.linkedin.com/in/gian-valentino/" class="author-link" target="_blank" rel="noopener">Gian Valentino</a>
+                </p>
+
+                <div class="category-wrapper">
+                    <span class="category-badge">Security</span>
+                </div>
+            </header>
+
+            <!-- INTRO BANNER IMAGE -->
+            <div class="tutorial-media-box intro-image-box">
+                <img src="" alt="Intro Image" class="tutorial-img">
+            </div>
+
+            <!-- TUTORIAL CONTENT BODY -->
+            <div class="tutorial-body">
+
+                <!-- INTRODUCTION SECTION -->
+                <section class="tutorial-intro">
+                    <h2 class="section-heading">Introduction</h2>
+                    
+                    <p class="content-text">
+                        Worried about someone trying to log into your SSH server? Don't worry! In this tutorial, I will guide you step-by-step on how to create your own Telegram bot that alerts you whenever someone logs into your SSH server.
+                    </p>
+                </section>
+
+                <!-- STEP 1 -->
+                <section class="tutorial-step">
+                    <h2 class="step-title">Step 1: Create a Bot on Telegram</h2>
+
+                    <!-- STEP IMAGE BANNER -->
+                    <div class="tutorial-media-box step-image-box">
+                        <img src="" alt="Step 1 Image" class="tutorial-img">
+                    </div>
+
+                    <ul class="directive-list">
+                        <li><strong>Find BotFather:</strong> Open Telegram and search for <code>@BotFather</code> (make sure it has the blue verification checkmark so you avoid using any malicious software).</li>
+                        <li><strong>Start Chat:</strong> Tap Start or send <code>/start</code> to @BotFather.</li>
+                        <li><strong>Create Bot:</strong> Type and send <code>/newbot</code>.</li>
+                        <li><strong>Name Your Bot:</strong> Enter a name for your bot (for example: <code>login alertbot</code>).</li>
+                        <li><strong>Choose Username:</strong> Choose a unique username for your bot. Note that the username must end with <code>bot</code> (e.g., <code>my_login_alert_bot</code>).</li>
+                        <li><strong>Save Token:</strong> Once a valid username is accepted, BotFather will provide your HTTP API token. Keep this token safe, as you will need it later.</li>
+                        <li><strong>Get Chat ID:</strong> Next, search for <code>@userinfobot</code> in Telegram and tap Start or send <code>/start</code>. The bot will respond with your Chat ID.</li>
+                        <li><strong>Initialize Bot:</strong> Finally, search for your new bot's username and start a conversation with it by tapping Start or sending a quick message like "hello".</li>
+                    </ul>
+                </section>
+
+                <!-- STEP 2 -->
+                <section class="tutorial-step">
+                    <h2 class="step-title">Step 2: Configure Your Bot on the Server</h2>
+
+                    <!-- STEP IMAGE BANNER -->
+                    <div class="tutorial-media-box step-image-box">
+                        <img src="" alt="Step 2 Image" class="tutorial-img">
+                    </div>
+
+                    <p class="content-text">
+                        Connect to your server via SSH terminal. Ensure <code>curl</code> and <code>python3</code> are installed on your server. If they aren't installed yet, run:
+                    </p>
+
+                    <!-- TERMINAL BOX -->
+                    <div class="terminal-box">
+                        <div class="terminal-bar">
+                            <div class="terminal-dots">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <span class="terminal-title">bash</span>
+                        </div>
+                        <pre class="terminal-content"><code><span class="prompt">$</span> sudo apt update &amp;&amp; sudo apt install curl python3 -y</code></pre>
+                    </div>
+
+                    <p class="content-text">
+                        Create your script file using the following command:
+                    </p>
+
+                    <div class="terminal-box">
+                        <div class="terminal-bar">
+                            <div class="terminal-dots">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <span class="terminal-title">bash</span>
+                        </div>
+                        <pre class="terminal-content"><code><span class="prompt">$</span> sudo nano /usr/local/bin/telegram-ssh-login.sh</code></pre>
+                    </div>
+
+                    <p class="content-text">
+                        Paste the following configuration into the file. (Make sure to replace <code>YOUR_TELEGRAM_BOT_TOKEN_HERE</code> and <code>YOUR_TELEGRAM_CHAT_ID_HERE</code> with your actual Bot Token and Chat ID):
+                    </p>
+
+                    <div class="terminal-box">
+                        <div class="terminal-bar">
+                            <div class="terminal-dots">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <span class="terminal-title">telegram-ssh-login.sh</span>
+                        </div>
+                        <pre class="terminal-content"><code>#!/usr/bin/env bash
+
+# System PATH setup
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
+# --- Telegram Credentials ---
+BOT_TOKEN="YOUR_TELEGRAM_BOT_TOKEN_HERE"
+CHAT_ID="YOUR_TELEGRAM_CHAT_ID_HERE"
+
+# --- Session Details ---
+HOSTNAME=$(hostname)
+USER_NAME="${PAM_USER:-$(whoami)}"
+IP="${PAM_RHOST:-127.0.0.1}"
+[ -z "$IP" ] &amp;&amp; IP="127.0.0.1"
+TTY_VAL="${PAM_TTY:-pts/0}"
+DATE_VAL=$(date '+%Y-%m-%d %H:%M:%S %Z')
+
+# Detect Session Type (Login vs Logout)
+if [ "${PAM_TYPE}" = "open_session" ]; then
+
+    # Query detailed IP telemetry
+    GEO_RAW=$(curl -s -m 3 "http://ip-api.com/json/${IP}?fields=status,country,regionName,city,zip,lat,lon,timezone,isp,org,mobile,proxy,hosting")
+
+    # Parse JSON safely via Python3
+    READ_GEO=$(echo "$GEO_RAW" | python3 -c "
+import sys, json
+try:
+    d = json.load(sys.stdin)
+    if d.get('status') == 'success':
+        city = d.get('city', 'Unknown')
+        region = d.get('regionName', 'Unknown')
+        country = d.get('country', 'Unknown')
+        zip_code = d.get('zip', 'N/A')
+        lat = d.get('lat', 0)
+        lon = d.get('lon', 0)
+        isp = d.get('isp', 'Unknown')
+        org = d.get('org', 'Unknown')
+        tz = d.get('timezone', 'Unknown')
+        
+        is_mobile = '📱 Mobile Network' if d.get('mobile') else ''
+        is_proxy = '🛡️ VPN/Proxy' if d.get('proxy') else ''
+        is_host = '💻 Datacenter' if d.get('hosting') else ''
+        net_type = ', '.join(filter(None, [is_mobile, is_proxy, is_host])) or '🏠 Residential Broadband'
+        
+        maps = f'https://www.google.com/maps?q={lat},{lon}'
+        print(f'{city}|{region}|{country}|{zip_code}|{lat},{lon}|{isp}|{org}|{tz}|{net_type}|{maps}')
+    else:
+        print('Unknown|Unknown|Unknown|N/A|0,0|Unknown|Unknown|Unknown|Standard|https://maps.google.com')
+except Exception:
+    print('Unknown|Unknown|Unknown|N/A|0,0|Unknown|Unknown|Unknown|Standard|https://maps.google.com')
+")
+
+    IFS='|' read -r CITY REGION COUNTRY ZIP COORDS ISP ORG TZ NET_TYPE MAPS_LINK &lt;&lt;&lt; "$READ_GEO"
+
+    MESSAGE="🟢 &lt;b&gt;SSH Login Alert&lt;/b&gt;
+
+• &lt;b&gt;User:&lt;/b&gt; &lt;code&gt;${USER_NAME}&lt;/code&gt;
+• &lt;b&gt;Server:&lt;/b&gt; &lt;code&gt;${HOSTNAME}&lt;/code&gt;
+• &lt;b&gt;Terminal:&lt;/b&gt; &lt;code&gt;${TTY_VAL}&lt;/code&gt;
+
+📍 &lt;b&gt;Detailed Location&lt;/b&gt;
+• &lt;b&gt;City/Region:&lt;/b&gt; &lt;code&gt;${CITY}, ${REGION}&lt;/code&gt;
+• &lt;b&gt;Country:&lt;/b&gt; &lt;code&gt;${COUNTRY}&lt;/code&gt;
+• &lt;b&gt;Postal Code:&lt;/b&gt; &lt;code&gt;${ZIP}&lt;/code&gt;
+• &lt;b&gt;Coordinates:&lt;/b&gt; &lt;code&gt;${COORDS}&lt;/code&gt;
+• &lt;b&gt;Map Pin:&lt;/b&gt; &lt;a href=\"${MAPS_LINK}\"&gt;Open Location in Google Maps 📍&lt;/a&gt;
+
+🌐 &lt;b&gt;Network &amp; Telecom&lt;/b&gt;
+• &lt;b&gt;IP Address:&lt;/b&gt; &lt;code&gt;${IP}&lt;/code&gt;
+• &lt;b&gt;ISP:&lt;/b&gt; &lt;code&gt;${ISP}&lt;/code&gt;
+• &lt;b&gt;Organization:&lt;/b&gt; &lt;code&gt;${ORG}&lt;/code&gt;
+• &lt;b&gt;Connection Type:&lt;/b&gt; ${NET_TYPE}
+• &lt;b&gt;Timezone:&lt;/b&gt; &lt;code&gt;${TZ}&lt;/code&gt;
+• &lt;b&gt;Timestamp:&lt;/b&gt; &lt;code&gt;${DATE_VAL}&lt;/code&gt;"
+
+    curl -s -X POST "https://api.telegram.org/bot${BOT_TOKEN}/sendMessage" \
+        -d "chat_id=${CHAT_ID}" \
+        -d "parse_mode=HTML" \
+        -d "disable_web_page_preview=true" \
+        --data-urlencode "text=${MESSAGE}"
+
+elif [ "${PAM_TYPE}" = "close_session" ]; then
+
+    MESSAGE="🔴 &lt;b&gt;SSH Logout Alert&lt;/b&gt;
+
+• &lt;b&gt;User:&lt;/b&gt; &lt;code&gt;${USER_NAME}&lt;/code&gt;
+• &lt;b&gt;Server:&lt;/b&gt; &lt;code&gt;${HOSTNAME}&lt;/code&gt;
+• &lt;b&gt;Terminal:&lt;/b&gt; &lt;code&gt;${TTY_VAL}&lt;/code&gt;
+• &lt;b&gt;IP:&lt;/b&gt; &lt;code&gt;${IP}&lt;/code&gt;
+• &lt;b&gt;Timestamp:&lt;/b&gt; &lt;code&gt;${DATE_VAL}&lt;/code&gt;"
+
+    curl -s -X POST "https://api.telegram.org/bot${BOT_TOKEN}/sendMessage" \
+        -d "chat_id=${CHAT_ID}" \
+        -d "parse_mode=HTML" \
+        --data-urlencode "text=${MESSAGE}"
+
+fi</code></pre>
+                    </div>
+
+                    <p class="content-text">
+                        Save the file and make it executable by running:
+                    </p>
+
+                    <div class="terminal-box">
+                        <div class="terminal-bar">
+                            <div class="terminal-dots">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <span class="terminal-title">bash</span>
+                        </div>
+                        <pre class="terminal-content"><code><span class="prompt">$</span> sudo chmod +x /usr/local/bin/telegram-ssh-login.sh</code></pre>
+                    </div>
+
+                    <p class="content-text">
+                        Hook the script into Linux PAM by opening the SSH configuration file:
+                    </p>
+
+                    <div class="terminal-box">
+                        <div class="terminal-bar">
+                            <div class="terminal-dots">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <span class="terminal-title">bash</span>
+                        </div>
+                        <pre class="terminal-content"><code><span class="prompt">$</span> sudo nano /etc/pam.d/sshd</code></pre>
+                    </div>
+
+                    <p class="content-text">
+                        Scroll to the very bottom of the file and add the following line:
+                    </p>
+
+                    <div class="terminal-box">
+                        <div class="terminal-bar">
+                            <div class="terminal-dots">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <span class="terminal-title">/etc/pam.d/sshd</span>
+                        </div>
+                        <pre class="terminal-content"><code>session optional pam_exec.so /usr/local/bin/telegram-ssh-login.sh</code></pre>
+                    </div>
+                </section>
+
+                <!-- STEP 3 -->
+                <section class="tutorial-step">
+                    <h2 class="step-title">Step 3: Verification and Testing</h2>
+
+                    <!-- STEP IMAGE BANNER -->
+                    <div class="tutorial-media-box step-image-box">
+                        <img src="" alt="Step 3 Image" class="tutorial-img">
+                    </div>
+
+                    <p class="content-text">
+                        Save the file and exit the editor. Open a new terminal tab or window and log into your server via SSH.
+                    </p>
+                    <p class="content-text">
+                        Check your Telegram app—you should instantly receive a 🟢 SSH Login Alert containing detailed information about the login, including:
+                    </p>
+
+                    <ul class="directive-list">
+                        <li>IP Address</li>
+                        <li>City / Region / Country</li>
+                        <li>ISP / Organization</li>
+                        <li>Clickable Google Maps location link</li>
+                    </ul>
+
+                    <div class="callout-box info">
+                        <strong>Success:</strong> Now you can rest easy knowing you'll be alerted if anyone accesses your server!
+                    </div>
+                </section>
+
+            </div>
+        </article>
+
+        <!-- RECOMMENDATION SECTION (DARK MINT CARDS) -->
+        <section class="recommendation-section">
+            <h2 class="recommendation-heading">Recommendation</h2>
+
+            <div class="recommendation-grid">
+                <a href="../speed/speed.html" class="card-link">
+                    <article class="card card--dark-mint">
+                        <div class="card-img-wrapper">
+                            <img src="../../Image/speed.webp" alt="How to Speed Up a Slow PC (Without Buying New Hardware)" class="card-img" onerror="this.src='../../Image/speed.webp'">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <span class="card-category">Systems</span>
+                                <time datetime="2026-07-20">July 2026</time>
+                            </div>
+                            <h3 class="card-title">How to Speed Up a Slow PC (Without Buying New Hardware)</h3>
+                            <p class="card-desc">Is your Windows 10 or 11 device feeling sluggish? Over time, background processes, pre-installed bloatware, and non-optimal sys...</p>
+                        </div>
+                    </article>
+                </a>
+
+                <a href="../claude/claude.html" class="card-link">
+                    <article class="card card--dark-mint">
+                        <div class="card-img-wrapper">
+                            <img src="../../Image/claude.avif" alt="How to Install & Configure Claude Code CLI on Linux" class="card-img" onerror="this.src='../../Image/speed.webp'">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <span class="card-category">SysAdmin</span>
+                                <time datetime="2026-07-20">July 2026</time>
+                            </div>
+                            <h3 class="card-title">How to Install & Configure Claude Code CLI on Linux</h3>
+                            <p class="card-desc">Before installing Claude Code, ensure your package manager is up to date and that Node.js and npm are installed on your system.</p>
+                        </div>
+                    </article>
+                </a>
+
+                <a href="../office/office.html" class="card-link">
+                    <article class="card card--dark-mint">
+                        <div class="card-img-wrapper">
+                            <img src="../../Image/office.avif" alt="How to Install/Update & Activate Microsoft Office" class="card-img" onerror="this.src='../../Image/speed.webp'">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <span class="card-category">Setup</span>
+                                <time datetime="2026-07-20">July 2026</time>
+                            </div>
+                            <h3 class="card-title">How to Install/Update & Activate Microsoft Office</h3>
+                            <p class="card-desc">In this tutorial, I'll guide you step by step on how to update your Office to the latest version!</p>
+                        </div>
+                    </article>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER SECTION -->
+    <footer>
+        <div class="footer-top">
+            <div class="foot-logo">
+                <img src="../../Logo/logo.png" alt="NextBit Logo">
+                <p class="foot-tagline">Free, community-made skills to learn and how-to guides for everything.</p>
+            </div>
+            <div class="foot-columns">
+                <div class="foot-col">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="../../learn.html">Learn</a></li>
+                        <li><a href="../../chatbot.html">Chatbot</a></li>
+                        <li><a href="https://trakteer.id/NextBit" target="_blank" rel="noopener">Donate</a></li>
+                        <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSePyFmZLFE-JLAPPpzzbfqEi7tIMhIK_mMEFpfXV8yfVe1FYw/viewform" target="_blank" rel="noopener">Submit a tutorial</a></li>
+                    </ul>
+                </div>
+                <div class="foot-col">
+                    <h4>Info</h4>
+                    <ul>
+                        <li><a href="../../about.html">About</a></li>
+                        <li><a href="mailto:contact@nextbit.org">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="foot-col">
+                    <h4>Follow</h4>
+                    <ul>
+                        <li><a href="https://www.instagram.com/nextbit.bpp?utm_source=qr&igsh=MWIwdHZra21zcWJocA==" target="_blank" rel="noopener">Instagram</a></li>
+                        <li><a href="https://github.com/gianvalentino-INA" target="_blank" rel="noopener">GitHub</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <hr class="footer-divider">
+        <p class="footer-copyright">&copy; 2026 NextBit. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>
