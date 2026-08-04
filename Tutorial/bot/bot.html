@@ -10,7 +10,9 @@
     <!-- STYLESHEETS -->
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="bot.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -22,7 +24,8 @@
 
             <div class="navbar-left">
                 <label for="menu-toggle" class="menu-btn" aria-label="Toggle Navigation Menu">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <line x1="3" y1="12" x2="21" y2="12"></line>
                         <line x1="3" y1="6" x2="21" y2="6"></line>
                         <line x1="3" y1="18" x2="21" y2="18"></line>
@@ -42,9 +45,11 @@
             </div>
 
             <div class="navbar-action">
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSePyFmZLFE-JLAPPpzzbfqEi7tIMhIK_mMEFpfXV8yfVe1FYw/viewform" class="submit-btn" target="_blank" rel="noopener">Submit</a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSePyFmZLFE-JLAPPpzzbfqEi7tIMhIK_mMEFpfXV8yfVe1FYw/viewform"
+                    class="submit-btn" target="_blank" rel="noopener">Submit</a>
                 <a href="../../learn.html" class="navbar-icon" aria-label="Search">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <circle cx="11" cy="11" r="8"></circle>
                         <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                     </svg>
@@ -60,20 +65,21 @@
 
             <!-- HEADER BLOCK -->
             <header class="tutorial-header">
-                <h1 class="tutorial-title">How to Set Up SSH Login Alerts with a Telegram Bot</h1>
+                <h1 class="tutorial-title">Automating Real-Time Telegram Alerts for SSH Logins on Linux</h1>
 
                 <p class="tutorial-author">
-                    By <a href="https://www.linkedin.com/in/gian-valentino/" class="author-link" target="_blank" rel="noopener">Gian Valentino</a>
+                    By <a href="https://www.linkedin.com/in/gian-valentino/" class="author-link" target="_blank"
+                        rel="noopener">Gian Valentino Ampang</a>
                 </p>
 
                 <div class="category-wrapper">
-                    <span class="category-badge">Security</span>
+                    <span class="category-badge">DevOps</span>
                 </div>
             </header>
 
             <!-- INTRO BANNER IMAGE -->
             <div class="tutorial-media-box intro-image-box">
-                <img src="" alt="Intro Image" class="tutorial-img">
+                <img src="../../Image/bot.webp" alt="Intro Image" class="tutorial-img">
             </div>
 
             <!-- TUTORIAL CONTENT BODY -->
@@ -82,9 +88,11 @@
                 <!-- INTRODUCTION SECTION -->
                 <section class="tutorial-intro">
                     <h2 class="section-heading">Introduction</h2>
-                    
+
                     <p class="content-text">
-                        Worried about someone trying to log into your SSH server? Don't worry! In this tutorial, I will guide you step-by-step on how to create your own Telegram bot that alerts you whenever someone logs into your SSH server.
+                        Worried about someone trying to log into your SSH server? Don't worry! In this tutorial, I will
+                        guide you step-by-step on how to create your own Telegram bot that alerts you whenever someone
+                        logs into your SSH server.
                     </p>
                 </section>
 
@@ -94,18 +102,25 @@
 
                     <!-- STEP IMAGE BANNER -->
                     <div class="tutorial-media-box step-image-box">
-                        <img src="" alt="Step 1 Image" class="tutorial-img">
+                        <img src="botfather.webp" alt="Step 1 Image" class="tutorial-img">
                     </div>
 
                     <ul class="directive-list">
-                        <li><strong>Find BotFather:</strong> Open Telegram and search for <code>@BotFather</code> (make sure it has the blue verification checkmark so you avoid using any malicious software).</li>
+                        <li><strong>Find BotFather:</strong> Open Telegram and search for <code>@BotFather</code> (make
+                            sure it has the blue verification checkmark so you avoid using any malicious software).</li>
                         <li><strong>Start Chat:</strong> Tap Start or send <code>/start</code> to @BotFather.</li>
                         <li><strong>Create Bot:</strong> Type and send <code>/newbot</code>.</li>
-                        <li><strong>Name Your Bot:</strong> Enter a name for your bot (for example: <code>login alertbot</code>).</li>
-                        <li><strong>Choose Username:</strong> Choose a unique username for your bot. Note that the username must end with <code>bot</code> (e.g., <code>my_login_alert_bot</code>).</li>
-                        <li><strong>Save Token:</strong> Once a valid username is accepted, BotFather will provide your HTTP API token. Keep this token safe, as you will need it later.</li>
-                        <li><strong>Get Chat ID:</strong> Next, search for <code>@userinfobot</code> in Telegram and tap Start or send <code>/start</code>. The bot will respond with your Chat ID.</li>
-                        <li><strong>Initialize Bot:</strong> Finally, search for your new bot's username and start a conversation with it by tapping Start or sending a quick message like "hello".</li>
+                        <li><strong>Name Your Bot:</strong> Enter a name for your bot (for example:
+                            <code>login alertbot</code>).
+                        </li>
+                        <li><strong>Choose Username:</strong> Choose a unique username for your bot. Note that the
+                            username must end with <code>bot</code> (e.g., <code>my_login_alert_bot</code>).</li>
+                        <li><strong>Save Token:</strong> Once a valid username is accepted, BotFather will provide your
+                            HTTP API token. Keep this token safe, as you will need it later.</li>
+                        <li><strong>Get Chat ID:</strong> Next, search for <code>@userinfobot</code> in Telegram and tap
+                            Start or send <code>/start</code>. The bot will respond with your Chat ID.</li>
+                        <li><strong>Initialize Bot:</strong> Finally, search for your new bot's username and start a
+                            conversation with it by tapping Start or sending a quick message like "hello".</li>
                     </ul>
                 </section>
 
@@ -115,11 +130,12 @@
 
                     <!-- STEP IMAGE BANNER -->
                     <div class="tutorial-media-box step-image-box">
-                        <img src="" alt="Step 2 Image" class="tutorial-img">
+                        <img src="cli.avif" alt="Step 2 Image" class="tutorial-img">
                     </div>
 
                     <p class="content-text">
-                        Connect to your server via SSH terminal. Ensure <code>curl</code> and <code>python3</code> are installed on your server. If they aren't installed yet, run:
+                        Connect to your server via SSH terminal. Ensure <code>curl</code> and <code>python3</code> are
+                        installed on your server. If they aren't installed yet, run:
                     </p>
 
                     <!-- TERMINAL BOX -->
@@ -132,7 +148,8 @@
                             </div>
                             <span class="terminal-title">bash</span>
                         </div>
-                        <pre class="terminal-content"><code><span class="prompt">$</span> sudo apt update &amp;&amp; sudo apt install curl python3 -y</code></pre>
+                        <pre
+                            class="terminal-content"><code><span class="prompt">$</span> sudo apt update &amp;&amp; sudo apt install curl python3 -y</code></pre>
                     </div>
 
                     <p class="content-text">
@@ -148,11 +165,14 @@
                             </div>
                             <span class="terminal-title">bash</span>
                         </div>
-                        <pre class="terminal-content"><code><span class="prompt">$</span> sudo nano /usr/local/bin/telegram-ssh-login.sh</code></pre>
+                        <pre
+                            class="terminal-content"><code><span class="prompt">$</span> sudo nano /usr/local/bin/telegram-ssh-login.sh</code></pre>
                     </div>
 
                     <p class="content-text">
-                        Paste the following configuration into the file. (Make sure to replace <code>YOUR_TELEGRAM_BOT_TOKEN_HERE</code> and <code>YOUR_TELEGRAM_CHAT_ID_HERE</code> with your actual Bot Token and Chat ID):
+                        Paste the following configuration into the file. (Make sure to replace
+                        <code>YOUR_TELEGRAM_BOT_TOKEN_HERE</code> and <code>YOUR_TELEGRAM_CHAT_ID_HERE</code> with your
+                        actual Bot Token and Chat ID):
                     </p>
 
                     <div class="terminal-box">
@@ -276,7 +296,8 @@ fi</code></pre>
                             </div>
                             <span class="terminal-title">bash</span>
                         </div>
-                        <pre class="terminal-content"><code><span class="prompt">$</span> sudo chmod +x /usr/local/bin/telegram-ssh-login.sh</code></pre>
+                        <pre
+                            class="terminal-content"><code><span class="prompt">$</span> sudo chmod +x /usr/local/bin/telegram-ssh-login.sh</code></pre>
                     </div>
 
                     <p class="content-text">
@@ -292,7 +313,8 @@ fi</code></pre>
                             </div>
                             <span class="terminal-title">bash</span>
                         </div>
-                        <pre class="terminal-content"><code><span class="prompt">$</span> sudo nano /etc/pam.d/sshd</code></pre>
+                        <pre
+                            class="terminal-content"><code><span class="prompt">$</span> sudo nano /etc/pam.d/sshd</code></pre>
                     </div>
 
                     <p class="content-text">
@@ -308,7 +330,8 @@ fi</code></pre>
                             </div>
                             <span class="terminal-title">/etc/pam.d/sshd</span>
                         </div>
-                        <pre class="terminal-content"><code>session optional pam_exec.so /usr/local/bin/telegram-ssh-login.sh</code></pre>
+                        <pre
+                            class="terminal-content"><code>session optional pam_exec.so /usr/local/bin/telegram-ssh-login.sh</code></pre>
                     </div>
                 </section>
 
@@ -322,10 +345,12 @@ fi</code></pre>
                     </div>
 
                     <p class="content-text">
-                        Save the file and exit the editor. Open a new terminal tab or window and log into your server via SSH.
+                        Save the file and exit the editor. Open a new terminal tab or window and log into your server
+                        via SSH.
                     </p>
                     <p class="content-text">
-                        Check your Telegram app—you should instantly receive a 🟢 SSH Login Alert containing detailed information about the login, including:
+                        Check your Telegram app—you should instantly receive a 🟢 SSH Login Alert containing detailed
+                        information about the login, including:
                     </p>
 
                     <ul class="directive-list">
@@ -336,7 +361,8 @@ fi</code></pre>
                     </ul>
 
                     <div class="callout-box info">
-                        <strong>Success:</strong> Now you can rest easy knowing you'll be alerted if anyone accesses your server!
+                        <strong>Success:</strong> Now you can rest easy knowing you'll be alerted if anyone accesses
+                        your server!
                     </div>
                 </section>
 
@@ -351,7 +377,9 @@ fi</code></pre>
                 <a href="../speed/speed.html" class="card-link">
                     <article class="card card--dark-mint">
                         <div class="card-img-wrapper">
-                            <img src="../../Image/speed.webp" alt="How to Speed Up a Slow PC (Without Buying New Hardware)" class="card-img" onerror="this.src='../../Image/speed.webp'">
+                            <img src="../../Image/speed.webp"
+                                alt="How to Speed Up a Slow PC (Without Buying New Hardware)" class="card-img"
+                                onerror="this.src='../../Image/speed.webp'">
                         </div>
                         <div class="card-content">
                             <div class="card-meta">
@@ -359,7 +387,8 @@ fi</code></pre>
                                 <time datetime="2026-07-20">July 2026</time>
                             </div>
                             <h3 class="card-title">How to Speed Up a Slow PC (Without Buying New Hardware)</h3>
-                            <p class="card-desc">Is your Windows 10 or 11 device feeling sluggish? Over time, background processes, pre-installed bloatware, and non-optimal sys...</p>
+                            <p class="card-desc">Is your Windows 10 or 11 device feeling sluggish? Over time, background
+                                processes, pre-installed bloatware, and non-optimal sys...</p>
                         </div>
                     </article>
                 </a>
@@ -367,7 +396,8 @@ fi</code></pre>
                 <a href="../claude/claude.html" class="card-link">
                     <article class="card card--dark-mint">
                         <div class="card-img-wrapper">
-                            <img src="../../Image/claude.avif" alt="How to Install & Configure Claude Code CLI on Linux" class="card-img" onerror="this.src='../../Image/speed.webp'">
+                            <img src="../../Image/claude.avif" alt="How to Install & Configure Claude Code CLI on Linux"
+                                class="card-img" onerror="this.src='../../Image/speed.webp'">
                         </div>
                         <div class="card-content">
                             <div class="card-meta">
@@ -375,7 +405,8 @@ fi</code></pre>
                                 <time datetime="2026-07-20">July 2026</time>
                             </div>
                             <h3 class="card-title">How to Install & Configure Claude Code CLI on Linux</h3>
-                            <p class="card-desc">Before installing Claude Code, ensure your package manager is up to date and that Node.js and npm are installed on your system.</p>
+                            <p class="card-desc">Before installing Claude Code, ensure your package manager is up to
+                                date and that Node.js and npm are installed on your system.</p>
                         </div>
                     </article>
                 </a>
@@ -383,7 +414,8 @@ fi</code></pre>
                 <a href="../office/office.html" class="card-link">
                     <article class="card card--dark-mint">
                         <div class="card-img-wrapper">
-                            <img src="../../Image/office.avif" alt="How to Install/Update & Activate Microsoft Office" class="card-img" onerror="this.src='../../Image/speed.webp'">
+                            <img src="../../Image/office.avif" alt="How to Install/Update & Activate Microsoft Office"
+                                class="card-img" onerror="this.src='../../Image/speed.webp'">
                         </div>
                         <div class="card-content">
                             <div class="card-meta">
@@ -391,7 +423,8 @@ fi</code></pre>
                                 <time datetime="2026-07-20">July 2026</time>
                             </div>
                             <h3 class="card-title">How to Install/Update & Activate Microsoft Office</h3>
-                            <p class="card-desc">In this tutorial, I'll guide you step by step on how to update your Office to the latest version!</p>
+                            <p class="card-desc">In this tutorial, I'll guide you step by step on how to update your
+                                Office to the latest version!</p>
                         </div>
                     </article>
                 </a>
@@ -414,7 +447,8 @@ fi</code></pre>
                         <li><a href="../../learn.html">Learn</a></li>
                         <li><a href="../../chatbot.html">Chatbot</a></li>
                         <li><a href="https://trakteer.id/NextBit" target="_blank" rel="noopener">Donate</a></li>
-                        <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSePyFmZLFE-JLAPPpzzbfqEi7tIMhIK_mMEFpfXV8yfVe1FYw/viewform" target="_blank" rel="noopener">Submit a tutorial</a></li>
+                        <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSePyFmZLFE-JLAPPpzzbfqEi7tIMhIK_mMEFpfXV8yfVe1FYw/viewform"
+                                target="_blank" rel="noopener">Submit a tutorial</a></li>
                     </ul>
                 </div>
                 <div class="foot-col">
@@ -427,8 +461,10 @@ fi</code></pre>
                 <div class="foot-col">
                     <h4>Follow</h4>
                     <ul>
-                        <li><a href="https://www.instagram.com/nextbit.bpp?utm_source=qr&igsh=MWIwdHZra21zcWJocA==" target="_blank" rel="noopener">Instagram</a></li>
-                        <li><a href="https://github.com/gianvalentino-INA" target="_blank" rel="noopener">GitHub</a></li>
+                        <li><a href="https://www.instagram.com/nextbit.bpp?utm_source=qr&igsh=MWIwdHZra21zcWJocA=="
+                                target="_blank" rel="noopener">Instagram</a></li>
+                        <li><a href="https://github.com/gianvalentino-INA" target="_blank" rel="noopener">GitHub</a>
+                        </li>
                     </ul>
                 </div>
             </div>
