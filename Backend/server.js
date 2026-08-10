@@ -60,10 +60,12 @@ NextBit provides technical solutions for individuals and small local businesses:
 - Freelance Contact: Clients can contact NextBit via WhatsApp at +62 0851 2974 1543.
 
 EXACT TUTORIALS ON NEXTBIT & TECHNICAL DETAILS:
-1. SSH Setup on Linux: Ubuntu terminal workflow using "sudo apt update", "sudo apt install openssh-server", and editing config.
-2. Installing Claude Code on Linux: Step-by-step setup tailored for Ubuntu distro systems.
-3. Installing Microsoft Office for Free: Uses the official Office Deployment Tool (ODT), Office Customization Tool, and CMD.
-4. Installing an Operating System: Practical guide using a USB flash disk prepared with Ventoy for effortless OS installations.
+1. Installing Claude Code on Linux: Step-by-step setup on Ubuntu using OpenRouter's free model tier. Configure Claude Code to route through OpenRouter by adding environment variables to ~/.bashrc.
+2. SSH Server Monitoring: Create a Telegram bot that alerts you whenever someone logs into your SSH server. Includes detailed location data, IP info, and clickable Google Maps links.
+3. How to Set Up & Harden a Secure SSH Server: Complete step-by-step guide for setting up OpenSSH server and implementing essential security configurations on Ubuntu (6 steps total).
+4. Installing an Operating System: Use Ventoy to create a bootable USB drive and install Windows 11 through a simple, user-friendly workflow.
+5. Installing Microsoft Office for Free: Use the official Office Deployment Tool (ODT) with command-line instructions for silent installation.
+6. Windows Optimization: Safe, effective steps to debloat Windows using free tools and built-in utilities, including Storage Sense, Ultimate Performance power plan, and GPU settings optimization.
 
 *** STRICT BEHAVIORAL RULES (MUST FOLLOW) ***
 1. Answer the user's question directly, naturally, and concisely.
@@ -121,6 +123,112 @@ NOT ON THIS SITE / DO NOT MENTION:
     } catch (error) {
         console.error("Server Error:", error);
         return res.status(500).json({ reply: "Server error occurred while handling request." });
+    }
+});
+
+// ============================================================
+// STORE PRODUCT CATALOG (source of truth for price & metadata)
+// ============================================================
+const PRODUCT_CATALOG = {
+    p1: {
+        id: "p1",
+        title: "SSH Terminal Hardener v1.0",
+        category: "Desktop Apps",
+        price: 50000,       // IDR
+        formattedPrice: "Rp 50.000",
+        available: true
+    },
+    p2: {
+        id: "p2",
+        title: "Telegram SSH Alert Bot Script",
+        category: "Scripts & Automation",
+        price: 25000,
+        formattedPrice: "Rp 25.000",
+        available: true
+    },
+    p3: {
+        id: "p3",
+        title: "MikroTik Router Setup Config Pack",
+        category: "Scripts & Automation",
+        price: 35000,
+        formattedPrice: "Rp 35.000",
+        available: true
+    }
+};
+
+// GET /api/products — returns the full catalog
+app.get('/api/products', (req, res) => {
+    res.json({ products: Object.values(PRODUCT_CATALOG) });
+});
+
+// POST /api/checkout — validates cart & email, returns order confirmation
+const checkoutLimiter = rateLimit({
+    windowMs: 5 * 60 * 1000,
+    max: 10,
+    message: { error: "Too many checkout attempts. Please wait a few minutes." }
+});
+
+app.post('/api/checkout', checkoutLimiter, (req, res) => {
+    try {
+        const { email, cart } = req.body;
+
+        // --- Validate email ---
+        if (!email || typeof email !== 'string' || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+            return res.status(400).json({ error: "A valid email address is required." });
+        }
+
+        // --- Validate cart ---
+        if (!Array.isArray(cart) || cart.length === 0) {
+            return res.status(400).json({ error: "Cart is empty." });
+        }
+
+        let orderTotal = 0;
+        const validatedItems = [];
+
+        for (const item of cart) {
+            const catalogProduct = PRODUCT_CATALOG[item.id];
+            if (!catalogProduct) {
+                return res.status(400).json({ error: `Unknown product ID: ${item.id}` });
+            }
+            if (!catalogProduct.available) {
+                return res.status(400).json({ error: `${catalogProduct.title} is currently unavailable.` });
+            }
+            const qty = Math.max(1, parseInt(item.qty) || 1);
+            const lineTotal = catalogProduct.price * qty;
+            orderTotal += lineTotal;
+
+            validatedItems.push({
+                id: catalogProduct.id,
+                title: catalogProduct.title,
+                price: catalogProduct.price,
+                qty,
+                lineTotal
+            });
+        }
+
+        // Build a simple order reference
+        const orderRef = `NB-${Date.now()}-${Math.random().toString(36).slice(2, 6).toUpperCase()}`;
+
+        console.log(`[ORDER] ${orderRef} | ${email} | Total: Rp ${orderTotal.toLocaleString('id-ID')} | Items:`, validatedItems);
+
+        // In production, this is where you would:
+        //   1. Create a Midtrans transaction token
+        //   2. Send a confirmation email
+        //   3. Store the order in a database
+        // For now we return a confirmation payload the frontend can display.
+        return res.json({
+            success: true,
+            orderRef,
+            email,
+            items: validatedItems,
+            total: orderTotal,
+            formattedTotal: `Rp ${orderTotal.toLocaleString('id-ID')}`,
+            message: `Order ${orderRef} received! A download link will be sent to ${email} shortly.`
+        });
+
+    } catch (error) {
+        console.error("Checkout Error:", error);
+        return res.status(500).json({ error: "Server error during checkout. Please try again." });
     }
 });
 
