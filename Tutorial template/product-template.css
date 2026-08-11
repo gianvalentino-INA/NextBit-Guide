@@ -1,0 +1,16 @@
+/* The reusable template intentionally shares the proven product-page layout. */
+@import url("../Store/clothing-packaging-mockups/clothing-packaging.css");
+
+/* A blank gallery remains visually clean until product images are added. */
+.main-image-box:has(#activeProductImg[hidden])::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #14231E, #1F3830);
+}
+
+.thumbnail-strip:empty,
+.carousel-dots:empty,
+.directive-list:empty {
+    display: none;
+}

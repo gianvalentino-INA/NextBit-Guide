@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store - NextBit</title>
+    <link rel="icon" type="image/png" sizes="500x500" href="../Logo/logo.png">
+
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="store.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="glass-dock">
+        <nav>
+            <input type="checkbox" id="menu-toggle" class="menu-toggle" hidden>
+
+            <div class="navbar-left">
+                <label for="menu-toggle" class="menu-btn" aria-label="Toggle Navigation Menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </label>
+
+                <a href="../index.html" class="logo-link">
+                    <img src="../Logo/logo.png" alt="NextBit Logo" class="navbar-logo">
+                </a>
+
+                <ul class="navbar-links">
+                    <li><a href="../index.html" class="navbar-link">Home</a></li>
+                    <li><a href="../learn.html" class="navbar-link">Learn</a></li>
+                    <li><a href="store.html" class="navbar-link active">Store</a></li>
+                    <li><a href="../chatbot.html" class="navbar-link">Chatbot</a></li>
+                    <li><a href="../about.html" class="navbar-link">About</a></li>
+                </ul>
+            </div>
+
+            <div class="navbar-action">
+                <form class="nav-search-form" id="navSearchForm" onsubmit="event.preventDefault();">
+                    <svg class="nav-search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                    <input type="text" class="nav-search-input" id="cardSearchInput" placeholder="Search products..."
+                        aria-label="Search products">
+                </form>
+
+                <button class="nav-cart-btn" id="openCartBtn" aria-label="View Shopping Cart">
+                    <img src="../Icon/cart.svg" alt="Cart" class="cart-icon">
+                    <span class="cart-badge" id="cartCount">0</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="learn-container">
+
+        <section class="learn-header animate-on-scroll">
+            <span class="section-tag">NextBit Digital Store</span>
+            <h1 class="learn-title">Tools & Software Apps</h1>
+            <p class="learn-subtitle">
+                Pay once, own forever. Download collection of templates, automation scripts, and server tools directly
+                to your device.
+            </p>
+        </section>
+
+        <!-- Category Filters -->
+        <section class="filter-section animate-on-scroll">
+            <div class="filter-container">
+                <button class="filter-btn active" data-filter="all">
+                    <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <span>All Products</span>
+                </button>
+                <button class="filter-btn" data-filter="template">
+                    <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <span>Template</span>
+                </button>
+                <button class="filter-btn" data-filter="scripts">
+                    <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <span>Scripts & Automation</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Product Grid -->
+        <section class="learn-grid-section">
+            <div class="learn-grid" id="storeGrid">
+
+                <!-- Product Card 1 -->
+                <article class="card card--dark product-card animate-on-scroll" data-category="template" data-id="p1">
+                    <a href="clothing-packaging-mockups/clothing-packaging.html" class="product-card-link">
+                        <div class="card-img-wrapper store-img-wrapper">
+                            <img src="../Image/mockup-thumbnail.png" alt="Collection Of Photoshop Mockup Template"
+                                class="card-img">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <span class="card-category">Template</span>
+                                <span class="product-price">Rp 50.000</span>
+                            </div>
+                            <h3 class="card-title store-card-title">Premium Mockup Collection</h3>
+                            <p class="card-desc">Carefully collected mockups for your design needs.</p>
+                        </div>
+                    </a>
+                    <div class="product-card-footer">
+                        <div class="product-actions">
+                            <button class="add-cart-btn"
+                                onclick="addToCart('p1', 'Premium Mockup Collection', 50000, '../Image/mockup-thumbnail.png')">
+                                <img src="../Icon/cart.svg" alt="Add to cart" class="cart-icon">
+                            </button>
+                            <button class="buy-now-btn"
+                                onclick="buyNow('p1', 'Premium Mockup Collection', 50000, '../Image/mockup-thumbnail.png')">Buy
+                                Now</button>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Shopping Cart Modal Overlay -->
+    <div class="cart-modal-overlay" id="cartModal">
+        <div class="cart-drawer">
+            <div class="cart-drawer-header">
+                <div class="cart-drawer-title">
+                    <img src="../Icon/cart.svg" alt="Cart" class="cart-icon">
+                    <h2>Cart (<span id="cartDrawerCount">0</span>)</h2>
+                </div>
+                <button class="cart-close-btn" id="closeCartBtn">&times;</button>
+            </div>
+
+            <div class="cart-items-body" id="cartItemsContainer">
+                <p class="cart-empty-text">Your cart is empty.</p>
+            </div>
+
+            <div class="cart-drawer-footer">
+                <div class="order-summary">
+                    <div class="summary-row">
+                        <span>Total Items</span>
+                        <span id="summaryItemCount">0</span>
+                    </div>
+                    <div class="summary-row grand-total">
+                        <span>Grand Total</span>
+                        <span id="summaryGrandTotal">Rp 0</span>
+                    </div>
+                </div>
+
+                <div class="checkout-email-group">
+                    <input type="email" id="customerEmail" placeholder="Enter your email address" required>
+                </div>
+
+                <button class="checkout-btn" onclick="checkoutWithMidtrans()">Buy Now</button>
+                <button class="continue-btn" id="continueShoppingBtn">Continue Shopping</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-top">
+            <div class="foot-logo">
+                <img src="../Logo/logo.png" alt="NextBit Logo">
+                <p class="foot-tagline">Free, community-made skills to learn and how-to guides for everything.</p>
+            </div>
+            <div class="foot-columns">
+                <div class="foot-col">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="../learn.html">Learn</a></li>
+                        <li><a href="store.html">Store</a></li>
+                        <li><a href="../chatbot.html">Chatbot</a></li>
+                        <li><a href="https://trakteer.id/NextBit" target="_blank" rel="noopener">Donate</a></li>
+                    </ul>
+                </div>
+                <div class="foot-col">
+                    <h4>Info</h4>
+                    <ul>
+                        <li><a href="../about.html">About</a></li>
+                        <li><a href="mailto:contact@nextbit.org">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="foot-col">
+                    <h4>Follow</h4>
+                    <ul>
+                        <li><a href="https://www.instagram.com/nextbit.bpp" target="_blank" rel="noopener">Instagram</a>
+                        </li>
+                        <li><a href="https://github.com/gianvalentino-INA" target="_blank" rel="noopener">GitHub</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <hr class="footer-divider">
+        <p class="footer-copyright">&copy; 2026 NextBit. All rights reserved.</p>
+    </footer>
+
+    <script>
+        let cart = JSON.parse(localStorage.getItem("nextbit_cart")) || [];
+
+        function saveCart() {
+            localStorage.setItem("nextbit_cart", JSON.stringify(cart));
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            const totalQuantity = cart.reduce((sum, item) => sum + item.qty, 0);
+            document.getElementById("cartCount").textContent = totalQuantity;
+            document.getElementById("cartDrawerCount").textContent = totalQuantity;
+            document.getElementById("summaryItemCount").textContent = totalQuantity;
+
+            const container = document.getElementById("cartItemsContainer");
+            if (cart.length === 0) {
+                container.innerHTML = `<p class="cart-empty-text">Your cart is empty.</p>`;
+                document.getElementById("summaryGrandTotal").textContent = "Rp 0";
+                return;
+            }
+
+            let html = "";
+            let grandTotal = 0;
+
+            cart.forEach((item, index) => {
+                const subtotal = item.price * item.qty;
+                grandTotal += subtotal;
+                html += `
+            <div class="cart-item">
+                <img src="${item.image}" alt="${item.title}" class="cart-item-img">
+                <div class="cart-item-info">
+                    <h4>${item.title}</h4>
+                    <p class="cart-item-price">Rp ${item.price.toLocaleString("id-ID")}</p>
+                    <span class="cart-item-qty">Qty: ${item.qty}</span>
+                </div>
+                <button class="cart-item-remove" onclick="removeFromCart(${index})">&times;</button>
+            </div>
+        `;
+            });
+
+            container.innerHTML = html;
+            document.getElementById("summaryGrandTotal").textContent = `Rp ${grandTotal.toLocaleString("id-ID")}`;
+        }
+
+        function addToCart(id, title, price, image) {
+            const existing = cart.find(item => item.id === id);
+            if (existing) {
+                existing.qty += 1;
+            } else {
+                cart.push({ id, title, price, image, qty: 1 });
+            }
+            saveCart();
+            animateCartIcon();
+        }
+
+        function buyNow(id, title, price, image) {
+            addToCart(id, title, price, image);
+            openCartModal();
+        }
+
+        function animateCartIcon() {
+            const navCartBtn = document.getElementById("openCartBtn");
+            if (navCartBtn) {
+                navCartBtn.classList.add("cart-bounce");
+                setTimeout(() => {
+                    navCartBtn.classList.remove("cart-bounce");
+                }, 400);
+            }
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            saveCart();
+        }
+
+        function openCartModal() {
+            document.getElementById("cartModal").classList.add("active");
+        }
+
+        function closeCartModal() {
+            document.getElementById("cartModal").classList.remove("active");
+        }
+
+        function checkoutWithMidtrans() {
+            const email = document.getElementById("customerEmail").value.trim();
+            if (cart.length === 0) return alert("Your cart is empty!");
+            if (!email) return alert("Please enter your email to receive download links.");
+
+            const checkoutBtn = document.querySelector(".checkout-btn");
+            checkoutBtn.disabled = true;
+            checkoutBtn.textContent = "Processing...";
+
+            fetch('/api/checkout', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, cart })
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.success) {
+                        cart = [];
+                        saveCart();
+                        closeCartModal();
+                        alert(`✅ ${data.message}\n\nOrder Reference: ${data.orderRef}\nTotal: ${data.formattedTotal}`);
+                    } else {
+                        alert(`❌ Checkout failed: ${data.error || 'Unknown error'}`);
+                    }
+                })
+                .catch(err => {
+                    console.error('Checkout error:', err);
+                    alert("⚠️ Could not reach server. Make sure the backend is running.");
+                })
+                .finally(() => {
+                    checkoutBtn.disabled = false;
+                    checkoutBtn.textContent = "Buy Now";
+                });
+        }
+
+        function filterAndSearchProducts() {
+            const activeFilterBtn = document.querySelector('.filter-btn.active');
+            const activeCategory = activeFilterBtn ? activeFilterBtn.getAttribute('data-filter') : 'all';
+            const searchQuery = document.getElementById('cardSearchInput').value.toLowerCase().trim();
+
+            const cards = document.querySelectorAll('.product-card');
+
+            cards.forEach(card => {
+                const cardCategory = card.getAttribute('data-category');
+                const title = card.querySelector('.store-card-title').textContent.toLowerCase();
+                const desc = card.querySelector('.card-desc').textContent.toLowerCase();
+
+                const matchesCategory = (activeCategory === 'all' || cardCategory === activeCategory);
+                const matchesSearch = title.includes(searchQuery) || desc.includes(searchQuery);
+
+                if (matchesCategory && matchesSearch) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            updateCartUI();
+
+            if (window.location.hash === '#checkout') {
+                openCartModal();
+                history.replaceState(null, '', window.location.pathname);
+            }
+
+            document.getElementById("openCartBtn").addEventListener("click", openCartModal);
+            document.getElementById("closeCartBtn").addEventListener("click", closeCartModal);
+            document.getElementById("continueShoppingBtn").addEventListener("click", closeCartModal);
+
+            document.getElementById("cartModal").addEventListener("click", (e) => {
+                if (e.target.id === "cartModal") closeCartModal();
+            });
+
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    filterAndSearchProducts();
+                });
+            });
+
+            const searchInput = document.getElementById('cardSearchInput');
+            if (searchInput) {
+                searchInput.addEventListener('input', filterAndSearchProducts);
+            }
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) entry.target.classList.add("is-visible");
+                });
+            }, { threshold: 0.1 });
+            document.querySelectorAll(".animate-on-scroll").forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+
+</html>

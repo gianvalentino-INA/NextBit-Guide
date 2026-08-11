@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Replace the empty title and description before publishing this page. -->
+    <title> - NextBit Store</title>
+    <meta name="description" content="">
+    <link rel="icon" type="image/png" sizes="500x500" href="../Logo/logo.png">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="product-template.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="glass-dock">
+        <nav>
+            <input type="checkbox" id="menu-toggle" class="menu-toggle" hidden>
+            <div class="navbar-left">
+                <label for="menu-toggle" class="menu-btn" aria-label="Toggle navigation menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                </label>
+                <a href="../index.html" class="logo-link"><img src="../Logo/logo.png" alt="NextBit Logo" class="navbar-logo"></a>
+                <ul class="navbar-links">
+                    <li><a href="../index.html" class="navbar-link">Home</a></li>
+                    <li><a href="../learn.html" class="navbar-link">Learn</a></li>
+                    <li><a href="../Store/store.html" class="navbar-link active">Store</a></li>
+                    <li><a href="../chatbot.html" class="navbar-link">Chatbot</a></li>
+                    <li><a href="../about.html" class="navbar-link">About</a></li>
+                </ul>
+            </div>
+            <div class="navbar-action">
+                <a href="../Store/store.html" class="nav-cart-btn" aria-label="View shopping cart">
+                    <img src="../Icon/cart.svg" alt="" class="cart-icon"><span class="cart-badge" id="cartBadge">0</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="product-page-container">
+        <div class="product-card-wrapper">
+            <div class="product-gallery">
+                <div class="main-image-box" id="mainImageBox">
+                    <button class="gallery-arrow prev-arrow" type="button" aria-label="Previous image" onclick="switchImage(currentIndex - 1)">&#10094;</button>
+                    <button class="gallery-arrow next-arrow" type="button" aria-label="Next image" onclick="switchImage(currentIndex + 1)">&#10095;</button>
+                    <!-- Add the first product image path to PRODUCT.images in the script. -->
+                    <img id="activeProductImg" src="" alt="" class="main-product-img" draggable="false" hidden>
+                    <div class="carousel-dots" id="carouselDots"></div>
+                </div>
+                <div class="thumbnail-strip" id="thumbnailStrip"></div>
+                <div class="gallery-footer-share">
+                    <span class="share-text">Share product:</span>
+                    <button class="share-icon-btn" type="button" onclick="shareProduct()"><span>Copy Link</span></button>
+                </div>
+            </div>
+
+            <div class="product-info-details">
+                <div class="title-price-header">
+                    <div class="category-badge" id="productBadge"></div>
+                    <h1 class="product-title" id="productTitle"></h1>
+                    <div class="price-banner-box"><span class="discount-price" id="productPrice"></span></div>
+                </div>
+
+                <div class="spec-list">
+                    <div class="spec-item"><span class="spec-label">Category</span><span class="spec-value" id="productCategory"></span></div>
+                    <div class="spec-item"><span class="spec-label">Platform</span><span class="spec-value" id="productPlatform"></span></div>
+                    <div class="spec-item"><span class="spec-label">Delivery</span><span class="spec-value" id="productDelivery"></span></div>
+                    <div class="spec-item"><span class="spec-label">License</span><span class="spec-value" id="productLicense"></span></div>
+                    <div class="spec-item desktop-only-spec">
+                        <span class="spec-label">Quantity</span>
+                        <div class="quantity-picker"><button type="button" onclick="adjustQty(-1)">-</button><input type="text" id="qtyInput" value="1" readonly><button type="button" onclick="adjustQty(1)">+</button><span class="stock-info" id="productStock"></span></div>
+                    </div>
+                </div>
+
+                <div class="product-description-block">
+                    <h3 class="description-heading">DESCRIPTION</h3>
+                    <!-- Add your product description and feature list in PRODUCT below. -->
+                    <p class="content-text" id="productDescription"></p>
+                    <ul class="directive-list" id="productFeatures"></ul>
+                </div>
+
+                <div class="action-buttons-group">
+                    <button class="add-cart-outline-btn" type="button" title="Add to cart" onclick="addToCart()"><img src="../Icon/cart.svg" alt="" class="btn-icon"><span class="btn-text-desktop">Add to Cart</span></button>
+                    <button class="buy-now-mint-btn" type="button" onclick="buyNow()">BUY NOW</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-top"><div class="foot-brand"><a href="../index.html" class="foot-logo"><img src="../Logo/logo.png" alt="NextBit Logo"></a><p class="foot-tagline">Free, community-made skills to learn and how-to guides for everything.</p></div><div class="foot-columns"><div class="foot-col"><h4>Explore</h4><ul><li><a href="../learn.html">Learn</a></li><li><a href="../Store/store.html">Store</a></li><li><a href="../chatbot.html">Chatbot</a></li></ul></div><div class="foot-col"><h4>Info</h4><ul><li><a href="../about.html">About</a></li><li><a href="mailto:contact@nextbit.org">Contact</a></li></ul></div></div></div>
+        <hr class="footer-divider"><p class="footer-copyright">&copy; 2026 NextBit. All rights reserved.</p>
+    </footer>
+
+    <script>
+        /* Fill in this one object for each new product. Leave a field empty when it does not apply. */
+        const PRODUCT = {
+            id: '', title: '', price: '', image: '', badge: '', category: '', platform: '',
+            delivery: '', license: '', stock: '', description: '', features: [], images: []
+        };
+
+        let currentIndex = 0;
+        const rupiah = value => value === '' || value === null ? '' : new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }).format(value);
+
+        function renderProduct() {
+            document.title = PRODUCT.title ? `${PRODUCT.title} - NextBit Store` : ' - NextBit Store';
+            document.querySelector('meta[name="description"]').content = PRODUCT.description;
+            const fields = { productBadge: PRODUCT.badge, productTitle: PRODUCT.title, productPrice: rupiah(PRODUCT.price), productCategory: PRODUCT.category, productPlatform: PRODUCT.platform, productDelivery: PRODUCT.delivery, productLicense: PRODUCT.license, productStock: PRODUCT.stock, productDescription: PRODUCT.description };
+            Object.entries(fields).forEach(([id, value]) => document.getElementById(id).textContent = value);
+            const list = document.getElementById('productFeatures');
+            PRODUCT.features.forEach(feature => { const item = document.createElement('li'); item.textContent = feature; list.appendChild(item); });
+            renderGallery();
+        }
+
+        function renderGallery() {
+            const images = PRODUCT.images.length ? PRODUCT.images : (PRODUCT.image ? [PRODUCT.image] : []);
+            const strip = document.getElementById('thumbnailStrip'); const dots = document.getElementById('carouselDots');
+            images.forEach((src, index) => {
+                const thumb = document.createElement('button'); thumb.type = 'button'; thumb.className = `thumb-item${index === 0 ? ' active' : ''}`; thumb.onclick = () => switchImage(index); thumb.innerHTML = `<img src="${src}" alt="">`; strip.appendChild(thumb);
+                const dot = document.createElement('button'); dot.type = 'button'; dot.className = `dot${index === 0 ? ' active' : ''}`; dot.onclick = () => switchImage(index); dots.appendChild(dot);
+            });
+            if (images.length) { const image = document.getElementById('activeProductImg'); image.src = images[0]; image.alt = PRODUCT.title; image.hidden = false; }
+            document.querySelectorAll('.gallery-arrow').forEach(button => button.hidden = images.length < 2);
+        }
+
+        function switchImage(index) {
+            const images = PRODUCT.images.length ? PRODUCT.images : (PRODUCT.image ? [PRODUCT.image] : []); if (!images.length) return;
+            currentIndex = (index + images.length) % images.length; document.getElementById('activeProductImg').src = images[currentIndex];
+            document.querySelectorAll('.thumb-item, .carousel-dots .dot').forEach((item, i) => item.classList.toggle('active', i === currentIndex));
+        }
+        function adjustQty(change) { const input = document.getElementById('qtyInput'); input.value = Math.max(1, Number(input.value) + change); }
+        function getCart() { return JSON.parse(localStorage.getItem('nextbit_cart')) || []; }
+        function updateCartBadge() { document.getElementById('cartBadge').textContent = getCart().reduce((sum, item) => sum + (item.qty || 0), 0); }
+        function addToCart() {
+            if (!PRODUCT.id || !PRODUCT.title || PRODUCT.price === '') { alert('Add the product ID, title, and price to the PRODUCT object before using the cart.'); return false; }
+            const qty = Number(document.getElementById('qtyInput').value); const cart = getCart(); const item = { id: PRODUCT.id, title: PRODUCT.title, price: Number(PRODUCT.price), image: PRODUCT.image || PRODUCT.images[0] || '', qty };
+            const existing = cart.find(entry => entry.id === item.id); if (existing) existing.qty += qty; else cart.push(item);
+            localStorage.setItem('nextbit_cart', JSON.stringify(cart)); updateCartBadge(); return true;
+        }
+        function buyNow() { if (addToCart()) window.location.href = '../Store/store.html#checkout'; }
+        async function shareProduct() { try { await navigator.clipboard.writeText(window.location.href); alert('Product link copied to clipboard!'); } catch { window.prompt('Copy this product link:', window.location.href); } }
+        document.addEventListener('DOMContentLoaded', () => { renderProduct(); updateCartBadge(); });
+    </script>
+</body>
+</html>

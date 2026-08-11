@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Mockup Collection - NextBit Store</title>
+    <meta name="description"
+        content="Collection of premium mockup thats ready to use and edit as you want. Pay once, own forever.">
+    <link rel="icon" type="image/png" sizes="500x500" href="../../Logo/logo.png">
+
+    <!-- STYLESHEETS -->
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="clothing-packaging.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- STORE GLASS NAVBAR -->
+    <header class="glass-dock">
+        <nav>
+            <input type="checkbox" id="menu-toggle" class="menu-toggle" hidden>
+
+            <div class="navbar-left">
+                <label for="menu-toggle" class="menu-btn" aria-label="Toggle Navigation Menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </label>
+
+                <a href="../../index.html" class="logo-link">
+                    <img src="../../Logo/logo.png" alt="NextBit Logo" class="navbar-logo">
+                </a>
+
+                <ul class="navbar-links">
+                    <li><a href="../../index.html" class="navbar-link">Home</a></li>
+                    <li><a href="../../learn.html" class="navbar-link">Learn</a></li>
+                    <li><a href="../../Store/store.html" class="navbar-link active">Store</a></li>
+                    <li><a href="../../chatbot.html" class="navbar-link">Chatbot</a></li>
+                    <li><a href="../../about.html" class="navbar-link">About</a></li>
+                </ul>
+            </div>
+
+            <!-- Store Navbar Actions -->
+            <div class="navbar-action">
+                <a href="../../Store/store.html" class="nav-cart-btn" aria-label="View Shopping Cart">
+                    <img src="../../Icon/cart.svg" alt="Cart" class="cart-icon">
+                    <span class="cart-badge" id="cartBadge">0</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- MAIN PRODUCT CONTAINER -->
+    <main class="product-page-container">
+        <div class="product-card-wrapper">
+
+            <!-- LEFT COLUMN: IMAGE SLIDER GALLERY -->
+            <div class="product-gallery">
+                <div class="main-image-box" id="mainImageBox">
+
+                    <!-- Navigation Arrows -->
+                    <button class="gallery-arrow prev-arrow" onclick="switchImage(currentIndex - 1)"
+                        aria-label="Previous Image">&#10094;</button>
+                    <button class="gallery-arrow next-arrow" onclick="switchImage(currentIndex + 1)"
+                        aria-label="Next Image">&#10095;</button>
+
+                    <!-- Main Featured Image -->
+                    <img id="activeProductImg" src="../../Image/mockup-thumbnail.png" alt="Premium Mockup Collection"
+                        class="main-product-img" draggable="false">
+
+                    <!-- Mobile Carousel Dots -->
+                    <div class="carousel-dots" id="carouselDots">
+                        <span class="dot active" onclick="switchImage(0)"></span>
+                        <span class="dot" onclick="switchImage(1)"></span>
+                        <span class="dot" onclick="switchImage(2)"></span>
+                    </div>
+                </div>
+
+                <!-- Thumbnails Carousel -->
+                <div class="thumbnail-strip">
+                    <div class="thumb-item active" onclick="switchImage(0)">
+                        <img src="../../Image/mockup-thumbnail.png" alt="Mockup Premium Collection - Main">
+                    </div>
+                    <div class="thumb-item" onclick="switchImage(1)">
+                        <img src="../../Image/shirt-cup-thumbnail.png" alt="Shirt & Cup Example">
+                    </div>
+                    <div class="thumb-item" onclick="switchImage(2)">
+                        <img src="../../Image/packaging-thumbnail.png" alt="Business Card & Packaging Example">
+                    </div>
+                </div>
+
+                <!-- Gallery Footer Share Row -->
+                <div class="gallery-footer-share">
+                    <span class="share-text">Share product:</span>
+                    <button class="share-icon-btn" title="Share Product" onclick="shareProduct()">
+                        <svg class="inline-share-icon-dark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <circle cx="18" cy="5" r="3"></circle>
+                            <circle cx="6" cy="12" r="3"></circle>
+                            <circle cx="18" cy="19" r="3"></circle>
+                            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                            <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+                        </svg>
+                        <span>Copy Link</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- RIGHT COLUMN: PRODUCT INFO & PURCHASE CONTROLS -->
+            <div class="product-info-details">
+
+                <!-- Category Badge & Title Header -->
+                <div class="title-price-header">
+                    <div class="category-badge">Template</div>
+                    <h1 class="product-title">Premium Mockup Collection</h1>
+
+                    <!-- Price Banner Container (Rupiah) -->
+                    <div class="price-banner-box">
+                        <span class="discount-price">Rp 50.000</span>
+                    </div>
+                </div>
+
+                <!-- Product Specifications -->
+                <div class="spec-list">
+                    <div class="spec-item">
+                        <span class="spec-label">Category</span>
+                        <span class="spec-value">Template</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Software</span>
+                        <span class="spec-value">Photoshop</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Delivery</span>
+                        <span class="spec-value">Instant Download Link via Email</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">License</span>
+                        <span class="spec-value">Commercial & Personal Use</span>
+                    </div>
+                    <div class="spec-item desktop-only-spec">
+                        <span class="spec-label">Quantity</span>
+                        <div class="quantity-picker">
+                            <button onclick="adjustQty(-1)">-</button>
+                            <input type="text" id="qtyInput" value="1" readonly>
+                            <button onclick="adjustQty(1)">+</button>
+                            <span class="stock-info">IN STOCK</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DESCRIPTION SECTION -->
+                <div class="product-description-block">
+                    <h3 class="description-heading">DESCRIPTION</h3>
+                    <p class="content-text">
+                        Elevate your portfolio and client presentations with this all-in-one branding mockup collection.
+                        Built specifically for creative freelancers, agency owners, and local businesses, this
+                        high-resolution Photoshop bundle gives you everything needed to showcase brand identities across
+                        apparel, food packaging, print stationery, and logo displays in seconds. Every template features
+                        drag-and-drop Smart Objects, customizable backdrops, and realistic studio lighting for a
+                        polished, professional finish.
+                    </p>
+                </div>
+
+                <!-- ACTION BUTTONS SECTION -->
+                <div class="action-buttons-group">
+                    <button class="add-cart-outline-btn" title="Add to Cart" onclick="addToCart()">
+                        <img src="../../Icon/cart.svg" alt="Cart" class="btn-icon">
+                        <span class="btn-text-desktop">Add to Cart</span>
+                    </button>
+
+                    <button class="buy-now-mint-btn" onclick="buyNow()">
+                        BUY NOW
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER SECTION -->
+    <footer>
+        <div class="footer-top">
+            <div class="foot-brand">
+                <a href="../../index.html" class="foot-logo">
+                    <img src="../../Logo/logo.png" alt="NextBit Logo">
+                </a>
+                <p class="foot-tagline">Free, community-made skills to learn and how-to guides for everything.</p>
+            </div>
+            <div class="foot-columns">
+                <div class="foot-col">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="../../learn.html">Learn</a></li>
+                        <li><a href="../../chatbot.html">Chatbot</a></li>
+                        <li><a href="https://trakteer.id/NextBit" target="_blank" rel="noopener">Donate</a></li>
+                        <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSePyFmZLFE-JLAPPpzzbfqEi7tIMhIK_mMEFpfXV8yfVe1FYw/viewform"
+                                target="_blank" rel="noopener">Submit a tutorial</a></li>
+                    </ul>
+                </div>
+                <div class="foot-col">
+                    <h4>Info</h4>
+                    <ul>
+                        <li><a href="../../about.html">About</a></li>
+                        <li><a href="mailto:contact@nextbit.org">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="foot-col">
+                    <h4>Follow</h4>
+                    <ul>
+                        <li><a href="https://www.instagram.com/nextbit.bpp?utm_source=qr&igsh=MWIwdHZra21zcWJocA=="
+                                target="_blank" rel="noopener">Instagram</a></li>
+                        <li><a href="https://github.com/gianvalentino-INA" target="_blank" rel="noopener">GitHub</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <hr class="footer-divider">
+        <p class="footer-copyright">&copy; 2026 NextBit. All rights reserved.</p>
+    </footer>
+
+    <!-- JS FOR GALLERY SLIDER, SWIPE, SHARE, QUANTITY & LOCALSTORAGE CART -->
+    <script>
+        let currentIndex = 0;
+        const imageList = [
+            "../../Image/mockup-thumbnail.png",
+            "../../Image/shirt-cup-thumbnail.png",
+            "../../Image/packaging-thumbnail.png"
+        ];
+
+        function switchImage(index) {
+            if (index < 0) index = imageList.length - 1;
+            if (index >= imageList.length) index = 0;
+            currentIndex = index;
+
+            document.getElementById('activeProductImg').src = imageList[currentIndex];
+
+            const thumbs = document.querySelectorAll('.thumb-item');
+            thumbs.forEach((t, i) => {
+                t.classList.toggle('active', i === currentIndex);
+            });
+
+            const dots = document.querySelectorAll('.carousel-dots .dot');
+            dots.forEach((d, i) => {
+                d.classList.toggle('active', i === currentIndex);
+            });
+        }
+
+        // SWIPE & DRAG HANDLERS
+        const mainImageBox = document.getElementById('mainImageBox');
+        let startX = 0;
+        let isDragging = false;
+
+        function handleDragStart(e) {
+            isDragging = true;
+            startX = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
+            mainImageBox.style.cursor = 'grabbing';
+        }
+
+        function handleDragEnd(e) {
+            if (!isDragging) return;
+            isDragging = false;
+            mainImageBox.style.cursor = 'grab';
+
+            const endX = e.type.includes('touch') ? e.changedTouches[0].clientX : e.clientX;
+            const diffX = endX - startX;
+            const threshold = 35;
+
+            if (diffX < -threshold) {
+                switchImage(currentIndex + 1);
+            } else if (diffX > threshold) {
+                switchImage(currentIndex - 1);
+            }
+        }
+
+        mainImageBox.addEventListener('mousedown', handleDragStart);
+        mainImageBox.addEventListener('mouseup', handleDragEnd);
+        mainImageBox.addEventListener('mouseleave', () => { isDragging = false; mainImageBox.style.cursor = 'grab'; });
+
+        mainImageBox.addEventListener('touchstart', handleDragStart, { passive: true });
+        mainImageBox.addEventListener('touchend', handleDragEnd, { passive: true });
+
+        // SHARE FUNCTION
+        function shareProduct() {
+            const currentUrl = window.location.href;
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(currentUrl).then(() => {
+                    alert("Product link copied to clipboard!");
+                }).catch(() => fallbackCopy(currentUrl));
+            } else {
+                fallbackCopy(currentUrl);
+            }
+        }
+
+        function fallbackCopy(text) {
+            const tempInput = document.createElement("input");
+            tempInput.value = text;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempInput);
+            alert("Product link copied to clipboard!");
+        }
+
+        function adjustQty(change) {
+            const input = document.getElementById('qtyInput');
+            let val = parseInt(input.value) + change;
+            if (val < 1) val = 1;
+            input.value = val;
+        }
+
+        // CART SYSTEM WITH RUPIAH (LOCALSTORAGE CONNECTED)
+        function getCart() {
+            return JSON.parse(localStorage.getItem('nextbit_cart')) || [];
+        }
+
+        function saveCart(cart) {
+            localStorage.setItem('nextbit_cart', JSON.stringify(cart));
+            updateCartBadge();
+        }
+
+        function updateCartBadge() {
+            const cart = getCart();
+            const totalItems = cart.reduce((sum, item) => sum + (item.qty || item.quantity || 0), 0);
+            const badge = document.getElementById('cartBadge');
+            if (badge) {
+                badge.textContent = totalItems;
+            }
+        }
+
+        function addToCart() {
+            const qtyInput = document.getElementById('qtyInput');
+            const qty = qtyInput ? parseInt(qtyInput.value) : 1;
+
+            // Matches the cart format used by store.html (id, title, price, image, qty)
+            const product = {
+                id: "p1",
+                title: "Premium Mockup Collection",
+                price: 50000,
+                image: "../../Image/mockup-thumbnail.png",
+                qty: qty
+            };
+
+            let cart = getCart();
+            const existingIndex = cart.findIndex(item => item.id === product.id);
+
+            if (existingIndex > -1) {
+                cart[existingIndex].qty += qty;
+            } else {
+                cart.push(product);
+            }
+
+            saveCart(cart);
+
+            // Notify the user with a modern toast instead of a blocking alert
+            showToast(`✅ Added ${qty}x Premium Mockup Collection to cart!`);
+        }
+
+        function buyNow() {
+            addToCart();
+            // Redirect back to store.html to trigger checkout modal
+            window.location.href = "../../Store/store.html#checkout";
+        }
+
+        // Simple toast notification (non-blocking)
+        function showToast(message) {
+            const toast = document.createElement('div');
+            toast.textContent = message;
+            Object.assign(toast.style, {
+                position: 'fixed', bottom: '24px', right: '24px',
+                background: '#14231E', color: '#5FDDAC',
+                border: '1px solid rgba(95,221,172,0.4)',
+                borderRadius: '10px', padding: '12px 20px',
+                fontWeight: '600', fontSize: '14px',
+                boxShadow: '0 8px 24px rgba(0,0,0,0.35)',
+                zIndex: '9999', transition: 'opacity 0.4s ease'
+            });
+            document.body.appendChild(toast);
+            setTimeout(() => { toast.style.opacity = '0'; }, 2500);
+            setTimeout(() => { document.body.removeChild(toast); }, 3000);
+        }
+
+        document.addEventListener('DOMContentLoaded', updateCartBadge);
+    </script>
+</body>
+
+</html>
