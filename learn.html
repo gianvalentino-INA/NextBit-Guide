@@ -281,15 +281,28 @@
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             // 1. Scroll Reveal Animation
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("is-visible");
-                    }
-                });
-            }, { threshold: 0.1 });
+            const elements = document.querySelectorAll(".animate-on-scroll");
+            const reveal = (el) => el.classList.add("is-visible");
 
-            document.querySelectorAll(".animate-on-scroll").forEach(el => observer.observe(el));
+            if (!("IntersectionObserver" in window)) {
+                elements.forEach(reveal);
+            } else {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) reveal(entry.target);
+                    });
+                }, { threshold: 0 });
+
+                elements.forEach(el => observer.observe(el));
+
+                setTimeout(() => {
+                    elements.forEach(el => {
+                        if (el.classList.contains("is-visible")) return;
+                        const rect = el.getBoundingClientRect();
+                        if (rect.top < window.innerHeight && rect.bottom > 0) reveal(el);
+                    });
+                }, 300);
+            }
 
             // 2. Filter Buttons Interactivity
             const filterBtns = document.querySelectorAll(".filter-btn");
