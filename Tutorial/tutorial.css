@@ -1,5 +1,6 @@
 /* ==========================================================================
-   NEXTBIT TUTORIAL STYLESHEET - LIGHT BODY (#F9FAFA) & DARK MINT CARDS
+   NEXTBIT SHARED TUTORIAL STYLESHEET
+   Light Body (#F9FAFA) & Dark Mint Cards (#14231E)
    ========================================================================== */
 
 body {
@@ -42,7 +43,6 @@ body {
     margin: 0 0 12px 0;
 }
 
-/* EXACT AUTHOR STYLING FROM REFERENCE PAGE */
 .tutorial-author {
     font-size: 20px;
     font-weight: 300;
@@ -80,7 +80,7 @@ body {
 }
 
 /* --------------------------------------------------------------------------
-   2. MEDIA & IMAGES
+   2. MEDIA & IMAGE BANNERS (FLEXIBLE & LAYOUT-SAFE)
    -------------------------------------------------------------------------- */
 .tutorial-media-box {
     margin: 0 auto;
@@ -89,12 +89,13 @@ body {
     background: #E5E7EB;
     border: 1px solid #E5E7EB;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    box-sizing: border-box;
 }
 
 .intro-image-box {
     max-width: 1015px;
     width: 100%;
-    aspect-ratio: 1015 / 536;
+    aspect-ratio: 16 / 9;
     max-height: 536px;
     margin-bottom: 40px;
 }
@@ -112,6 +113,7 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
     display: block;
 }
 
@@ -193,7 +195,49 @@ body {
 }
 
 /* --------------------------------------------------------------------------
-   4. TERMINAL / BASH BOX COMPONENT
+   4. COMPARISON TABLE COMPONENT
+   -------------------------------------------------------------------------- */
+.comparison-table-wrapper {
+    overflow-x: auto;
+    margin: 28px 0;
+    border-radius: 12px;
+    border: 1px solid #E5E7EB;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 16px;
+    background: #FFFFFF;
+}
+
+.comparison-table th {
+    background-color: #14231E;
+    color: #5FDDAC;
+    padding: 14px 18px;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.comparison-table td {
+    padding: 14px 18px;
+    border-bottom: 1px solid #E5E7EB;
+    color: #374151;
+    line-height: 1.6;
+}
+
+.comparison-table tr:last-child td {
+    border-bottom: none;
+}
+
+.comparison-table tr:nth-child(even) td {
+    background-color: #F9FAFA;
+}
+
+/* --------------------------------------------------------------------------
+   5. TERMINAL / BASH BOX COMPONENT
    -------------------------------------------------------------------------- */
 .terminal-box {
     background-color: #0D1117;
@@ -273,7 +317,7 @@ body {
 }
 
 /* --------------------------------------------------------------------------
-   5. STEP SECTIONS
+   6. STEP SECTIONS
    -------------------------------------------------------------------------- */
 .tutorial-step {
     margin-top: 52px;
@@ -289,7 +333,7 @@ body {
 }
 
 /* --------------------------------------------------------------------------
-   6. DARK MINT RECOMMENDATION CARDS
+   7. DARK MINT RECOMMENDATION CARDS
    -------------------------------------------------------------------------- */
 .recommendation-section {
     width: 100%;

@@ -14,49 +14,8 @@
 
 <body>
 
-    <header class="glass-dock">
-        <nav>
-            <input type="checkbox" id="menu-toggle" class="menu-toggle" hidden>
-
-            <div class="navbar-left">
-                <label for="menu-toggle" class="menu-btn" aria-label="Toggle Navigation Menu">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="3" y1="12" x2="21" y2="12"></line>
-                        <line x1="3" y1="6" x2="21" y2="6"></line>
-                        <line x1="3" y1="18" x2="21" y2="18"></line>
-                    </svg>
-                </label>
-
-                <a href="index.html" class="logo-link">
-                    <img src="Logo/logo.png" alt="NextBit Logo" class="navbar-logo">
-                </a>
-
-                <ul class="navbar-links">
-                    <li><a href="index.html" class="navbar-link">Home</a></li>
-                    <li><a href="learn.html" class="navbar-link active">Learn</a></li>
-                    <li><a href="Store/store.html" class="navbar-link">Store</a></li>
-                    <li><a href="chatbot.html" class="navbar-link">Chatbot</a></li>
-                    <li><a href="about.html" class="navbar-link">About</a></li>
-                </ul>
-            </div>
-
-            <div class="navbar-action">
-                <form class="nav-search-form" id="navSearchForm" onsubmit="event.preventDefault();">
-                    <svg class="nav-search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="11" cy="11" r="8"></circle>
-                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                    </svg>
-                    <input type="text" class="nav-search-input" id="cardSearchInput" placeholder="Search tutorials..."
-                        aria-label="Search tutorials">
-                </form>
-
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSePyFmZLFE-JLAPPpzzbfqEi7tIMhIK_mMEFpfXV8yfVe1FYw/viewform"
-                    class="submit-btn" target="_blank" rel="noopener">Submit</a>
-            </div>
-        </nav>
-    </header>
+    <!-- NAVBAR PLACEHOLDER (injected by nav.js) -->
+    <div id="nav-placeholder"></div>
 
     <main class="learn-container">
 
@@ -276,35 +235,12 @@
 
     <!-- FOOTER SECTION -->
     <div id="footer-placeholder"></div>
+    <script src="nav.js" defer></script>
     <script src="footer.js" defer></script>
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            // 1. Scroll Reveal Animation
-            const elements = document.querySelectorAll(".animate-on-scroll");
-            const reveal = (el) => el.classList.add("is-visible");
-
-            if (!("IntersectionObserver" in window)) {
-                elements.forEach(reveal);
-            } else {
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) reveal(entry.target);
-                    });
-                }, { threshold: 0 });
-
-                elements.forEach(el => observer.observe(el));
-
-                setTimeout(() => {
-                    elements.forEach(el => {
-                        if (el.classList.contains("is-visible")) return;
-                        const rect = el.getBoundingClientRect();
-                        if (rect.top < window.innerHeight && rect.bottom > 0) reveal(el);
-                    });
-                }, 300);
-            }
-
-            // 2. Filter Buttons Interactivity
+            // 1. Filter Buttons Interactivity
             const filterBtns = document.querySelectorAll(".filter-btn");
             const cards = document.querySelectorAll("#learnGrid .card-link");
 
@@ -344,6 +280,8 @@
             }
         });
     </script>
+
+    <script src="anim.js" defer></script>
 </body>
 
 </html>

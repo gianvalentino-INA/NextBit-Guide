@@ -9,7 +9,7 @@
 
     <!-- STYLESHEETS -->
     <link rel="stylesheet" href="../../styles.css">
-    <link rel="stylesheet" href="claude.css">
+    <link rel="stylesheet" href="../tutorial.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
         rel="stylesheet">
@@ -17,47 +17,8 @@
 
 <body>
 
-    <!-- FLOATING GLASS NAVBAR -->
-    <header class="glass-dock">
-        <nav>
-            <input type="checkbox" id="menu-toggle" class="menu-toggle" hidden>
-
-            <div class="navbar-left">
-                <label for="menu-toggle" class="menu-btn" aria-label="Toggle Navigation Menu">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="3" y1="12" x2="21" y2="12"></line>
-                        <line x1="3" y1="6" x2="21" y2="6"></line>
-                        <line x1="3" y1="18" x2="21" y2="18"></line>
-                    </svg>
-                </label>
-
-                <a href="../../index.html" class="logo-link">
-                    <img src="../../Logo/logo.png" alt="NextBit Logo" class="navbar-logo">
-                </a>
-
-                <ul class="navbar-links">
-                    <li><a href="../../index.html" class="navbar-link">Home</a></li>
-                    <li><a href="../../learn.html" class="navbar-link active">Learn</a></li>
-                    <li><a href="../../Store/store.html" class="navbar-link">Store</a></li>
-                    <li><a href="../../chatbot.html" class="navbar-link">Chatbot</a></li>
-                    <li><a href="../../about.html" class="navbar-link">About</a></li>
-                </ul>
-            </div>
-
-            <div class="navbar-action">
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSePyFmZLFE-JLAPPpzzbfqEi7tIMhIK_mMEFpfXV8yfVe1FYw/viewform"
-                    class="submit-btn" target="_blank" rel="noopener">Submit</a>
-                <a href="../../learn.html" class="navbar-icon" aria-label="Search">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="11" cy="11" r="8"></circle>
-                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                    </svg>
-                </a>
-            </div>
-        </nav>
-    </header>
+    <!-- NAVBAR PLACEHOLDER (injected by nav.js) -->
+    <div id="nav-placeholder"></div>
 
     <!-- MAIN TUTORIAL CONTAINER -->
     <main class="tutorial-page-container">
@@ -347,6 +308,7 @@ export ANTHROPIC_DEFAULT_HAIKU_MODEL="openrouter/free"</code></pre>
 
     <!-- FOOTER SECTION -->
     <div id="footer-placeholder"></div>
+    <script src="../../nav.js" defer></script>
     <script src="../../footer.js" defer></script>
     <script src="../recommendations.js" defer></script>
 

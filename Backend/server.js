@@ -58,8 +58,6 @@ const chatLimiter = rateLimit({
     }
 });
 
-const AI_MODELS = ["openrouter/free"];
-
 app.post('/api/chat', chatLimiter, async (req, res) => {
     try {
         let { userMessage } = req.body;
@@ -107,53 +105,49 @@ NOT ON THIS SITE / DO NOT MENTION:
 
         let replyText = null;
 
-        for (const model of AI_MODELS) {
-            try {
-                const response = await fetch(
-                    "https://openrouter.ai/api/v1/chat/completions",
-                    {
-                        method: "POST",
-                        headers: {
-                            "Authorization": `Bearer ${process.env.AI_API_KEY}`,
-                            "Content-Type": "application/json",
-                            "HTTP-Referer":
-                                process.env.SITE_URL ||
-                                `http://localhost:${process.env.PORT || 1140}`,
-                            "X-Title": "NextBit AI Assistant"
-                        },
-                        body: JSON.stringify({
-                            model: model,
-                            messages: [
-                                {
-                                    role: "system",
-                                    content: systemPrompt
-                                },
-                                {
-                                    role: "user",
-                                    content: userMessage
-                                }
-                            ],
-                            max_tokens: 700,
-                            temperature: 0.3
-                        })
-                    }
+        try {
+            const response = await fetch(
+                "https://openrouter.ai/api/v1/chat/completions",
+                {
+                    method: "POST",
+                    headers: {
+                        "Authorization": `Bearer ${process.env.AI_API_KEY}`,
+                        "Content-Type": "application/json",
+                        "HTTP-Referer":
+                            process.env.SITE_URL ||
+                            `http://localhost:${process.env.PORT || 1140}`,
+                        "X-Title": "NextBit AI Assistant"
+                    },
+                    body: JSON.stringify({
+                        model: "openrouter/free",
+                        messages: [
+                            {
+                                role: "system",
+                                content: systemPrompt
+                            },
+                            {
+                                role: "user",
+                                content: userMessage
+                            }
+                        ],
+                        max_tokens: 700,
+                        temperature: 0.3
+                    })
+                }
+            );
+
+            const data = await response.json();
+
+            if (!response.ok) {
+                console.error(
+                    `[OpenRouter Error] Status ${response.status}:`,
+                    data
                 );
 
-                const data = await response.json();
-
-                if (!response.ok) {
-                    console.error(
-                        `[OpenRouter Error] Status ${response.status}:`,
-                        data
-                    );
-
-                    replyText =
-                        `OpenRouter Error (${response.status}): ` +
-                        `${data.error?.message || "API request rejected"}`;
-
-                    break;
-                }
-
+                replyText =
+                    `OpenRouter Error (${response.status}): ` +
+                    `${data.error?.message || "API request rejected"}`;
+            } else {
                 const candidateReply =
                     data.choices?.[0]?.message?.content;
 
@@ -162,17 +156,16 @@ NOT ON THIS SITE / DO NOT MENTION:
                     !candidateReply.includes("User Safety:")
                 ) {
                     replyText = candidateReply;
-                    break;
                 }
-            } catch (err) {
-                console.error(
-                    `Model ${model} fetch failed:`,
-                    err.message
-                );
-
-                replyText =
-                    `Network error connecting to OpenRouter: ${err.message}`;
             }
+        } catch (err) {
+            console.error(
+                `OpenRouter fetch failed:`,
+                err.message
+            );
+
+            replyText =
+                `Network error connecting to OpenRouter: ${err.message}`;
         }
 
         if (!replyText) {
@@ -198,28 +191,10 @@ NOT ON THIS SITE / DO NOT MENTION:
 const PRODUCT_CATALOG = {
     p1: {
         id: "p1",
-        title: "SSH Terminal Hardener v1.0",
-        category: "Desktop Apps",
+        title: "Premium Mockup Collection",
+        category: "Template",
         price: 50000,
         formattedPrice: "Rp 50.000",
-        available: true
-    },
-
-    p2: {
-        id: "p2",
-        title: "Telegram SSH Alert Bot Script",
-        category: "Scripts & Automation",
-        price: 25000,
-        formattedPrice: "Rp 25.000",
-        available: true
-    },
-
-    p3: {
-        id: "p3",
-        title: "MikroTik Router Setup Config Pack",
-        category: "Scripts & Automation",
-        price: 35000,
-        formattedPrice: "Rp 35.000",
         available: true
     }
 };
