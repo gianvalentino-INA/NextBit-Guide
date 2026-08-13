@@ -1,0 +1,221 @@
+# Privacy Policy
+
+**Last Updated: August 13, 2026**
+
+## 1. Introduction
+
+Welcome to **NextBit**, also referred to as **NextBit IT Solution** ("NextBit," "we," "us," or "our").
+
+This Privacy Policy explains how NextBit collects, uses, stores, and handles personal information when you visit or use our website, contact us, submit a form, purchase a product, or use our IT and digital services.
+
+NextBit is a student-run freelance IT service based in **Balikpapan, Indonesia**.
+
+By using our website or Services, you acknowledge the practices described in this Privacy Policy.
+
+## 2. Information We Collect
+
+We aim to collect only information reasonably necessary to provide our Services and communicate with customers.
+
+Depending on how you interact with NextBit, we may collect the following information.
+
+### 2.1 Information You Provide Directly
+
+You may voluntarily provide information when you:
+
+- Contact us;
+- Request an IT service;
+- Purchase a product;
+- Submit the Guide form;
+- Request support;
+- Communicate with us through email or WhatsApp; or
+- Otherwise communicate with NextBit.
+
+This information may include:
+
+- Your name;
+- Email address;
+- Social media account or profile information;
+- Information about your requested service;
+- Information contained in messages or support requests; and
+- Other information you voluntarily provide.
+
+### 2.2 Guide Submission Information
+
+If you submit information through our Guide-related form, we may request information such as your **name, email address, and social media information**.
+
+This information is used for purposes such as processing the submission, contacting you regarding the submission, and providing the requested Guide or related service.
+
+We do not require users to create a general account to browse or use the website.
+
+### 2.3 Purchase and Payment Information
+
+When you purchase products or services, information related to the transaction may be processed, including:
+
+- Product or service purchased;
+- Order information;
+- Transaction status;
+- Payment status; and
+- Information necessary to identify or confirm a transaction.
+
+Payments may be processed through **Midtrans** or another payment provider made available by NextBit.
+
+NextBit does **not intentionally store full payment card numbers or complete card credentials**. Payment information may be collected and processed directly by the applicable payment provider according to its own privacy policy and terms.
+
+## 3. Information Collected Automatically
+
+When you visit our website, certain technical information may be automatically recorded by our website infrastructure or hosting providers.
+
+This may include:
+
+- IP address;
+- Browser type;
+- Device information;
+- Basic server logs;
+- Requested pages or resources;
+- Date and time of requests; and
+- Basic information necessary for website security and operation.
+
+This information may be used to maintain website functionality, prevent abuse, investigate security incidents, and troubleshoot technical problems.
+
+We do not intentionally collect unnecessary personal information merely for browsing the Site.
+
+## 4. How We Use Information
+
+We may use personal information to:
+
+- Provide requested IT services;
+- Process and fulfill purchases;
+- Deliver digital products;
+- Respond to questions and support requests;
+- Communicate with customers;
+- Process Guide submissions;
+- Confirm payments and transactions;
+- Schedule on-site or remote services;
+- Maintain and secure our website;
+- Detect and prevent fraud, abuse, or unauthorized activity;
+- Resolve disputes and investigate complaints;
+- Maintain appropriate business records; and
+- Comply with applicable legal obligations.
+
+We will not use personal information for purposes materially unrelated to the reason it was collected without an appropriate legal basis or, where required, your consent.
+
+## 5. Email and Communications
+
+We may use your email address to:
+
+- Respond to inquiries;
+- Deliver purchased digital products;
+- Provide requested services;
+- Confirm or communicate about transactions;
+- Provide customer support; and
+- Send important service-related communications.
+
+We do not intend to use your email address for unrelated promotional spam.
+
+You may contact us if you believe you are receiving unwanted communications from NextBit.
+
+## 6. WhatsApp and Social Media
+
+If you contact NextBit through WhatsApp or another social media platform, information you provide through that platform may be processed by the relevant platform according to its own privacy policy.
+
+NextBit does not control how third-party social media platforms collect or process information.
+
+We may use information provided through these channels to respond to your request, provide customer support, or coordinate services.
+
+## 7. Third-Party Service Providers
+
+NextBit may rely on third-party providers to operate the website and provide Services.
+
+These may include providers for:
+
+- Payment processing;
+- Email delivery;
+- Cloud storage;
+- Website hosting;
+- Infrastructure and security; and
+- Other technical services required to operate NextBit.
+
+For example, digital products may be stored or delivered using cloud storage infrastructure such as **Backblaze B2**.
+
+Third-party providers may process information according to their own terms and privacy policies.
+
+NextBit does not sell your personal information to third parties.
+
+## 8. Data Security
+
+We take reasonable measures to protect personal information against unauthorized access, misuse, alteration, disclosure, or destruction.
+
+However, no website, internet transmission, computer system, or electronic storage system can be guaranteed to be completely secure.
+
+You should avoid sending passwords, payment credentials, or other highly sensitive information through ordinary email, contact forms, or social media unless specifically requested through an appropriate secure process.
+
+## 9. Data Retention
+
+We retain personal information only for as long as reasonably necessary for the purposes described in this Privacy Policy, including providing Services, maintaining transaction records, resolving disputes, preventing fraud, and satisfying applicable legal or accounting requirements.
+
+The exact retention period may vary depending on the type of information and the reason it was collected.
+
+When information is no longer reasonably required, we may delete, anonymize, or otherwise securely dispose of it where appropriate.
+
+## 10. Your Rights and Requests
+
+Depending on applicable law, you may have rights concerning your personal information, including the ability to:
+
+- Ask what personal information we hold about you;
+- Request correction of inaccurate information;
+- Request deletion of information where legally applicable;
+- Ask about how your information is being used; and
+- Raise concerns about our handling of your personal information.
+
+To make a privacy-related request, contact:
+
+**Email:** nextbit255@gmail.com
+
+We may need to verify your identity or request additional information before processing certain requests.
+
+Some information may need to be retained where required by law or where there is a legitimate reason to retain it, such as transaction records or dispute documentation.
+
+## 11. Cookies and Similar Technologies
+
+NextBit may use necessary cookies or similar technologies required for basic website functionality, security, or technical operation.
+
+If we introduce analytics, advertising technologies, or other non-essential tracking technologies in the future, we may update this Privacy Policy and, where required, provide appropriate notices or consent mechanisms.
+
+## 12. Children's Privacy
+
+Our Services are not specifically directed toward children.
+
+We do not knowingly request unnecessary personal information from children.
+
+If you believe that a child has provided personal information to us without appropriate authorization, please contact us so that we can review and take appropriate action where necessary.
+
+## 13. Links to Third-Party Websites
+
+Our website may contain links to third-party websites, services, social media platforms, or other resources.
+
+NextBit is not responsible for the privacy practices, content, security, or policies of third-party websites.
+
+You should review the privacy policy of any third-party service before providing personal information to it.
+
+## 14. Changes to This Privacy Policy
+
+We may update this Privacy Policy from time to time to reflect changes to our Services, technology, business practices, or applicable legal requirements.
+
+When we make significant changes, we may update the "Last Updated" date and provide additional notice where appropriate.
+
+Your continued use of the Site after an updated Privacy Policy takes effect means that you acknowledge the updated policy to the extent permitted by applicable law.
+
+## 15. Contact Us
+
+If you have questions, concerns, or requests relating to this Privacy Policy or your personal information, contact us at:
+
+**NextBit / NextBit IT Solution**  
+**Location:** Balikpapan, Indonesia  
+**Email:** nextbit255@gmail.com  
+**WhatsApp:** 085129741543
+
+We will make reasonable efforts to review and respond to privacy-related requests.
+
+---
+
+**End of Privacy Policy**

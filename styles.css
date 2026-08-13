@@ -379,94 +379,8 @@ time {
   margin-top: auto;
 }
 
-/* ==========================================================================
-   6. EVENLY SPACED DESKTOP & MOBILE FOOTER
-   ========================================================================== */
-footer {
-  background-color: #161817;
-  color: var(--gray-50);
-  padding: 60px 24px 32px 24px;
-  margin-top: 80px;
-}
+/* Note: Footer styles have been moved to footer.css to avoid duplication */
 
-.footer-top {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 60px;
-}
-
-.foot-brand {
-  max-width: 320px;
-}
-
-.foot-logo img {
-  height: 64px;
-  width: auto;
-  margin-bottom: -12px;
-  margin-top: -25px;
-  margin-left: -20px;
-}
-
-.foot-tagline {
-  color: var(--gray-500);
-  font-size: 14px;
-  line-height: 1.6;
-}
-
-/* Spreads columns evenly across remaining footer width */
-.foot-columns {
-  display: flex;
-  flex: 1;
-  justify-content: space-between;
-  max-width: 650px;
-}
-
-.foot-col h4 {
-  color: var(--gray-50);
-  font-size: 15px;
-  font-weight: 600;
-  margin-bottom: 16px;
-
-  /* Matches category tag color accents */
-  border-bottom: 2px solid var(--mint-300);
-  display: inline-block;
-  padding-bottom: 4px;
-}
-
-.foot-col ul {
-  list-style: none;
-}
-
-.foot-col li {
-  margin-bottom: 10px;
-}
-
-.foot-col a {
-  color: var(--gray-500);
-  text-decoration: none;
-  font-size: 14px;
-  transition: color 0.2s ease;
-}
-
-.foot-col a:hover {
-  color: var(--mint-300);
-}
-
-.footer-divider {
-  max-width: 1200px;
-  margin: 40px auto 24px auto;
-  border: 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.footer-copyright {
-  text-align: center;
-  font-size: 13px;
-  color: var(--gray-500);
-}
 
 /* ==========================================================================
    7. MOBILE RESPONSIVE
@@ -538,28 +452,5 @@ footer {
     padding: 12px 24px;
   }
 
-  /* Responsive Footer Stacking & Layout */
-  .footer-top {
-    flex-direction: column;
-    gap: 40px;
-  }
 
-  .foot-brand {
-    max-width: 100%;
-  }
-
-  .foot-columns {
-    width: 100%;
-    max-width: 100%;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 32px;
-  }
-}
-
-@media (max-width: 480px) {
-  .foot-columns {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
 }

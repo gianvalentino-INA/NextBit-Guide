@@ -1,0 +1,379 @@
+# Terms of Service
+
+**Last Updated: August 13, 2026**
+
+## 1. Introduction
+
+Welcome to **NextBit**, also referred to as **NextBit IT Solution** ("NextBit," "we," "us," or "our").
+
+These Terms of Service ("Terms") govern your access to and use of the NextBit website, services, and products (collectively, the "Services").
+
+NextBit is a student-run freelance IT service based in **Balikpapan, Indonesia**. We provide IT support, computer and software setup, networking services, website development and design, and selected digital products.
+
+By accessing our website, contacting us, purchasing a product, booking a service, or otherwise using our Services, you agree to these Terms. If you do not agree with these Terms, please do not use our Services.
+
+These Terms should be read together with our Privacy Policy and any separate agreement, quotation, invoice, or statement of work that applies to a particular service.
+
+## 2. Our Services
+
+NextBit may provide the following services:
+
+- Computer and device setup and configuration
+- Windows installation and configuration
+- Software installation and configuration
+- Network installation, configuration, and troubleshooting
+- MikroTik and related network configuration
+- Remote IT support
+- On-site IT support
+- Website development
+- Website design
+- Digital products, including scripts, templates, assets, and other technology-related materials
+
+The exact scope, price, schedule, and deliverables of custom work may be agreed upon separately with the customer.
+
+For custom projects, NextBit may require a separate written or electronic agreement, quotation, statement of work, or other confirmation before work begins. If a separate agreement conflicts with these Terms regarding the specific project, the project agreement will control for that project.
+
+We reserve the right to refuse a request or service that we reasonably believe is unlawful, unsafe, technically inappropriate, outside our capabilities, or inconsistent with these Terms.
+
+## 3. Service Appointments and Cancellation
+
+For on-site or remote services requiring a scheduled appointment, customers may request cancellation or rescheduling.
+
+Where reasonably possible, cancellation or rescheduling requests should be made at least **6 to 12 hours before the scheduled service**.
+
+Late cancellations may affect eligibility for a refund or may result in reasonable charges where costs or work have already been incurred.
+
+If NextBit needs to cancel or reschedule a service, we will make reasonable efforts to notify the customer and arrange an alternative time or provide an appropriate refund where applicable.
+
+## 4. Customer Responsibilities
+
+Customers are responsible for:
+
+- Providing accurate information required to perform the requested service;
+- Providing lawful access to devices, systems, accounts, networks, or other resources where necessary;
+- Obtaining any required licenses or permissions for software, accounts, content, or systems they ask NextBit to install or configure;
+- Maintaining backups of important files and data before IT work is performed;
+- Informing NextBit about known hardware, software, security, or data problems before work begins; and
+- Following reasonable instructions provided by NextBit during or after a service.
+
+Customers should maintain their own backups. Unless expressly agreed otherwise in writing, NextBit does not provide guaranteed data recovery or backup services.
+
+## 5. Service Support Period
+
+For ordinary IT services, NextBit may provide a limited **7-day support period** following completion of the relevant service.
+
+During this period, customers may contact NextBit regarding problems that are reasonably related to the work performed.
+
+This support period does not automatically cover:
+
+- New problems unrelated to the original service;
+- Problems caused by the customer or another person after the service;
+- Hardware failure;
+- Malware or security incidents occurring after the service;
+- Changes made to the device, software, or network after the service;
+- Software updates or third-party changes;
+- Misuse or improper operation;
+- Problems that existed before NextBit began the service; or
+- Services or problems outside the original agreed scope.
+
+After the support period expires, further assistance may be treated as a new service and may be subject to additional charges.
+
+Nothing in this section removes any rights or remedies that cannot legally be excluded under applicable law.
+
+## 6. Website Development and Design
+
+Website development and design projects are subject to the scope and terms agreed upon with the customer.
+
+Unless otherwise agreed:
+
+- Work begins after the required agreement or confirmation has been accepted;
+- The customer is responsible for providing necessary content, information, credentials, and materials;
+- Delays in receiving required materials or approvals may affect the project schedule;
+- Requests outside the agreed scope may require additional fees;
+- Third-party software, plugins, fonts, themes, APIs, hosting, and other components remain subject to their respective licenses and terms; and
+- NextBit may retain ownership of its reusable code, development methods, templates, frameworks, tools, and general-purpose components that were not created exclusively for the customer.
+
+Ownership or usage rights for a specific completed website may be defined in the applicable project agreement.
+
+Unless the customer requests otherwise, NextBit may identify completed work as part of its portfolio or promotional materials, provided that doing so does not disclose confidential information.
+
+## 7. Digital Products
+
+Digital products may include scripts, templates, design resources, assets, collections, and other downloadable or electronically delivered materials.
+
+Digital products may be delivered through email, download links, cloud storage, or another delivery method selected by NextBit.
+
+Customers are responsible for providing a valid email address or other information necessary to receive their purchase.
+
+### 7.1 Permitted Use
+
+Customers may use purchased digital products only in accordance with the rights and licenses applicable to those products.
+
+Where NextBit has the legal right to grant such permission, customers may use the product for their own permitted personal or project-related purposes.
+
+### 7.2 Prohibited Redistribution
+
+Unless expressly permitted by the applicable license, customers must not:
+
+- Resell a digital product obtained from NextBit;
+- Re-upload or publicly publish the product;
+- Create a public download page containing the product or its bundled files;
+- Mirror the files on public file-sharing services;
+- Distribute the product widely over the internet;
+- Claim ownership of third-party material contained within a product; or
+- Remove licensing or attribution information where such information is required.
+
+Customers may share materials privately with people in their immediate personal or working environment only where that sharing is consistent with the applicable rights and licenses.
+
+Nothing in these Terms grants rights that NextBit does not legally possess. Third-party materials remain subject to their applicable licenses and rights.
+
+### 7.3 Product Removal
+
+NextBit may remove a digital product from its store, discontinue its sale, or make it unavailable for future downloads.
+
+Where a customer has already legitimately purchased or received a product, removal of the product from the store does not automatically require the customer to delete a lawfully obtained copy, subject to applicable third-party rights and licenses.
+
+## 8. Payments and Pricing
+
+Payments for NextBit products and services may be processed through **Midtrans** or another payment method made available at checkout or agreed upon with the customer.
+
+NextBit does not intentionally store customers' full payment card information.
+
+Prices are displayed in Indonesian Rupiah unless otherwise stated.
+
+Prices may change at any time before an order is completed. A price change does not affect an order that has already been paid and confirmed, except where correction is required because of an obvious pricing or system error.
+
+Customers are responsible for providing accurate payment and billing information.
+
+Payment transactions may also be subject to the terms and policies of the applicable payment provider.
+
+## 9. Refunds and Cancellations
+
+Refund eligibility depends on the type and status of the purchase.
+
+### 9.1 Digital Products
+
+Because digital products can generally be accessed or copied after delivery, digital products are generally **non-refundable after successful delivery or access**, except where:
+
+- The product is materially defective;
+- The product is materially different from its description;
+- NextBit is unable to provide the purchased product; or
+- A refund is otherwise required by applicable law.
+
+Customers should contact NextBit as soon as reasonably possible if they experience a problem with a digital purchase.
+
+### 9.2 IT Services
+
+For services that have not yet started, customers may request cancellation subject to the appointment cancellation requirements in these Terms.
+
+Once work has started, refunds may be limited depending on the amount of work already performed, expenses incurred, and the applicable project agreement.
+
+### 9.3 Custom Projects
+
+Refunds for website development, design, or other custom projects will generally be handled according to the applicable project agreement.
+
+Where NextBit is unable to complete a project for reasons within NextBit's control, NextBit will work with the customer to determine an appropriate remedy, which may include a refund for work that has not been completed.
+
+## 10. Intellectual Property
+
+NextBit's original website content, branding, original code, designs, text, graphics, and other materials created by NextBit remain the property of NextBit unless otherwise agreed.
+
+Third-party materials used or referenced by NextBit remain the property of their respective owners and are subject to their applicable licenses.
+
+Nothing in these Terms transfers ownership of third-party intellectual property to NextBit or to a customer.
+
+Customers must not use NextBit's name, logo, branding, or original materials in a manner that falsely suggests sponsorship, endorsement, partnership, or ownership without permission.
+
+## 11. Copyright Infringement Notices
+
+NextBit respects intellectual property rights.
+
+If you believe material made available through our Services infringes your copyright or other intellectual property rights, please contact us with sufficient information for us to identify:
+
+1. The copyrighted work or other protected material;
+2. The material that you believe is infringing;
+3. Where the material can be found;
+4. Your contact information; and
+5. Any other information reasonably necessary for us to evaluate the complaint.
+
+You may submit copyright-related complaints to:
+
+**Email:** nextbit255@gmail.com
+
+NextBit may review, restrict, remove, or disable access to material that is reasonably believed to infringe applicable rights.
+
+## 12. Prohibited Uses
+
+You agree not to use the Site or Services:
+
+- For unlawful activities;
+- To commit fraud or facilitate fraudulent transactions;
+- To use stolen payment information;
+- To distribute malware or other harmful software;
+- To attempt unauthorized access to systems, accounts, servers, or networks;
+- To interfere with or disrupt NextBit's website or infrastructure;
+- To abuse or exploit vulnerabilities in our systems;
+- To send spam or malicious communications;
+- To impersonate NextBit or another person;
+- To infringe intellectual property rights;
+- To redistribute digital products in violation of applicable licenses or these Terms;
+- To publicly re-upload or mirror purchased digital products without permission;
+- To abuse refunds or payment chargebacks; or
+- To use our Services in a manner that violates applicable Indonesian law or other applicable law.
+
+NextBit may suspend or refuse service where there is reasonable evidence of prohibited activity.
+
+## 13. Third-Party Services
+
+NextBit may use third-party services to operate its website and provide products or services, including payment processors, hosting providers, cloud storage providers, email services, and other technology providers.
+
+Third-party services are subject to their own terms and policies.
+
+NextBit is not responsible for failures, outages, policy changes, or other circumstances caused solely by third-party providers, although we will make reasonable efforts to address problems affecting a customer's purchase or service.
+
+## 14. Privacy
+
+NextBit may collect information necessary to communicate with customers, provide Services, process orders, deliver digital products, and respond to inquiries.
+
+Depending on how you interact with NextBit, this may include information such as:
+
+- Email address;
+- Name;
+- Social media information voluntarily submitted through specific forms;
+- Information provided when requesting a service;
+- Order and transaction information; and
+- Basic technical or security information required to operate the website.
+
+NextBit does not currently require a general user account to use the website.
+
+For more information about how personal information is handled, please refer to the NextBit Privacy Policy.
+
+## 15. Disclaimer of Warranties
+
+To the fullest extent permitted by applicable law, the Site and Services are provided on an "as available" basis.
+
+NextBit does not guarantee that:
+
+- The website will always be available or uninterrupted;
+- Every service will resolve every technical issue;
+- Third-party software, hardware, hosting, or network services will continue to operate as expected;
+- Downloaded files will be compatible with every device or environment; or
+- Services will satisfy requirements that were not included in the agreed scope.
+
+NextBit will make reasonable efforts to provide Services professionally and according to the agreed scope.
+
+Nothing in these Terms excludes warranties or consumer rights that cannot legally be excluded under applicable law.
+
+## 16. Limitation of Liability
+
+To the fullest extent permitted by applicable law, NextBit will not be responsible for indirect, incidental, special, consequential, or unforeseeable losses arising from the use of the Site or Services.
+
+This may include losses such as lost profits, lost business opportunities, loss of anticipated savings, or loss of data, except where such limitation is prohibited by applicable law.
+
+To the fullest extent permitted by applicable law, NextBit's aggregate liability arising from a particular product or service will not exceed the amount actually paid by the customer for that particular product or service.
+
+This limitation does not apply to liability that cannot legally be excluded or limited under applicable law, including any mandatory consumer rights or other legally protected rights.
+
+## 17. Customer Indemnification
+
+To the extent permitted by applicable law, you agree to be responsible for claims, losses, damages, or reasonable costs arising directly from:
+
+- Your unlawful use of the Services;
+- Your violation of these Terms;
+- Your infringement of another person's intellectual property rights; or
+- Your misuse of products, services, accounts, or systems provided by NextBit.
+
+This section does not require you to indemnify NextBit for losses caused by NextBit's own unlawful conduct or liability that cannot legally be transferred to you.
+
+## 18. Suspension and Termination
+
+NextBit may suspend, restrict, or terminate access to Services where reasonably necessary, including where a customer:
+
+- Violates these Terms;
+- Engages in fraudulent or unlawful activity;
+- Abuses payment or refund systems;
+- Attempts to compromise NextBit's systems;
+- Repeatedly infringes intellectual property rights; or
+- Uses the Services in a manner that creates a significant risk to NextBit or others.
+
+Termination does not remove obligations that by their nature should continue after termination, including payment obligations, intellectual property restrictions, disclaimers, limitations of liability, and dispute provisions.
+
+## 19. Dispute Resolution
+
+If a dispute arises between you and NextBit concerning the Site, Services, products, or these Terms, both parties should first attempt to resolve the matter through **good-faith informal negotiations**.
+
+The parties will attempt to resolve the dispute for a period of **30 days** after one party provides written notice of the dispute.
+
+If the dispute cannot be resolved through informal negotiations, the parties intend to resolve the dispute through arbitration where a valid written or legally effective electronic arbitration agreement exists and arbitration is permitted by applicable law.
+
+The intended arbitration arrangements are:
+
+- **Country:** Indonesia
+- **Location:** Balikpapan, East Kalimantan
+- **Language:** Indonesian
+- **Number of arbitrators:** One
+
+The arbitrator and applicable arbitration procedure will be selected or determined in accordance with the parties' agreement and applicable Indonesian law.
+
+Nothing in this section prevents a party from exercising rights or seeking remedies that cannot legally be waived or restricted by an arbitration agreement.
+
+## 20. Governing Law
+
+These Terms are governed by the laws of the **Republic of Indonesia**, without regard to conflict-of-law principles.
+
+Nothing in these Terms is intended to remove or reduce rights or protections that cannot legally be excluded under applicable Indonesian law.
+
+## 21. Time Limit for Claims
+
+To the extent permitted by applicable law, any claim relating to a purchase, service, or use of the Site should be raised within **six (6) months** after the event giving rise to the claim.
+
+This limitation does not apply where a longer period is required by applicable law or where the limitation cannot legally be enforced.
+
+## 22. Force Majeure
+
+NextBit will not be responsible for delays or failures caused by circumstances beyond its reasonable control, including major internet or infrastructure outages, natural disasters, government actions, war, civil unrest, widespread cyber incidents, third-party service failures, or other events that could not reasonably have been prevented or overcome.
+
+## 23. Electronic Communications
+
+You agree that communications between you and NextBit may take place electronically, including through email, website forms, messaging services, electronic invoices, and other electronic means.
+
+Where legally valid, electronic communications and agreements may be used to document transactions, approvals, service arrangements, and other interactions between you and NextBit.
+
+## 24. Changes to These Terms
+
+NextBit may update these Terms from time to time.
+
+For material changes, we intend to provide reasonable notice, where practical, before the changes take effect.
+
+The updated version will state its effective or "Last Updated" date.
+
+Your continued use of the Site or Services after updated Terms take effect constitutes acceptance of the updated Terms to the extent permitted by applicable law.
+
+## 25. Severability
+
+If any provision of these Terms is determined to be invalid, unlawful, or unenforceable, that provision will be limited or removed only to the extent necessary, and the remaining provisions will continue to apply.
+
+## 26. No Waiver
+
+If NextBit does not immediately enforce a provision of these Terms, that does not mean NextBit has permanently waived its right to enforce that provision later.
+
+## 27. Entire Agreement
+
+These Terms, the Privacy Policy, and any applicable service agreement, quotation, invoice, or statement of work constitute the agreement between you and NextBit concerning the applicable Site, product, or service.
+
+Where a specific written or electronic project agreement applies, that agreement may contain additional terms specific to the project.
+
+## 28. Contact
+
+If you have questions, complaints, refund requests, copyright concerns, or other issues relating to NextBit, you may contact us through:
+
+**NextBit / NextBit IT Solution**  
+**Location:** Balikpapan, Indonesia  
+**Email:** nextbit255@gmail.com  
+**WhatsApp:** 085129741543
+
+We encourage customers to contact us first so that we have a reasonable opportunity to resolve issues directly and in good faith.
+
+---
+
+**End of Terms of Service**
