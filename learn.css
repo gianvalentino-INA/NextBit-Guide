@@ -24,32 +24,32 @@
     background: rgba(255, 255, 255, 0.08);
     border: 1px solid rgba(255, 255, 255, 0.14);
     border-radius: 999px;
-    padding: 6px 14px;
-    gap: 8px;
+    padding: 4px 10px;
+    gap: 6px;
+    height: 36px;
+    color: var(--gray-50);
     transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-    width: 200px;
+    width: 140px;
     min-width: 0;
-    /* Allows container to shrink inside flex parents */
 }
 
 .nav-search-form:focus-within {
     background: rgba(255, 255, 255, 0.14);
     border-color: var(--mint-300);
     box-shadow: 0 0 12px rgba(95, 221, 172, 0.25);
-    width: 240px;
-    /* Subtle smooth expansion on focus */
+    width: 180px;
 }
 
 .nav-search-icon {
-    width: 16px;
-    height: 16px;
-    color: var(--gray-500);
+    width: 14px;
+    height: 14px;
+    color: var(--gray-50);
     flex-shrink: 0;
     transition: color 0.25s ease;
 }
 
 .nav-search-form:focus-within .nav-search-icon {
-    color: var(--mint-300);
+    color: var(--gray-50);
 }
 
 .nav-search-input {
@@ -227,10 +227,10 @@
     .nav-search-form {
         display: flex;
         flex: 1 1 auto;
-        max-width: 160px;
-        /* Reduced to fit mobile navbar */
-        padding: 5px 10px;
-        gap: 6px;
+        max-width: 140px;
+        padding: 3px 8px;
+        gap: 4px;
+        height: 32px;
     }
 
     .filter-container {
@@ -255,14 +255,13 @@
 /* Extra small mobile screens (iPhone / Android portrait) */
 @media (max-width: 480px) {
     .nav-search-form {
-        max-width: 110px;
-        /* Tight search box size so submit button stays inside */
-        padding: 4px 8px;
+        max-width: 100px;
+        padding: 2px 6px;
+        height: 30px;
     }
 
     .nav-search-form:focus-within {
         width: 130px;
-        /* Controlled expansion on phone focus */
     }
 
     .nav-search-input {
