@@ -364,3 +364,46 @@
 .cart-bounce {
     animation: cartPulse 0.4s ease-in-out;
 }
+
+/* --------------------------------------------------------------------------
+   4. SEARCH, LOADING & UNAVAILABLE STATES
+   -------------------------------------------------------------------------- */
+.store-search-input {
+    width: 100%;
+    max-width: 420px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 16px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    background: rgba(255, 255, 255, 0.06);
+    color: #FFFFFF;
+    font-family: inherit;
+    font-size: 13px;
+    outline: none;
+}
+
+.store-search-input:focus {
+    border-color: rgba(95, 221, 172, 0.6);
+    box-shadow: 0 0 12px rgba(95, 221, 172, 0.2);
+}
+
+.store-search-input::placeholder {
+    color: var(--gray-500);
+}
+
+.store-loading {
+    text-align: center;
+    color: var(--gray-500);
+    padding: 40px 0;
+    grid-column: 1 / -1;
+}
+
+.product-unavailable {
+    text-align: center;
+    color: var(--gray-500);
+    padding: 10px 0;
+    font-size: 13px;
+    font-weight: 600;
+}

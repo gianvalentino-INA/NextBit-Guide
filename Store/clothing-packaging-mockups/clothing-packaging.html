@@ -124,7 +124,7 @@
 
                     <!-- Price Banner Container (Rupiah) -->
                     <div class="price-banner-box">
-                        <span class="discount-price">Rp 50.000</span>
+                        <span class="discount-price" id="priceBanner">Rp 1.000</span>
                     </div>
                 </div>
 
@@ -193,6 +193,26 @@
     <!-- JS FOR GALLERY SLIDER, SWIPE, SHARE, QUANTITY & LOCALSTORAGE CART -->
     <script>
         let currentIndex = 0;
+        const PRODUCT_ID = "p1";
+        let catalogProduct = null;
+
+        // Pull the price from the server catalog (single source of truth)
+        // so this page always matches what checkout actually charges.
+        async function loadCatalogPrice() {
+            try {
+                const res = await fetch('/api/products');
+                const data = await res.json();
+                if (res.ok && Array.isArray(data.products)) {
+                    catalogProduct = data.products.find(p => p.id === PRODUCT_ID) || null;
+                }
+            } catch (_) { /* fall back to the static values in the HTML */ }
+
+            if (catalogProduct) {
+                const banner = document.getElementById('priceBanner');
+                if (banner) banner.textContent = catalogProduct.formattedPrice;
+            }
+        }
+
         const imageList = [
             "../../Image/mockup-thumbnail.png",
             "../../Image/shirt-cup-thumbnail.png",
@@ -303,14 +323,12 @@
             const qtyInput = document.getElementById('qtyInput');
             const qty = qtyInput ? parseInt(qtyInput.value) : 1;
 
-            // Matches the cart format used by store.html (id, title, price, image, qty)
-            const product = {
-                id: "p1",
-                title: "Premium Mockup Collection",
-                price: 50000,
-                image: "../../Image/mockup-thumbnail.png",
-                qty: qty
-            };
+            // Matches the cart format used by store.html (id, title, price, image, qty).
+            // Price/title come from the server catalog so they can never diverge
+            // from what checkout actually charges.
+            const product = catalogProduct
+                ? { id: catalogProduct.id, title: catalogProduct.title, price: catalogProduct.price, image: catalogProduct.image, qty }
+                : { id: PRODUCT_ID, title: "Premium Mockup Collection", price: 1000, image: "../../Image/mockup-thumbnail.png", qty };
 
             let cart = getCart();
             const existingIndex = cart.findIndex(item => item.id === product.id);
@@ -351,7 +369,10 @@
             setTimeout(() => { document.body.removeChild(toast); }, 3000);
         }
 
-        document.addEventListener('DOMContentLoaded', updateCartBadge);
+        document.addEventListener('DOMContentLoaded', () => {
+            loadCatalogPrice();
+            updateCartBadge();
+        });
     </script>
 </body>
 

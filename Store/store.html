@@ -28,67 +28,17 @@
             </p>
         </section>
 
-        <!-- Category Filters -->
+        <!-- Category Filters (built dynamically from GET /api/products) -->
         <section class="filter-section animate-on-scroll">
-            <div class="filter-container">
-                <button class="filter-btn active" data-filter="all">
-                    <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
-                    <span>All Products</span>
-                </button>
-                <button class="filter-btn" data-filter="template">
-                    <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
-                    <span>Template</span>
-                </button>
-                <button class="filter-btn" data-filter="scripts">
-                    <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
-                    <span>Scripts & Automation</span>
-                </button>
-            </div>
+            <div class="filter-container" id="filterContainer"></div>
+
+            <input type="text" id="cardSearchInput" class="store-search-input"
+                placeholder="Search products...">
         </section>
 
-        <!-- Product Grid -->
+        <!-- Product Grid (rendered from GET /api/products) -->
         <section class="learn-grid-section">
-            <div class="learn-grid" id="storeGrid">
-
-                <!-- Product Card 1 -->
-                <article class="card card--dark product-card animate-on-scroll" data-category="template" data-id="p1">
-                    <a href="clothing-packaging-mockups/clothing-packaging.html" class="product-card-link">
-                        <div class="card-img-wrapper store-img-wrapper">
-                            <img src="../Image/mockup-thumbnail.png" alt="Collection Of Photoshop Mockup Template"
-                                class="card-img">
-                        </div>
-                        <div class="card-content">
-                            <div class="card-meta">
-                                <span class="card-category">Template</span>
-                                <span class="product-price">Rp 50.000</span>
-                            </div>
-                            <h3 class="card-title store-card-title">Premium Mockup Collection</h3>
-                            <p class="card-desc">Carefully collected mockups for your design needs.</p>
-                        </div>
-                    </a>
-                    <div class="product-card-footer">
-                        <div class="product-actions">
-                            <button class="add-cart-btn"
-                                onclick="addToCart('p1', 'Premium Mockup Collection', 50000, '../Image/mockup-thumbnail.png')">
-                                <img src="../Icon/cart.svg" alt="Add to cart" class="cart-icon">
-                            </button>
-                            <button class="buy-now-btn"
-                                onclick="buyNow('p1', 'Premium Mockup Collection', 50000, '../Image/mockup-thumbnail.png')">Buy
-                                Now</button>
-                        </div>
-                    </div>
-                </article>
-
-            </div>
+            <div class="learn-grid" id="storeGrid"></div>
         </section>
 
     </main>
@@ -121,7 +71,11 @@
                 </div>
 
                 <div class="checkout-email-group">
-                    <input type="email" id="customerEmail" placeholder="Enter your email address" required>
+                    <input type="text" id="customerName" placeholder="Your full name" autocomplete="name" required>
+                </div>
+
+                <div class="checkout-email-group">
+                    <input type="email" id="customerEmail" placeholder="Enter your email address" autocomplete="email" required>
                 </div>
 
                 <button class="checkout-btn" onclick="checkoutWithMidtrans()">Buy Now</button>
@@ -137,7 +91,131 @@
     <script src="../anim.js" defer></script>
 
     <script>
+        // ============================================================
+        // PRODUCTS LOADED FROM THE BACKEND (GET /api/products)
+        // The catalog on the server is the single source of truth.
+        // ============================================================
+        let products = {}; // id -> product
         let cart = JSON.parse(localStorage.getItem("nextbit_cart")) || [];
+
+        async function loadProducts() {
+            const grid = document.getElementById("storeGrid");
+            grid.innerHTML = `<p class="store-loading">Loading products...</p>`;
+
+            try {
+                const res = await fetch('/api/products');
+                const data = await res.json();
+
+                if (!res.ok || !Array.isArray(data.products)) {
+                    throw new Error('Failed to load products.');
+                }
+
+                products = {};
+                data.products.forEach(p => { products[p.id] = p; });
+
+                renderProducts();
+                buildFilterButtons();
+            } catch (err) {
+                console.error('Failed to load products:', err);
+                grid.innerHTML =
+                    `<p class="store-loading">Could not load products. Make sure the backend is running.</p>`;
+            }
+        }
+
+        function renderProducts() {
+            const grid = document.getElementById("storeGrid");
+            grid.innerHTML = '';
+
+            Object.values(products).forEach(product => {
+                const categorySlug = String(product.category || '').toLowerCase();
+
+                const actions = product.available
+                    ? `
+                        <div class="product-actions">
+                            <button class="add-cart-btn" onclick="addToCart('${product.id}')">
+                                <img src="/Icon/cart.svg" alt="Add to cart" class="cart-icon">
+                            </button>
+                            <button class="buy-now-btn" onclick="buyNow('${product.id}')">Buy Now</button>
+                        </div>
+                    `
+                    : `<p class="product-unavailable">Currently unavailable</p>`;
+
+                const card = document.createElement('article');
+                card.className = 'card card--dark product-card animate-on-scroll is-visible';
+                card.dataset.category = categorySlug;
+                card.dataset.id = product.id;
+
+                card.innerHTML = `
+                    <a href="${product.detailPath || '#'}" class="product-card-link">
+                        <div class="card-img-wrapper store-img-wrapper">
+                            <img src="${product.image}" alt="${product.title}" class="card-img">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <span class="card-category">${product.category}</span>
+                                <span class="product-price">${product.formattedPrice}</span>
+                            </div>
+                            <h3 class="card-title store-card-title">${product.title}</h3>
+                            <p class="card-desc">${product.description || ''}</p>
+                        </div>
+                    </a>
+                    <div class="product-card-footer">
+                        ${actions}
+                    </div>
+                `;
+
+                grid.appendChild(card);
+            });
+
+            filterAndSearchProducts();
+        }
+
+        // Filter buttons are built from the actual categories in the
+        // catalog, so they can never point to an empty/nonexistent value.
+        function buildFilterButtons() {
+            const container = document.getElementById("filterContainer");
+            container.innerHTML = '';
+
+            const categories = [...new Set(
+                Object.values(products)
+                    .filter(p => p.available)
+                    .map(p => String(p.category || '').toLowerCase())
+                    .filter(Boolean)
+            )];
+
+            const filters = ['all', ...categories];
+
+            filters.forEach((cat, index) => {
+                const btn = document.createElement('button');
+                btn.className = 'filter-btn' + (index === 0 ? ' active' : '');
+                btn.dataset.filter = cat;
+                btn.innerHTML = `
+                    <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <span>${cat === 'all' ? 'All Products' : productCategoryLabel(cat)}</span>
+                `;
+                btn.addEventListener('click', () => {
+                    container.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    filterAndSearchProducts();
+                });
+                container.appendChild(btn);
+            });
+        }
+
+        function productCategoryLabel(slug) {
+            const found = Object.values(products).find(
+                p => String(p.category || '').toLowerCase() === slug
+            );
+            return found ? found.category : slug;
+        }
+
+        // ============================================================
+        // CART (browser-side, informational only)
+        // The checkout amount is always recomputed server-side.
+        // ============================================================
 
         function saveCart() {
             localStorage.setItem("nextbit_cart", JSON.stringify(cart));
@@ -158,41 +236,51 @@
             }
 
             let html = "";
-            let grandTotal = 0;
 
             cart.forEach((item, index) => {
-                const subtotal = item.price * item.qty;
-                grandTotal += subtotal;
+                const catalog = products[item.id];
+                const title = catalog ? catalog.title : item.title;
+                const price = catalog ? catalog.price : (item.price || 0);
+
                 html += `
-            <div class="cart-item">
-                <img src="${item.image}" alt="${item.title}" class="cart-item-img">
-                <div class="cart-item-info">
-                    <h4>${item.title}</h4>
-                    <p class="cart-item-price">Rp ${item.price.toLocaleString("id-ID")}</p>
-                    <span class="cart-item-qty">Qty: ${item.qty}</span>
-                </div>
-                <button class="cart-item-remove" onclick="removeFromCart(${index})">&times;</button>
-            </div>
-        `;
+                    <div class="cart-item">
+                        <img src="${catalog ? catalog.image : item.image}" alt="${title}" class="cart-item-img">
+                        <div class="cart-item-info">
+                            <h4>${title}</h4>
+                            <p class="cart-item-price">${catalog ? catalog.formattedPrice : 'Rp ' + price.toLocaleString("id-ID")}</p>
+                            <span class="cart-item-qty">Qty: ${item.qty}</span>
+                        </div>
+                        <button class="cart-item-remove" onclick="removeFromCart(${index})">&times;</button>
+                    </div>
+                `;
             });
 
             container.innerHTML = html;
-            document.getElementById("summaryGrandTotal").textContent = `Rp ${grandTotal.toLocaleString("id-ID")}`;
+
+            const grandTotalLine = cart
+                .filter(item => products[item.id])
+                .reduce((sum, item) => sum + products[item.id].price * item.qty, 0);
+
+            document.getElementById("summaryGrandTotal").textContent =
+                grandTotalLine > 0 ? `Rp ${grandTotalLine.toLocaleString("id-ID")}` : "Rp 0";
         }
 
-        function addToCart(id, title, price, image) {
+        function addToCart(id) {
+            const product = products[id];
+            if (!product) return alert("Product not found.");
+
             const existing = cart.find(item => item.id === id);
             if (existing) {
                 existing.qty += 1;
             } else {
-                cart.push({ id, title, price, image, qty: 1 });
+                cart.push({ id, qty: 1 });
             }
             saveCart();
             animateCartIcon();
         }
 
-        function buyNow(id, title, price, image) {
-            addToCart(id, title, price, image);
+        function buyNow(id) {
+            addToCart(id);
             openCartModal();
         }
 
@@ -200,9 +288,7 @@
             const navCartBtn = document.getElementById("openCartBtn");
             if (navCartBtn) {
                 navCartBtn.classList.add("cart-bounce");
-                setTimeout(() => {
-                    navCartBtn.classList.remove("cart-bounce");
-                }, 400);
+                setTimeout(() => navCartBtn.classList.remove("cart-bounce"), 400);
             }
         }
 
@@ -219,49 +305,132 @@
             document.getElementById("cartModal").classList.remove("active");
         }
 
-        function checkoutWithMidtrans() {
-            const email = document.getElementById("customerEmail").value.trim();
-            if (cart.length === 0) return alert("Your cart is empty!");
-            if (!email) return alert("Please enter your email to receive download links.");
+        // ============================================================
+        // CHECKOUT — Midtrans Snap
+        // The browser only sends { productId, customer }. The server
+        // validates everything and returns a Snap token.
+        // ============================================================
 
+        let snapScriptLoaded = false;
+
+        function loadSnapScript(url, clientKey) {
+            return new Promise((resolve, reject) => {
+                if (window.snap && snapScriptLoaded) {
+                    resolve();
+                    return;
+                }
+                const script = document.createElement('script');
+                script.src = url;
+                script.setAttribute('data-client-key', clientKey);
+                script.async = true;
+                script.onload = () => {
+                    snapScriptLoaded = true;
+                    resolve();
+                };
+                script.onerror = () => reject(new Error('Failed to load payment widget.'));
+                document.head.appendChild(script);
+            });
+        }
+
+        async function checkoutWithMidtrans() {
+            const name = document.getElementById("customerName").value.trim();
+            const email = document.getElementById("customerEmail").value.trim();
+
+            if (cart.length === 0) return alert("Your cart is empty!");
+            if (!name || name.length < 2) return alert("Please enter your full name.");
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return alert("Please enter a valid email address.");
+
+            const productId = cart[0].id;
             const checkoutBtn = document.querySelector(".checkout-btn");
             checkoutBtn.disabled = true;
             checkoutBtn.textContent = "Processing...";
 
-            fetch('/api/checkout', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ email, cart })
-            })
-                .then(res => res.json())
-                .then(data => {
-                    if (data.success) {
+            try {
+                const res = await fetch('/api/checkout', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ productId, customer: { name, email } })
+                });
+
+                let data = {};
+                try { data = await res.json(); } catch (_) { /* ignore */ }
+
+                if (!res.ok || !data.success) {
+                    throw new Error(data.error || 'Checkout failed.');
+                }
+
+                await loadSnapScript(data.midtrans.snapScriptUrl, data.midtrans.clientKey);
+
+                window.snap.pay(data.token, {
+                    onSuccess: (result) => {
+                        console.log('Snap onSuccess:', result);
                         cart = [];
                         saveCart();
                         closeCartModal();
-                        alert(`✅ ${data.message}\n\nOrder Reference: ${data.orderRef}\nTotal: ${data.formattedTotal}`);
-                    } else {
-                        alert(`❌ Checkout failed: ${data.error || 'Unknown error'}`);
+                        alert(
+                            "Payment submitted. Waiting for payment confirmation...\n\n" +
+                            "Once the payment is confirmed, we will email your download link to you."
+                        );
+                        pollOrderStatus(data.orderId);
+                    },
+                    onPending: (result) => {
+                        alert(
+                            "Payment pending. Please complete the payment to continue.\n" +
+                            (result.status_message ? `(${result.status_message})` : '')
+                        );
+                    },
+                    onError: (result) => {
+                        alert(
+                            "Payment error. Your order was not charged.\n" +
+                            (result.status_message ? `(${result.status_message})` : '')
+                        );
+                    },
+                    onClose: () => {
+                        alert("Payment window closed. Your order has not been paid yet. You can retry anytime.");
                     }
-                })
-                .catch(err => {
-                    console.error('Checkout error:', err);
-                    alert("⚠️ Could not reach server. Make sure the backend is running.");
-                })
-                .finally(() => {
-                    checkoutBtn.disabled = false;
-                    checkoutBtn.textContent = "Buy Now";
                 });
+
+            } catch (err) {
+                console.error('Checkout error:', err);
+                alert(`❌ ${err.message || "Could not reach the server. Make sure the backend is running."}`);
+            } finally {
+                checkoutBtn.disabled = false;
+                checkoutBtn.textContent = "Buy Now";
+            }
         }
+
+        // Lightweight poller so the customer knows when the payment is
+        // confirmed and the delivery email has been sent.
+        function pollOrderStatus(orderId) {
+            let attempts = 0;
+            const timer = setInterval(async () => {
+                attempts += 1;
+                if (attempts > 10) {
+                    clearInterval(timer);
+                    return;
+                }
+                try {
+                    const res = await fetch(`/api/order/${encodeURIComponent(orderId)}`);
+                    const data = await res.json();
+                    if (data.paymentStatus === 'paid' && data.fulfillmentStatus === 'fulfilled') {
+                        clearInterval(timer);
+                        alert("✅ Payment confirmed! Your download link has been emailed to you.");
+                    }
+                } catch (_) { /* transient failures are ignored */ }
+            }, 5000);
+        }
+
+        // ============================================================
+        // FILTERING & SEARCH
+        // ============================================================
 
         function filterAndSearchProducts() {
             const activeFilterBtn = document.querySelector('.filter-btn.active');
             const activeCategory = activeFilterBtn ? activeFilterBtn.getAttribute('data-filter') : 'all';
-            const searchQuery = document.getElementById('cardSearchInput').value.toLowerCase().trim();
+            const searchInput = document.getElementById('cardSearchInput');
+            const searchQuery = searchInput ? searchInput.value.toLowerCase().trim() : '';
 
-            const cards = document.querySelectorAll('.product-card');
-
-            cards.forEach(card => {
+            document.querySelectorAll('.product-card').forEach(card => {
                 const cardCategory = card.getAttribute('data-category');
                 const title = card.querySelector('.store-card-title').textContent.toLowerCase();
                 const desc = card.querySelector('.card-desc').textContent.toLowerCase();
@@ -269,15 +438,12 @@
                 const matchesCategory = (activeCategory === 'all' || cardCategory === activeCategory);
                 const matchesSearch = title.includes(searchQuery) || desc.includes(searchQuery);
 
-                if (matchesCategory && matchesSearch) {
-                    card.style.display = 'flex';
-                } else {
-                    card.style.display = 'none';
-                }
+                card.style.display = (matchesCategory && matchesSearch) ? 'flex' : 'none';
             });
         }
 
         document.addEventListener("DOMContentLoaded", () => {
+            loadProducts();
             updateCartUI();
 
             if (window.location.hash === '#checkout') {
@@ -291,15 +457,6 @@
 
             document.getElementById("cartModal").addEventListener("click", (e) => {
                 if (e.target.id === "cartModal") closeCartModal();
-            });
-
-            const filterBtns = document.querySelectorAll('.filter-btn');
-            filterBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    filterBtns.forEach(b => b.classList.remove('active'));
-                    btn.classList.add('active');
-                    filterAndSearchProducts();
-                });
             });
 
             const searchInput = document.getElementById('cardSearchInput');
