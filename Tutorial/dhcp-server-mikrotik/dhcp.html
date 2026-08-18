@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Configuring a Basic DHCP Server on MikroTik RouterOS - NextBit</title>
+    <title data-i18n-title="dhcp.page_title">Configuring a Basic DHCP Server on MikroTik RouterOS - NextBit</title>
     <link rel="icon" type="image/png" sizes="500x500" href="../../Logo/logo.png">
 
     <!-- STYLESHEETS -->
@@ -27,21 +27,21 @@
 
             <!-- HEADER BLOCK -->
             <header class="tutorial-header">
-                <h1 class="tutorial-title">Configuring a Basic DHCP Server on MikroTik RouterOS</h1>
+                <h1 class="tutorial-title" data-i18n="dhcp.title">Configuring a Basic DHCP Server on MikroTik RouterOS</h1>
 
                 <p class="tutorial-author">
-                    By <a href="https://www.linkedin.com/in/gian-valentino/" class="author-link" target="_blank"
-                        rel="noopener">Gian Valentino Ampang</a>
+                    <span data-i18n="common.by">By</span> <a href="https://www.linkedin.com/in/gian-valentino/"
+                        class="author-link" target="_blank" rel="noopener">Gian Valentino Ampang</a>
                 </p>
 
                 <div class="category-wrapper">
-                    <span class="category-badge">Networks</span>
+                    <span class="category-badge" data-i18n="common.cat_networks">Networks</span>
                 </div>
             </header>
 
             <!-- INTRO BANNER IMAGE -->
             <div class="tutorial-media-box intro-image-box">
-                <img src="../../Image/dhcp.webp" alt="Configuring a DHCP Server on MikroTik" class="tutorial-img">
+                <img src="../../Image/dhcp.webp" alt="Configuring a DHCP Server on MikroTik" class="tutorial-img" data-i18n-alt="dhcp.banner_alt">
             </div>
 
             <!-- TUTORIAL CONTENT BODY -->
@@ -49,9 +49,9 @@
 
                 <!-- INTRODUCTION SECTION -->
                 <section class="tutorial-intro">
-                    <h2 class="section-heading">Introduction</h2>
+                    <h2 class="section-heading" data-i18n="common.introduction">Introduction</h2>
 
-                    <p class="content-text">
+                    <p class="content-text" data-i18n="dhcp.intro1">
                         You have a spare MikroTik around and wonder what you can do with it? In this guide, you will
                         learn one of the most common uses of a MikroTik RouterBOARD for your home network. This guide
                         covers how to get an internet connection to your RouterBOARD, set up IP pools, configure the
@@ -61,127 +61,127 @@
 
                 <!-- STEP 1 -->
                 <section class="tutorial-step">
-                    <h2 class="step-title">Step 1: Reset the Device to Zero Configuration (No Default Config)</h2>
+                    <h2 class="step-title" data-i18n="dhcp.s1">Step 1: Reset the Device to Zero Configuration (No Default Config)</h2>
 
                     <!-- STEP IMAGE BANNER -->
                     <div class="tutorial-media-box step-image-box">
                         <img src="restart.avif" alt="Step 1: Resetting the MikroTik to Zero Configuration"
-                            class="tutorial-img">
+                            class="tutorial-img" data-i18n-alt="dhcp.s1img">
                     </div>
 
-                    <p class="content-text">
+                    <p class="content-text" data-i18n="dhcp.s1p1">
                         Starting from a completely blank setup ensures existing default rules or configurations do not
                         conflict with your setup.
                     </p>
 
                     <ul class="directive-list">
-                        <li><strong>Connect your PC:</strong> Connect your PC to any port on the MikroTik (e.g.,
+                        <li data-i18n="dhcp.s1l1"><strong>Connect your PC:</strong> Connect your PC to any port on the MikroTik (e.g.,
                             <code>ether2</code>) using an Ethernet cable.
                         </li>
-                        <li><strong>Open WinBox:</strong> Go to the <strong>Neighbors</strong> tab, click on your
+                        <li data-i18n="dhcp.s1l2"><strong>Open WinBox:</strong> Go to the <strong>Neighbors</strong> tab, click on your
                             router's MAC address, and click <strong>Connect</strong> (default username is
                             <code>admin</code> with no password).
                         </li>
-                        <li><strong>Reset Configuration:</strong> In the left menu, navigate to <strong>System &gt;
+                        <li data-i18n="dhcp.s1l3"><strong>Reset Configuration:</strong> In the left menu, navigate to <strong>System &gt;
                                 Reset Configuration</strong>.</li>
-                        <li><strong>Disable Defaults:</strong> Check the box for <strong>No Default
+                        <li data-i18n="dhcp.s1l4"><strong>Disable Defaults:</strong> Check the box for <strong>No Default
                                 Configuration</strong>.</li>
-                        <li><strong>Confirm:</strong> Click <strong>Reset Configuration</strong>, then click
+                        <li data-i18n="dhcp.s1l5"><strong>Confirm:</strong> Click <strong>Reset Configuration</strong>, then click
                             <strong>Yes</strong> to confirm.
                         </li>
-                        <li><strong>Reconnect:</strong> The router will reboot and wipe all settings. Once it turns back
+                        <li data-i18n="dhcp.s1l6"><strong>Reconnect:</strong> The router will reboot and wipe all settings. Once it turns back
                             on, reconnect via WinBox using the MAC Address from the Neighbors list.</li>
                     </ul>
                 </section>
 
                 <!-- STEP 2 -->
                 <section class="tutorial-step">
-                    <h2 class="step-title">Step 2: Get Internet to the RouterBOARD (Ethernet ISP Setup)</h2>
+                    <h2 class="step-title" data-i18n="dhcp.s2">Step 2: Get Internet to the RouterBOARD (Ethernet ISP Setup)</h2>
 
                     <!-- STEP IMAGE BANNER -->
                     <div class="tutorial-media-box step-image-box">
                         <img src="internet.avif" alt="Step 2: Connecting the Internet to the RouterBOARD"
-                            class="tutorial-img">
+                            class="tutorial-img" data-i18n-alt="dhcp.s2img">
                     </div>
 
-                    <p class="content-text">
+                    <p class="content-text" data-i18n="dhcp.s2p1">
                         When your ISP gives you a direct Ethernet cable along with static IP details (IP Address, Subnet
                         Mask, Gateway, and DNS), configure <code>ether1</code> manually as follows:
                     </p>
 
-                    <h3 class="subsection-heading">1. Connect the Ethernet ISP Cable</h3>
-                    <p class="content-text">
+                    <h3 class="subsection-heading" data-i18n="dhcp.s2h1">1. Connect the Ethernet ISP Cable</h3>
+                    <p class="content-text" data-i18n="dhcp.s2h1p1">
                         Plug the main Ethernet line from your ISP into <code>ether1</code> on the MikroTik.
                     </p>
 
-                    <h3 class="subsection-heading">2. Assign the Static WAN IP Address</h3>
+                    <h3 class="subsection-heading" data-i18n="dhcp.s2h2">2. Assign the Static WAN IP Address</h3>
                     <ul class="directive-list">
-                        <li>In WinBox, click <strong>IP &gt; Addresses</strong>.</li>
-                        <li>Click the blue <strong>+</strong> (Add) button.</li>
-                        <li>In <strong>Address</strong>, enter the static IP and CIDR subnet mask provided by your ISP
+                        <li data-i18n="dhcp.s2h2l1">In WinBox, click <strong>IP &gt; Addresses</strong>.</li>
+                        <li data-i18n="dhcp.s2h2l2">Click the blue <strong>+</strong> (Add) button.</li>
+                        <li data-i18n="dhcp.s2h2l3">In <strong>Address</strong>, enter the static IP and CIDR subnet mask provided by your ISP
                             (e.g., <code>192.168.1.100/24</code> or <code>203.0.113.10/24</code>).</li>
-                        <li>Set <strong>Interface</strong> to <code>ether1</code>.</li>
-                        <li>Click <strong>Apply</strong>, then <strong>OK</strong>.</li>
+                        <li data-i18n="dhcp.s2h2l4">Set <strong>Interface</strong> to <code>ether1</code>.</li>
+                        <li data-i18n="dhcp.s2h2l5">Click <strong>Apply</strong>, then <strong>OK</strong>.</li>
                     </ul>
 
-                    <h3 class="subsection-heading">3. Add the Default Gateway Route</h3>
+                    <h3 class="subsection-heading" data-i18n="dhcp.s2h3">3. Add the Default Gateway Route</h3>
                     <ul class="directive-list">
-                        <li>Go to <strong>IP &gt; Routes</strong>.</li>
-                        <li>Click the blue <strong>+</strong> (Add) button under the Routes tab.</li>
-                        <li>Leave <strong>Dst. Address</strong> as <code>0.0.0.0/0</code>.</li>
-                        <li>In the <strong>Gateway</strong> field, enter the Gateway IP address given by your ISP (e.g.,
+                        <li data-i18n="dhcp.s2h3l1">Go to <strong>IP &gt; Routes</strong>.</li>
+                        <li data-i18n="dhcp.s2h3l2">Click the blue <strong>+</strong> (Add) button under the Routes tab.</li>
+                        <li data-i18n="dhcp.s2h3l3">Leave <strong>Dst. Address</strong> as <code>0.0.0.0/0</code>.</li>
+                        <li data-i18n="dhcp.s2h3l4">In the <strong>Gateway</strong> field, enter the Gateway IP address given by your ISP (e.g.,
                             <code>192.168.1.1</code> or <code>203.0.113.1</code>).
                         </li>
-                        <li>Click <strong>Apply</strong>, then <strong>OK</strong>. Verify that the status shows
+                        <li data-i18n="dhcp.s2h3l5">Click <strong>Apply</strong>, then <strong>OK</strong>. Verify that the status shows
                             <strong>reachable</strong>.
                         </li>
                     </ul>
 
-                    <h3 class="subsection-heading">4. Configure DNS Settings</h3>
+                    <h3 class="subsection-heading" data-i18n="dhcp.s2h4">4. Configure DNS Settings</h3>
                     <ul class="directive-list">
-                        <li>Go to <strong>IP &gt; DNS</strong>.</li>
-                        <li>In the <strong>Servers</strong> box, enter your ISP's DNS IP addresses (or public DNS like
+                        <li data-i18n="dhcp.s2h4l1">Go to <strong>IP &gt; DNS</strong>.</li>
+                        <li data-i18n="dhcp.s2h4l2">In the <strong>Servers</strong> box, enter your ISP's DNS IP addresses (or public DNS like
                             <code>1.1.1.1</code> and <code>8.8.8.8</code>).
                         </li>
-                        <li>Check the box for <strong>Allow Remote Requests</strong> (this lets local LAN clients use the
+                        <li data-i18n="dhcp.s2h4l3">Check the box for <strong>Allow Remote Requests</strong> (this lets local LAN clients use the
                             MikroTik as their DNS resolver).</li>
-                        <li>Click <strong>Apply</strong>, then <strong>OK</strong>.</li>
+                        <li data-i18n="dhcp.s2h4l4">Click <strong>Apply</strong>, then <strong>OK</strong>.</li>
                     </ul>
 
-                    <h3 class="subsection-heading">5. Configure Firewall NAT (Masquerade)</h3>
+                    <h3 class="subsection-heading" data-i18n="dhcp.s2h5">5. Configure Firewall NAT (Masquerade)</h3>
                     <ul class="directive-list">
-                        <li>Go to <strong>IP &gt; Firewall</strong> and select the <strong>NAT</strong> tab.</li>
-                        <li>Click the blue <strong>+</strong> (Add) button.</li>
-                        <li>Under the <strong>General</strong> tab: set <strong>Chain</strong> to
+                        <li data-i18n="dhcp.s2h5l1">Go to <strong>IP &gt; Firewall</strong> and select the <strong>NAT</strong> tab.</li>
+                        <li data-i18n="dhcp.s2h5l2">Click the blue <strong>+</strong> (Add) button.</li>
+                        <li data-i18n="dhcp.s2h5l3">Under the <strong>General</strong> tab: set <strong>Chain</strong> to
                             <code>srcnat</code> and <strong>Out. Interface</strong> to <code>ether1</code>.
                         </li>
-                        <li>Under the <strong>Action</strong> tab: set <strong>Action</strong> to
+                        <li data-i18n="dhcp.s2h5l4">Under the <strong>Action</strong> tab: set <strong>Action</strong> to
                             <code>masquerade</code>.</li>
-                        <li>Click <strong>Apply</strong>, then <strong>OK</strong>.</li>
+                        <li data-i18n="dhcp.s2h5l5">Click <strong>Apply</strong>, then <strong>OK</strong>.</li>
                     </ul>
                 </section>
 
                 <!-- STEP 3 -->
                 <section class="tutorial-step">
-                    <h2 class="step-title">Step 3: Configure LAN IP Address and Gateway</h2>
+                    <h2 class="step-title" data-i18n="dhcp.s3">Step 3: Configure LAN IP Address and Gateway</h2>
 
                     <!-- STEP IMAGE BANNER -->
                     <div class="tutorial-media-box step-image-box">
-                        <img src="lan.avif" alt="Step 3: Configuring the LAN IP Address and Gateway" class="tutorial-img">
+                        <img src="lan.avif" alt="Step 3: Configuring the LAN IP Address and Gateway" class="tutorial-img" data-i18n-alt="dhcp.s3img">
                     </div>
 
-                    <p class="content-text">
+                    <p class="content-text" data-i18n="dhcp.s3p1">
                         Set a static IP address on your local interface (<code>ether2</code> or a bridge) to act as the
                         default gateway for your LAN devices.
                     </p>
 
                     <ul class="directive-list">
-                        <li>Go to <strong>IP &gt; Addresses</strong>.</li>
-                        <li>Click the blue <strong>+</strong> (Add) button.</li>
-                        <li>Enter <strong>Address</strong>: <code>192.168.88.1/24</code>.</li>
-                        <li>Select <strong>Interface</strong>: <code>ether2</code> (or your local LAN interface /
+                        <li data-i18n="dhcp.s3l1">Go to <strong>IP &gt; Addresses</strong>.</li>
+                        <li data-i18n="dhcp.s3l2">Click the blue <strong>+</strong> (Add) button.</li>
+                        <li data-i18n="dhcp.s3l3">Enter <strong>Address</strong>: <code>192.168.88.1/24</code>.</li>
+                        <li data-i18n="dhcp.s3l4">Select <strong>Interface</strong>: <code>ether2</code> (or your local LAN interface /
                             bridge).</li>
-                        <li>Click <strong>Apply</strong> (the Network field will auto-fill to
+                        <li data-i18n="dhcp.s3l5">Click <strong>Apply</strong> (the Network field will auto-fill to
                             <code>192.168.88.0</code>), then click <strong>OK</strong>.
                         </li>
                     </ul>
@@ -189,65 +189,65 @@
 
                 <!-- STEP 4 -->
                 <section class="tutorial-step">
-                    <h2 class="step-title">Step 4: Set Up the DHCP Server and IP Pool</h2>
+                    <h2 class="step-title" data-i18n="dhcp.s4">Step 4: Set Up the DHCP Server and IP Pool</h2>
 
                     <!-- STEP IMAGE BANNER -->
                     <div class="tutorial-media-box step-image-box">
-                        <img src="dhcp.avif" alt="Step 4: Setting Up the DHCP Server and IP Pool" class="tutorial-img">
+                        <img src="dhcp.avif" alt="Step 4: Setting Up the DHCP Server and IP Pool" class="tutorial-img" data-i18n-alt="dhcp.s4img">
                     </div>
 
-                    <p class="content-text">
+                    <p class="content-text" data-i18n="dhcp.s4p1">
                         Use the built-in wizard to automatically generate the IP pool, gateway parameters, and DHCP
                         server instance.
                     </p>
 
                     <ul class="directive-list">
-                        <li>Go to <strong>IP &gt; DHCP Server</strong>.</li>
-                        <li>On the <strong>DHCP</strong> tab, click the <strong>DHCP Setup</strong> button.</li>
-                        <li><strong>DHCP Server Interface:</strong> Select <code>ether2</code> (or your LAN
+                        <li data-i18n="dhcp.s4l1">Go to <strong>IP &gt; DHCP Server</strong>.</li>
+                        <li data-i18n="dhcp.s4l2">On the <strong>DHCP</strong> tab, click the <strong>DHCP Setup</strong> button.</li>
+                        <li data-i18n="dhcp.s4l3"><strong>DHCP Server Interface:</strong> Select <code>ether2</code> (or your LAN
                             interface/bridge). Click <strong>Next</strong>.</li>
-                        <li><strong>DHCP Address Space:</strong> Confirm <code>192.168.88.0/24</code>. Click
+                        <li data-i18n="dhcp.s4l4"><strong>DHCP Address Space:</strong> Confirm <code>192.168.88.0/24</code>. Click
                             <strong>Next</strong>.
                         </li>
-                        <li><strong>Gateway for DHCP Network:</strong> Confirm <code>192.168.88.1</code>. Click
+                        <li data-i18n="dhcp.s4l5"><strong>Gateway for DHCP Network:</strong> Confirm <code>192.168.88.1</code>. Click
                             <strong>Next</strong>.
                         </li>
-                        <li><strong>Addresses to Give Out (IP Pool):</strong> Set the range of IP addresses to assign
+                        <li data-i18n="dhcp.s4l6"><strong>Addresses to Give Out (IP Pool):</strong> Set the range of IP addresses to assign
                             dynamically (e.g., <code>192.168.88.10-192.168.88.254</code>). Click <strong>Next</strong>.
                         </li>
-                        <li><strong>DNS Servers:</strong> Enter your preferred DNS servers (e.g., <code>1.1.1.1</code>
+                        <li data-i18n="dhcp.s4l7"><strong>DNS Servers:</strong> Enter your preferred DNS servers (e.g., <code>1.1.1.1</code>
                             and <code>8.8.8.8</code>, or <code>192.168.88.1</code>). Click <strong>Next</strong>.</li>
-                        <li><strong>Lease Time:</strong> Enter how long devices keep an assigned IP (e.g.,
+                        <li data-i18n="dhcp.s4l8"><strong>Lease Time:</strong> Enter how long devices keep an assigned IP (e.g.,
                             <code>1d</code> for 1 day). Click <strong>Next</strong>.
                         </li>
-                        <li>Click <strong>OK</strong> on the completion prompt.</li>
+                        <li data-i18n="dhcp.s4l9">Click <strong>OK</strong> on the completion prompt.</li>
                     </ul>
                 </section>
 
                 <!-- STEP 5 -->
                 <section class="tutorial-step">
-                    <h2 class="step-title">Step 5: Test the Connection</h2>
+                    <h2 class="step-title" data-i18n="dhcp.s5">Step 5: Test the Connection</h2>
 
                     <!-- STEP IMAGE BANNER -->
                     <div class="tutorial-media-box step-image-box">
-                        <img src="test.avif" alt="Step 5: Testing the Connection" class="tutorial-img">
+                        <img src="test.avif" alt="Step 5: Testing the Connection" class="tutorial-img" data-i18n-alt="dhcp.s5img">
                     </div>
 
                     <ul class="directive-list">
-                        <li><strong>Request a fresh IP:</strong> Unplug and reconnect your computer's Ethernet cable (or
+                        <li data-i18n="dhcp.s5l1"><strong>Request a fresh IP:</strong> Unplug and reconnect your computer's Ethernet cable (or
                             disable and re-enable the network adapter) to request a fresh IP from the MikroTik.</li>
-                        <li><strong>Check your IP:</strong> Check your computer's network details—it should now have an
+                        <li data-i18n="dhcp.s5l2"><strong>Check your IP:</strong> Check your computer's network details—it should now have an
                             IP address in the <code>192.168.88.x</code> range.</li>
-                        <li><strong>View the lease:</strong> In WinBox, go to <strong>IP &gt; DHCP Server &gt;
+                        <li data-i18n="dhcp.s5l3"><strong>View the lease:</strong> In WinBox, go to <strong>IP &gt; DHCP Server &gt;
                                 Leases</strong> tab to view your connected device.</li>
-                        <li><strong>Confirm internet access:</strong> Open a terminal or browser on your PC and
+                        <li data-i18n="dhcp.s5l4"><strong>Confirm internet access:</strong> Open a terminal or browser on your PC and
                             <code>ping 8.8.8.8</code> or browse a website to confirm active internet access.
                         </li>
                     </ul>
 
                     <div class="callout-box info">
-                        <strong>Success:</strong> Your MikroTik is now handing out IP addresses automatically, and your
-                        LAN devices can connect to the internet through it.
+                        <strong data-i18n="dhcp.s5wlabel">Success:</strong> <span data-i18n="dhcp.s5wtext">Your MikroTik is now handing out IP
+                            addresses automatically, and your LAN devices can connect to the internet through it.</span>
                     </div>
                 </section>
 
@@ -256,7 +256,7 @@
 
         <!-- RECOMMENDATION SECTION (DARK MINT CARDS) -->
         <section class="recommendation-section">
-            <h2 class="recommendation-heading">Recommendation</h2>
+            <h2 class="recommendation-heading" data-i18n="common.recommendation">Recommendation</h2>
 
             <div class="recommendation-grid" id="recommendationGrid"></div>
         </section>
@@ -265,6 +265,7 @@
 
     <!-- FOOTER SECTION -->
     <div id="footer-placeholder"></div>
+    <script src="../../i18n.js" defer></script>
     <script src="../../nav.js" defer></script>
     <script src="../../footer.js" defer></script>
     <script src="../recommendations.js" defer></script>

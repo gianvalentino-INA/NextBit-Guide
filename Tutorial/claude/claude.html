@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Installing Claude Code Into Your Linux System - NextBit</title>
+    <title data-i18n-title="claude.page_title">Installing Claude Code Into Your Linux System - NextBit</title>
     <link rel="icon" type="image/png" sizes="500x500" href="../../Logo/logo.png">
 
     <!-- STYLESHEETS -->
@@ -27,20 +27,20 @@
 
             <!-- HEADER BLOCK -->
             <header class="tutorial-header">
-                <h1 class="tutorial-title">How to Install & Configure Claude Code CLI on Linux</h1>
+                <h1 class="tutorial-title" data-i18n="claude.title">How to Install & Configure Claude Code CLI on Linux</h1>
 
                 <p class="tutorial-author">
-                    By <a href="../../about.html" class="author-link">Gian Valentino Ampang</a>
+                    <span data-i18n="common.by">By</span> <a href="../../about.html" class="author-link">Gian Valentino Ampang</a>
                 </p>
 
                 <div class="category-wrapper">
-                    <span class="category-badge">SysAdmin</span>
+                    <span class="category-badge" data-i18n="common.cat_sysadmin">SysAdmin</span>
                 </div>
             </header>
 
             <!-- INTRO BANNER IMAGE (SAME FOLDER) -->
             <div class="tutorial-media-box intro-image-box">
-                <img src="../../Image/claude.avif" alt="Claude Code Linux Setup Banner" class="tutorial-img">
+                <img src="../../Image/claude.avif" alt="Claude Code Linux Setup Banner" class="tutorial-img" data-i18n-alt="claude.banner_alt">
             </div>
 
             <!-- TUTORIAL CONTENT BODY -->
@@ -48,9 +48,9 @@
 
                 <!-- INTRODUCTION SECTION -->
                 <section class="tutorial-intro">
-                    <h2 class="section-heading">Introduction</h2>
+                    <h2 class="section-heading" data-i18n="common.introduction">Introduction</h2>
 
-                    <p class="content-text">
+                    <p class="content-text" data-i18n="claude.intro1">
                         <strong>Claude Code</strong> is an AI-powered agentic coding assistant developed by Anthropic.
                         Operating directly inside your terminal, IDE, or desktop environment, it can analyze codebases,
                         edit files, execute shell commands, and manage Git workflows—all using plain language
@@ -58,23 +58,23 @@
                     </p>
 
                     <div class="callout-box info">
-                        <strong>Free Tier Tip:</strong> While using Claude Code directly through Anthropic's official
+                        <strong data-i18n="claude.introwlabel">Free Tier Tip:</strong> <span data-i18n="claude.introwtext">While using Claude Code directly through Anthropic's official
                         API can get expensive, you can run it 100% free on Linux by routing it through OpenRouter's free
-                        model tier.
+                        model tier.</span>
                     </div>
                 </section>
 
                 <!-- STEP 1 -->
                 <section class="tutorial-step">
-                    <h2 class="step-title">Step 1: Update Your System and Install Dependencies</h2>
+                    <h2 class="step-title" data-i18n="claude.s1">Step 1: Update Your System and Install Dependencies</h2>
 
-                    <p class="content-text">
+                    <p class="content-text" data-i18n="claude.s1p1">
                         Before installing Claude Code, ensure your package manager is up to date and that Node.js and
                         npm are installed on your system.
                     </p>
 
-                    <h3 class="subsection-heading">1. Update Package Managers</h3>
-                    <p class="content-text">Choose the command corresponding to your Linux distribution:</p>
+                    <h3 class="subsection-heading" data-i18n="claude.s1h1">1. Update Package Managers</h3>
+                    <p class="content-text" data-i18n="claude.s1p2">Choose the command corresponding to your Linux distribution:</p>
 
                     <div class="terminal-box">
                         <div class="terminal-bar">
@@ -115,8 +115,8 @@
                             class="terminal-content"><code><span class="prompt">$</span> sudo zypper refresh && sudo zypper update -y</code></pre>
                     </div>
 
-                    <h3 class="subsection-heading">2. Install Node.js and npm</h3>
-                    <p class="content-text">If you do not have Node.js and npm installed yet, run the appropriate
+                    <h3 class="subsection-heading" data-i18n="claude.s1h2">2. Install Node.js and npm</h3>
+                    <p class="content-text" data-i18n="claude.s1p3">If you do not have Node.js and npm installed yet, run the appropriate
                         command for your system:</p>
 
                     <div class="terminal-box">
@@ -138,11 +138,11 @@
 <span class="prompt">$</span> sudo zypper install nodejs npm -y</code></pre>
                     </div>
 
-                    <h3 class="subsection-heading">3. Install Claude Code</h3>
-                    <p class="content-text">Run the official installation script:</p>
+                    <h3 class="subsection-heading" data-i18n="claude.s1h3">3. Install Claude Code</h3>
+                    <p class="content-text" data-i18n="claude.s1p4">Run the official installation script:</p>
 
                     <div class="tutorial-media-box step-image-box">
-                        <img src="install.avif" alt="Installing Claude Code script" class="tutorial-img">
+                        <img src="install.avif" alt="Installing Claude Code script" class="tutorial-img" data-i18n-alt="claude.s1img">
                     </div>
 
                     <div class="terminal-box">
@@ -155,7 +155,7 @@
                             class="terminal-content"><code><span class="prompt">$</span> curl -fsSL https://claude.ai/install.sh | bash</code></pre>
                     </div>
 
-                    <p class="content-text">Once the installation finishes, add the binary path to your shell profile so
+                    <p class="content-text" data-i18n="claude.s1p5">Once the installation finishes, add the binary path to your shell profile so
                         your system can locate the <code>claude</code> executable:</p>
 
                     <div class="terminal-box">
@@ -169,32 +169,32 @@
                     </div>
 
                     <div class="callout-box info">
-                        <strong>Tip:</strong> You can verify where Claude Code was installed by running:
-                        <code>which claude</code>
+                        <strong data-i18n="claude.s1wlabel">Tip:</strong> <span data-i18n="claude.s1wtext">You can verify where Claude Code was installed by running:
+                        <code>which claude</code></span>
                     </div>
                 </section>
 
                 <!-- STEP 2 -->
                 <section class="tutorial-step">
-                    <h2 class="step-title">Step 2: Obtain a Free OpenRouter API Key</h2>
+                    <h2 class="step-title" data-i18n="claude.s2">Step 2: Obtain a Free OpenRouter API Key</h2>
 
                     <div class="tutorial-media-box step-image-box">
-                        <img src="api-key.avif" alt="OpenRouter Key Generation Dashboard" class="tutorial-img">
+                        <img src="api-key.avif" alt="OpenRouter Key Generation Dashboard" class="tutorial-img" data-i18n-alt="claude.s2img">
                     </div>
 
                     <ul class="directive-list">
-                        <li>Go to <strong>OpenRouter.ai</strong> and create a free account (or log in).</li>
-                        <li>Navigate to your Account Dashboard and click <strong>Get API Keys</strong>.</li>
-                        <li>Click <strong>Create Key</strong>, give it a name, and copy the generated API key
+                        <li data-i18n="claude.s2l1">Go to <strong>OpenRouter.ai</strong> and create a free account (or log in).</li>
+                        <li data-i18n="claude.s2l2">Navigate to your Account Dashboard and click <strong>Get API Keys</strong>.</li>
+                        <li data-i18n="claude.s2l3">Click <strong>Create Key</strong>, give it a name, and copy the generated API key
                             immediately.</li>
                     </ul>
 
                     <div class="callout-box warning">
-                        <strong>Important:</strong> Save your API key somewhere secure (like a password manager). You
-                        will not be able to view full key details again after closing the window.
+                        <strong data-i18n="claude.s2wlabel">Important:</strong> <span data-i18n="claude.s2wtext">Save your API key somewhere secure (like a password manager). You
+                        will not be able to view full key details again after closing the window.</span>
                     </div>
 
-                    <p class="content-text">
+                    <p class="content-text" data-i18n="claude.s2p1">
                         Using the <code>openrouter/free</code> endpoint allows OpenRouter to automatically route your
                         requests to available free models (such as <code>nvidia/nemotron-3-ultra</code> or others) and
                         rotate them if daily limits are reached.
@@ -203,14 +203,14 @@
 
                 <!-- STEP 3 -->
                 <section class="tutorial-step">
-                    <h2 class="step-title">Step 3: Configure Claude Code to Use OpenRouter</h2>
+                    <h2 class="step-title" data-i18n="claude.s3">Step 3: Configure Claude Code to Use OpenRouter</h2>
 
-                    <p class="content-text">
+                    <p class="content-text" data-i18n="claude.s3p1">
                         Now, direct Claude Code to route requests through OpenRouter by adding the necessary environment
                         variables to your configuration file.
                     </p>
 
-                    <p class="content-text">Open your bash configuration file in a text editor:</p>
+                    <p class="content-text" data-i18n="claude.s3p2">Open your bash configuration file in a text editor:</p>
 
                     <div class="terminal-box">
                         <div class="terminal-bar">
@@ -221,7 +221,7 @@
                         <pre class="terminal-content"><code><span class="prompt">$</span> nano ~/.bashrc</code></pre>
                     </div>
 
-                    <p class="content-text">Scroll to the bottom of the file and paste the following block:</p>
+                    <p class="content-text" data-i18n="claude.s3p3">Scroll to the bottom of the file and paste the following block:</p>
 
                     <div class="terminal-box">
                         <div class="terminal-bar">
@@ -244,16 +244,16 @@ export ANTHROPIC_DEFAULT_SONNET_MODEL="openrouter/free"
 export ANTHROPIC_DEFAULT_HAIKU_MODEL="openrouter/free"</code></pre>
                     </div>
 
-                    <p class="content-text">
+                    <p class="content-text" data-i18n="claude.s3p4">
                         <em>(Be sure to replace <code>sk-or-v1-YOUR-OPENROUTER-KEY-HERE</code> with your actual
                             key)</em>.
                     </p>
 
-                    <p class="content-text">Save and exit the editor (<code>Ctrl + O</code>, <code>Enter</code>, then
+                    <p class="content-text" data-i18n="claude.s3p5">Save and exit the editor (<code>Ctrl + O</code>, <code>Enter</code>, then
                         <code>Ctrl + X</code> in nano).
                     </p>
 
-                    <p class="content-text">Reload your configuration to apply the changes:</p>
+                    <p class="content-text" data-i18n="claude.s3p6">Reload your configuration to apply the changes:</p>
 
                     <div class="terminal-box">
                         <div class="terminal-bar">
@@ -267,13 +267,13 @@ export ANTHROPIC_DEFAULT_HAIKU_MODEL="openrouter/free"</code></pre>
 
                 <!-- STEP 4 -->
                 <section class="tutorial-step">
-                    <h2 class="step-title">Step 4: Run Claude Code</h2>
+                    <h2 class="step-title" data-i18n="claude.s4">Step 4: Run Claude Code</h2>
 
                     <div class="tutorial-media-box step-image-box">
-                        <img src="run.avif" alt="Launching Claude Code Terminal" class="tutorial-img">
+                        <img src="run.avif" alt="Launching Claude Code Terminal" class="tutorial-img" data-i18n-alt="claude.s4img">
                     </div>
 
-                    <p class="content-text">Navigate to your target project directory and launch Claude Code:</p>
+                    <p class="content-text" data-i18n="claude.s4p1">Navigate to your target project directory and launch Claude Code:</p>
 
                     <div class="terminal-box">
                         <div class="terminal-bar">
@@ -285,12 +285,12 @@ export ANTHROPIC_DEFAULT_HAIKU_MODEL="openrouter/free"</code></pre>
 <span class="prompt">$</span> claude</code></pre>
                     </div>
 
-                    <p class="content-text">You can now interact with and maintain your project using plain English
+                    <p class="content-text" data-i18n="claude.s4p2">You can now interact with and maintain your project using plain English
                         instructions right from your terminal.</p>
 
                     <div class="callout-box warning">
-                        <strong>Caution:</strong> AI agents are not perfect and can occasionally make errors. Always
-                        review shell commands generated by Claude Code before executing them.
+                        <strong data-i18n="claude.s4wlabel">Caution:</strong> <span data-i18n="claude.s4wtext">AI agents are not perfect and can occasionally make errors. Always
+                        review shell commands generated by Claude Code before executing them.</span>
                     </div>
                 </section>
 
@@ -299,7 +299,7 @@ export ANTHROPIC_DEFAULT_HAIKU_MODEL="openrouter/free"</code></pre>
 
         <!-- RECOMMENDATION SECTION (DARK MINT CARDS) -->
         <section class="recommendation-section">
-            <h2 class="recommendation-heading">Recommendation</h2>
+            <h2 class="recommendation-heading" data-i18n="common.recommendation">Recommendation</h2>
 
             <div class="recommendation-grid" id="recommendationGrid"></div>
         </section>
@@ -308,6 +308,7 @@ export ANTHROPIC_DEFAULT_HAIKU_MODEL="openrouter/free"</code></pre>
 
     <!-- FOOTER SECTION -->
     <div id="footer-placeholder"></div>
+    <script src="../../i18n.js" defer></script>
     <script src="../../nav.js" defer></script>
     <script src="../../footer.js" defer></script>
     <script src="../recommendations.js" defer></script>

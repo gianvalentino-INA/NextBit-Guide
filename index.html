@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NextBit - Knowledge Belongs to Everyone</title>
+    <title data-i18n-title="idx.page_title">NextBit - Knowledge Belongs to Everyone</title>
     <link rel="icon" type="image/png" sizes="500x500" href="Logo/logo.png">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -19,9 +19,9 @@
     <!-- HERO SECTION (EDGE-TO-EDGE DARK LIQUID BG) -->
     <section class="hero">
         <div class="hero-text">
-            <h1 class="hero-title">Knowledge belongs to everyone</h1>
+            <h1 class="hero-title" data-i18n="idx.hero_title">Knowledge belongs to everyone</h1>
             <a href="learn.html" class="hero-cta">
-                Start learning today
+                <span data-i18n="idx.hero_cta">Start learning today</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                     <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -33,8 +33,8 @@
 
     <!-- TUTORIAL SECTION (WHITE BACKGROUND WITH SCROLL ANIMATION) -->
     <section class="tutorial">
-        <h2 class="tut-title animate-on-scroll">Find things to learn</h2>
-        <p class="tut-sub animate-on-scroll">Get the user-made guides you need to level up your skills, build better
+        <h2 class="tut-title animate-on-scroll" data-i18n="idx.tut_title">Find things to learn</h2>
+        <p class="tut-sub animate-on-scroll" data-i18n="idx.tut_sub">Get the user-made guides you need to level up your skills, build better
             habits, and increase your value.</p>
 
         <div class="tut-grid">
@@ -46,11 +46,11 @@
                         </div>
                         <div class="card-content">
                             <div class="card-meta">
-                                <span class="card-category">DevOps</span>
-                                <time datetime="2026-07-20">July 20, 2026</time>
+                                <span class="card-category" data-i18n="common.cat_devops">DevOps</span>
+                                <time datetime="2026-07-20" data-i18n="common.july20">July 20, 2026</time>
                             </div>
-                            <h3 class="card-title">How to Set Up & Harden a Secure SSH Server</h3>
-                            <p class="card-desc">A step-by-step guide to configuring OpenSSH, key-based authentication, and modern cryptographic rules for server security.</p>
+                            <h3 class="card-title" data-i18n="lrn.card_ssh_title">How to Set Up & Harden a Secure SSH Server</h3>
+                            <p class="card-desc" data-i18n="lrn.card_ssh_desc">A step-by-step guide to configuring OpenSSH, key-based authentication, and modern cryptographic rules for server security.</p>
                         </div>
                     </article>
                 </a>
@@ -63,11 +63,11 @@
                         </div>
                         <div class="card-content">
                             <div class="card-meta">
-                                <span class="card-category">DevOps</span>
-                                <time datetime="2026-07-18">July 18, 2026</time>
+                                <span class="card-category" data-i18n="common.cat_devops">DevOps</span>
+                                <time datetime="2026-07-18" data-i18n="common.july18">July 18, 2026</time>
                             </div>
-                            <h3 class="card-title">How to Install & Configure Claude Code CLI on Linux</h3>
-                            <p class="card-desc">Learn how to deploy Anthropic's terminal AI agent for terminal automation, code refactoring, and developer productivity.</p>
+                            <h3 class="card-title" data-i18n="lrn.card_claude_title">How to Install & Configure Claude Code CLI on Linux</h3>
+                            <p class="card-desc" data-i18n="lrn.card_claude_desc">Learn how to deploy Anthropic's terminal AI agent for terminal automation, code refactoring, and developer productivity.</p>
                         </div>
                     </article>
                 </a>
@@ -80,11 +80,11 @@
                         </div>
                         <div class="card-content">
                             <div class="card-meta">
-                                <span class="card-category">Systems</span>
-                                <time datetime="2026-07-15">July 15, 2026</time>
+                                <span class="card-category" data-i18n="common.cat_systems">Systems</span>
+                                <time datetime="2026-07-15" data-i18n="common.july15">July 15, 2026</time>
                             </div>
-                            <h3 class="card-title">How to Install/Update & Activate Microsoft Office</h3>
-                            <p class="card-desc">A step-by-step guide on redeeming your license key and downloading official Office apps directly from your Microsoft account.</p>
+                            <h3 class="card-title" data-i18n="lrn.card_office_title">How to Install/Update & Activate Microsoft Office</h3>
+                            <p class="card-desc" data-i18n="lrn.card_office_desc">A step-by-step guide on redeeming your license key and downloading official Office apps directly from your Microsoft account.</p>
                         </div>
                     </article>
                 </a>
@@ -93,6 +93,7 @@
 
     <!-- FOOTER SECTION -->
     <div id="footer-placeholder"></div>
+    <script src="i18n.js" defer></script>
     <script src="nav.js" defer></script>
     <script src="footer.js" defer></script>
 

@@ -141,6 +141,39 @@ header nav {
   background-color: var(--mint-200);
 }
 
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  padding: 3px;
+  gap: 2px;
+}
+
+.lang-opt {
+  border: none;
+  background: transparent;
+  color: var(--gray-500);
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  padding: 6px 10px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.lang-opt:hover {
+  color: var(--mint-300);
+}
+
+.lang-opt.active {
+  background-color: var(--mint-300);
+  color: var(--gray-900);
+}
+
 .navbar-icon {
   color: var(--gray-50);
   display: flex;

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>How to Set Up a Secure SSH Server - NextBit</title>
+    <title data-i18n-title="ssh.page_title">How to Set Up a Secure SSH Server - NextBit</title>
     <link rel="icon" type="image/png" sizes="500x500" href="../../Logo/logo.png">
 
     <!-- STYLESHEETS -->
@@ -27,21 +27,21 @@
 
             <!-- HEADER BLOCK -->
             <header class="tutorial-header">
-                <h1 class="tutorial-title">How to Set Up & Harden a Secure SSH Server</h1>
+                <h1 class="tutorial-title" data-i18n="ssh.title">How to Set Up & Harden a Secure SSH Server</h1>
 
                 <p class="tutorial-author">
-                    By <a href="https://www.linkedin.com/in/gian-valentino/" class="author-link">Gian Valentino
+                    <span data-i18n="common.by">By</span> <a href="https://www.linkedin.com/in/gian-valentino/" class="author-link">Gian Valentino
                         Ampang</a>
                 </p>
 
                 <div class="category-wrapper">
-                    <span class="category-badge">DevOps</span>
+                    <span class="category-badge" data-i18n="common.cat_devops">DevOps</span>
                 </div>
             </header>
 
             <!-- INTRO BANNER IMAGE -->
             <div class="tutorial-media-box intro-image-box">
-                <img src="../../Image/ssh.avif" alt="How to Set Up a Secure SSH Server Banner" class="tutorial-img">
+                <img src="../../Image/ssh.avif" alt="How to Set Up a Secure SSH Server Banner" class="tutorial-img" data-i18n-alt="ssh.banner_alt">
             </div>
 
             <!-- TUTORIAL CONTENT BODY -->
@@ -49,23 +49,23 @@
 
                 <!-- INTRODUCTION -->
                 <section class="tutorial-intro">
-                    <h2 class="section-heading">Introduction</h2>
+                    <h2 class="section-heading" data-i18n="common.introduction">Introduction</h2>
 
-                    <p class="content-text">
+                    <p class="content-text" data-i18n="ssh.intro1">
                         Short for <strong>Secure Shell</strong>, SSH is a protocol that lets you safely connect your
                         computer to another machine anywhere in the world.
                     </p>
 
-                    <p class="content-text">
+                    <p class="content-text" data-i18n="ssh.intro2">
                         Why should you learn it? Simply put, SSH is the global industry standard for remote system
                         management. Whether you're configuring a cloud server, deploying a website, or just tapping into
                         your home computer from a local coffee shop, SSH gives you complete control over a remote
                         terminal—securely, efficiently, and without needing a clunky graphical interface. Best of all,
-                        once you understand the basics, it’s surprisingly easy to configure.
+                        once you understand the basics, it's surprisingly easy to configure.
                     </p>
 
-                    <p class="content-text">
-                        In this tutorial, I’ll walk you through setting up your very first SSH server step-by-step on a
+                    <p class="content-text" data-i18n="ssh.intro3">
+                        In this tutorial, I'll walk you through setting up your very first SSH server step-by-step on a
                         virtual machine using only the terminal. We'll also cover essential security configurations
                         every SSH server should have so you can start managing your devices safely from anywhere.
                     </p>
@@ -73,15 +73,15 @@
 
                 <!-- STEP 1 -->
                 <section class="tutorial-step">
-                    <h2 class="step-title">Step 1: Update Your Linux System</h2>
+                    <h2 class="step-title" data-i18n="ssh.s1">Step 1: Update Your Linux System</h2>
 
                     <div class="tutorial-media-box step-image-box">
-                        <img src="update.avif" alt="Step 1: Updating System Package Lists" class="tutorial-img">
+                        <img src="update.avif" alt="Step 1: Updating System Package Lists" class="tutorial-img" data-i18n-alt="ssh.s1img">
                     </div>
 
-                    <p class="content-text">
+                    <p class="content-text" data-i18n="ssh.s1p1">
                         Before diving into any setup, it's highly recommended to update your system first. In this
-                        tutorial, I’ll be using Ubuntu, so we'll use <code>apt</code> to update our package lists by
+                        tutorial, I'll be using Ubuntu, so we'll use <code>apt</code> to update our package lists by
                         running:
                     </p>
 
@@ -98,7 +98,7 @@
                             class="terminal-content"><code><span class="prompt">$</span> sudo apt update && sudo apt upgrade -y</code></pre>
                     </div>
 
-                    <p class="content-text">
+                    <p class="content-text" data-i18n="ssh.s1p2">
                         <strong>Why do this?</strong> Keeping your system updated minimizes the risk of attacks that
                         exploit known security vulnerabilities in outdated software.
                     </p>
@@ -106,23 +106,23 @@
 
                 <!-- STEP 2 -->
                 <section class="tutorial-step">
-                    <h2 class="step-title">Step 2: Install OpenSSH Server</h2>
+                    <h2 class="step-title" data-i18n="ssh.s2">Step 2: Install OpenSSH Server</h2>
 
                     <div class="tutorial-media-box step-image-box">
-                        <img src="install.avif" alt="Step 2: Installing OpenSSH Package" class="tutorial-img">
+                        <img src="install.avif" alt="Step 2: Installing OpenSSH Package" class="tutorial-img" data-i18n-alt="ssh.s2img">
                     </div>
 
-                    <p class="content-text">
+                    <p class="content-text" data-i18n="ssh.s2p1">
                         To handle incoming SSH connections, we need an SSH server package. We'll be using OpenSSH, which
                         is reliable, secure, and easy to configure.
                     </p>
 
                     <div class="callout-box info">
-                        <strong>Note:</strong> SSH tools might already come pre-installed on some Linux distributions.
-                        If so, you can skip this installation step.
+                        <strong data-i18n="ssh.note_label">Note:</strong> <span data-i18n="ssh.s2callout">SSH tools might already come pre-installed on some Linux distributions.
+                        If so, you can skip this installation step.</span>
                     </div>
 
-                    <p class="content-text">
+                    <p class="content-text" data-i18n="ssh.s2p2">
                         To install OpenSSH on Ubuntu, enter the following command:
                     </p>
 
@@ -139,20 +139,20 @@
                             class="terminal-content"><code><span class="prompt">$</span> sudo apt install openssh-server -y</code></pre>
                     </div>
 
-                    <p class="content-text">
+                    <p class="content-text" data-i18n="ssh.s2p3">
                         Wait for the installation process to finish until your command prompt returns.
                     </p>
                 </section>
 
                 <!-- STEP 3 -->
                 <section class="tutorial-step">
-                    <h2 class="step-title">Step 3: Verify and Start the SSH Service</h2>
+                    <h2 class="step-title" data-i18n="ssh.s3">Step 3: Verify and Start the SSH Service</h2>
 
                     <div class="tutorial-media-box step-image-box">
-                        <img src="verify.avif" alt="Step 3: Verifying SSH Service Status" class="tutorial-img">
+                        <img src="verify.avif" alt="Step 3: Verifying SSH Service Status" class="tutorial-img" data-i18n-alt="ssh.s3img">
                     </div>
 
-                    <p class="content-text">
+                    <p class="content-text" data-i18n="ssh.s3p1">
                         Once installed, check if the SSH service is running properly with this command:
                     </p>
 
@@ -169,7 +169,7 @@
                             class="terminal-content"><code><span class="prompt">$</span> sudo systemctl status ssh</code></pre>
                     </div>
 
-                    <p class="content-text">
+                    <p class="content-text" data-i18n="ssh.s3p2">
                         If the status shows as inactive or dead, start the service for the first time by running:
                     </p>
 
@@ -186,7 +186,7 @@
                             class="terminal-content"><code><span class="prompt">$</span> sudo systemctl start ssh</code></pre>
                     </div>
 
-                    <p class="content-text">
+                    <p class="content-text" data-i18n="ssh.s3p3">
                         Once the output shows <code>active (running)</code> in green text, you're ready for the next
                         step!
                     </p>
@@ -194,18 +194,18 @@
 
                 <!-- STEP 4 -->
                 <section class="tutorial-step">
-                    <h2 class="step-title">Step 4: Configure Basic SSH Security</h2>
+                    <h2 class="step-title" data-i18n="ssh.s4">Step 4: Configure Basic SSH Security</h2>
 
                     <div class="tutorial-media-box step-image-box">
-                        <img src="ssh-conf.avif" alt="Step 4: Editing SSH Configuration File" class="tutorial-img">
+                        <img src="ssh-conf.avif" alt="Step 4: Editing SSH Configuration File" class="tutorial-img" data-i18n-alt="ssh.s4img">
                     </div>
 
-                    <p class="content-text">
+                    <p class="content-text" data-i18n="ssh.s4p1">
                         Now for the fun part: configuration. While we won't cover advanced enterprise security here, we
                         will apply the essential baseline settings every SSH server needs.
                     </p>
 
-                    <p class="content-text">
+                    <p class="content-text" data-i18n="ssh.s4p2">
                         To edit the SSH server configuration file, open Nano terminal editor:
                     </p>
 
@@ -222,7 +222,7 @@
                             class="terminal-content"><code><span class="prompt">$</span> sudo nano /etc/ssh/sshd_config</code></pre>
                     </div>
 
-                    <p class="content-text">
+                    <p class="content-text" data-i18n="ssh.s4p3">
                         Inside this file, you'll see many lines starting with a <code>#</code> (which means they are
                         commented out). Find the following directives, uncomment them by removing the <code>#</code>,
                         and set their values as shown below:
@@ -245,29 +245,29 @@ ClientAliveCountMax 2
 PasswordAuthentication no</code></pre>
                     </div>
 
-                    <h3 class="subsection-heading">Why are these settings essential?</h3>
+                    <h3 class="subsection-heading" data-i18n="ssh.s4h1">Why are these settings essential?</h3>
                     <ul class="directive-list">
-                        <li><strong>PermitRootLogin no:</strong> Disables direct logins to the root account. It's much
+                        <li data-i18n="ssh.s4l1"><strong>PermitRootLogin no:</strong> Disables direct logins to the root account. It's much
                             safer to log in as a standard user and use <code>sudo</code> when elevated privileges are
                             needed, preventing attackers from targeting the main administrator account directly.</li>
-                        <li><strong>PermitEmptyPasswords no:</strong> Ensures the server will never accept accounts that
+                        <li data-i18n="ssh.s4l2"><strong>PermitEmptyPasswords no:</strong> Ensures the server will never accept accounts that
                             lack a password.</li>
-                        <li><strong>MaxAuthTries 3:</strong> Limits password attempts to 3 per session to prevent
+                        <li data-i18n="ssh.s4l3"><strong>MaxAuthTries 3:</strong> Limits password attempts to 3 per session to prevent
                             brute-force attacks.</li>
-                        <li><strong>ClientAliveInterval 300 & ClientAliveCountMax 2:</strong> If a client is idle for 5
+                        <li data-i18n="ssh.s4l4"><strong>ClientAliveInterval 300 & ClientAliveCountMax 2:</strong> If a client is idle for 5
                             minutes (300 seconds), the server sends a quiet check-in ping. If it goes unanswered twice,
                             the server safely disconnects the idle user.</li>
-                        <li><strong>PasswordAuthentication no:</strong> Disables password-based logins entirely, forcing
+                        <li data-i18n="ssh.s4l5"><strong>PasswordAuthentication no:</strong> Disables password-based logins entirely, forcing
                             users to authenticate using SSH keys instead.</li>
                     </ul>
 
                     <div class="callout-box warning">
-                        <strong>CRITICAL WARNING:</strong> Do NOT set <code>PasswordAuthentication no</code> until you
+                        <strong data-i18n="ssh.s4wlabel">CRITICAL WARNING:</strong> <span data-i18n="ssh.s4wtext">Do NOT set <code>PasswordAuthentication no</code> until you
                         have successfully generated and copied your SSH public key to the server! If you disable
-                        password logins before adding your key, you will lock yourself out of your server.
+                        password logins before adding your key, you will lock yourself out of your server.</span>
                     </div>
 
-                    <p class="content-text">
+                    <p class="content-text" data-i18n="ssh.s4p4">
                         After saving the file (press <code>Ctrl + O</code>, then <code>Enter</code>, then
                         <code>Ctrl + X</code> to exit), apply the changes by restarting the SSH service:
                     </p>
@@ -288,14 +288,14 @@ PasswordAuthentication no</code></pre>
 
                 <!-- STEP 5 -->
                 <section class="tutorial-step">
-                    <h2 class="step-title">Step 5: Connect to Your SSH Server from the Host Machine</h2>
+                    <h2 class="step-title" data-i18n="ssh.s5">Step 5: Connect to Your SSH Server from the Host Machine</h2>
 
                     <div class="tutorial-media-box step-image-box">
                         <img src="connect.avif" alt="Step 5: Connecting to SSH Server from Host Machine"
-                            class="tutorial-img">
+                            class="tutorial-img" data-i18n-alt="ssh.s5img">
                     </div>
 
-                    <p class="content-text">
+                    <p class="content-text" data-i18n="ssh.s5p1">
                         To connect to your server from another computer, you first need to know your server's IP
                         address. Run this command on your SSH server:
                     </p>
@@ -312,12 +312,12 @@ PasswordAuthentication no</code></pre>
                         <pre class="terminal-content"><code><span class="prompt">$</span> ip a</code></pre>
                     </div>
 
-                    <p class="content-text">
+                    <p class="content-text" data-i18n="ssh.s5p2">
                         Look for your active network interface (usually starting with <code>eth</code> or
                         <code>enp</code>) and find your local IP address (for example, <code>192.168.1.50</code>).
                     </p>
 
-                    <p class="content-text">
+                    <p class="content-text" data-i18n="ssh.s5p3">
                         Now, move to your host machine (Windows PowerShell, macOS Terminal, or another Linux terminal)
                         and run:
                     </p>
@@ -335,12 +335,12 @@ PasswordAuthentication no</code></pre>
                             class="terminal-content"><code><span class="prompt">$</span> ssh username@your_server_ip</code></pre>
                     </div>
 
-                    <p class="content-text">
+                    <p class="content-text" data-i18n="ssh.s5p4">
                         <em>(Replace <code>username</code> with your Ubuntu user account name and
                             <code>your_server_ip</code> with the IP address you found above.)</em>
                     </p>
 
-                    <p class="content-text">
+                    <p class="content-text" data-i18n="ssh.s5p5">
                         If this is your first time connecting, type <code>yes</code> when prompted to accept the host
                         key, enter your account password, and voilà! You are now remotely connected to your own secure
                         SSH server.
@@ -352,7 +352,7 @@ PasswordAuthentication no</code></pre>
 
         <!-- RECOMMENDATION SECTION (DARK MINT CARDS) -->
         <section class="recommendation-section">
-            <h2 class="recommendation-heading">Recommendation</h2>
+            <h2 class="recommendation-heading" data-i18n="common.recommendation">Recommendation</h2>
 
             <div class="recommendation-grid" id="recommendationGrid"></div>
         </section>
@@ -361,6 +361,7 @@ PasswordAuthentication no</code></pre>
 
     <!-- FOOTER SECTION -->
     <div id="footer-placeholder"></div>
+    <script src="../../i18n.js" defer></script>
     <script src="../../nav.js" defer></script>
     <script src="../../footer.js" defer></script>
     <script src="../recommendations.js" defer></script>

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>How to Set Up SSH Login Alerts with a Telegram Bot - NextBit</title>
+    <title data-i18n-title="bot.page_title">How to Set Up SSH Login Alerts with a Telegram Bot - NextBit</title>
     <link rel="icon" type="image/png" sizes="500x500" href="../../Logo/logo.png">
 
     <!-- STYLESHEETS -->
@@ -27,21 +27,21 @@
 
             <!-- HEADER BLOCK -->
             <header class="tutorial-header">
-                <h1 class="tutorial-title">Automating Real-Time Telegram Alerts for SSH Logins on Linux</h1>
+                <h1 class="tutorial-title" data-i18n="bot.title">Automating Real-Time Telegram Alerts for SSH Logins on Linux</h1>
 
                 <p class="tutorial-author">
-                    By <a href="https://www.linkedin.com/in/gian-valentino/" class="author-link" target="_blank"
+                    <span data-i18n="common.by">By</span> <a href="https://www.linkedin.com/in/gian-valentino/" class="author-link" target="_blank"
                         rel="noopener">Gian Valentino Ampang</a>
                 </p>
 
                 <div class="category-wrapper">
-                    <span class="category-badge">DevOps</span>
+                    <span class="category-badge" data-i18n="common.cat_devops">DevOps</span>
                 </div>
             </header>
 
             <!-- INTRO BANNER IMAGE -->
             <div class="tutorial-media-box intro-image-box">
-                <img src="../../Image/bot.webp" alt="Intro Image" class="tutorial-img">
+                <img src="../../Image/bot.webp" alt="Intro Image" class="tutorial-img" data-i18n-alt="bot.banner_alt">
             </div>
 
             <!-- TUTORIAL CONTENT BODY -->
@@ -49,9 +49,9 @@
 
                 <!-- INTRODUCTION SECTION -->
                 <section class="tutorial-intro">
-                    <h2 class="section-heading">Introduction</h2>
+                    <h2 class="section-heading" data-i18n="common.introduction">Introduction</h2>
 
-                    <p class="content-text">
+                    <p class="content-text" data-i18n="bot.intro1">
                         Worried about someone trying to log into your SSH server? Don't worry! In this tutorial, I will
                         guide you step-by-step on how to create your own Telegram bot that alerts you whenever someone
                         logs into your SSH server.
@@ -60,42 +60,42 @@
 
                 <!-- STEP 1 -->
                 <section class="tutorial-step">
-                    <h2 class="step-title">Step 1: Create a Bot on Telegram</h2>
+                    <h2 class="step-title" data-i18n="bot.s1">Step 1: Create a Bot on Telegram</h2>
 
                     <!-- STEP IMAGE BANNER -->
                     <div class="tutorial-media-box step-image-box">
-                        <img src="botfather.webp" alt="Step 1 Image" class="tutorial-img">
+                        <img src="botfather.webp" alt="Step 1 Image" class="tutorial-img" data-i18n-alt="bot.s1img">
                     </div>
 
                     <ul class="directive-list">
-                        <li><strong>Find BotFather:</strong> Open Telegram and search for <code>@BotFather</code> (make
+                        <li data-i18n="bot.s1l1"><strong>Find BotFather:</strong> Open Telegram and search for <code>@BotFather</code> (make
                             sure it has the blue verification checkmark so you avoid using any malicious software).</li>
-                        <li><strong>Start Chat:</strong> Tap Start or send <code>/start</code> to @BotFather.</li>
-                        <li><strong>Create Bot:</strong> Type and send <code>/newbot</code>.</li>
-                        <li><strong>Name Your Bot:</strong> Enter a name for your bot (for example:
+                        <li data-i18n="bot.s1l2"><strong>Start Chat:</strong> Tap Start or send <code>/start</code> to @BotFather.</li>
+                        <li data-i18n="bot.s1l3"><strong>Create Bot:</strong> Type and send <code>/newbot</code>.</li>
+                        <li data-i18n="bot.s1l4"><strong>Name Your Bot:</strong> Enter a name for your bot (for example:
                             <code>login alertbot</code>).
                         </li>
-                        <li><strong>Choose Username:</strong> Choose a unique username for your bot. Note that the
+                        <li data-i18n="bot.s1l5"><strong>Choose Username:</strong> Choose a unique username for your bot. Note that the
                             username must end with <code>bot</code> (e.g., <code>my_login_alert_bot</code>).</li>
-                        <li><strong>Save Token:</strong> Once a valid username is accepted, BotFather will provide your
+                        <li data-i18n="bot.s1l6"><strong>Save Token:</strong> Once a valid username is accepted, BotFather will provide your
                             HTTP API token. Keep this token safe, as you will need it later.</li>
-                        <li><strong>Get Chat ID:</strong> Next, search for <code>@userinfobot</code> in Telegram and tap
+                        <li data-i18n="bot.s1l7"><strong>Get Chat ID:</strong> Next, search for <code>@userinfobot</code> in Telegram and tap
                             Start or send <code>/start</code>. The bot will respond with your Chat ID.</li>
-                        <li><strong>Initialize Bot:</strong> Finally, search for your new bot's username and start a
+                        <li data-i18n="bot.s1l8"><strong>Initialize Bot:</strong> Finally, search for your new bot's username and start a
                             conversation with it by tapping Start or sending a quick message like "hello".</li>
                     </ul>
                 </section>
 
                 <!-- STEP 2 -->
                 <section class="tutorial-step">
-                    <h2 class="step-title">Step 2: Configure Your Bot on the Server</h2>
+                    <h2 class="step-title" data-i18n="bot.s2">Step 2: Configure Your Bot on the Server</h2>
 
                     <!-- STEP IMAGE BANNER -->
                     <div class="tutorial-media-box step-image-box">
-                        <img src="cli.avif" alt="Step 2 Image" class="tutorial-img">
+                        <img src="cli.avif" alt="Step 2 Image" class="tutorial-img" data-i18n-alt="bot.s2img">
                     </div>
 
-                    <p class="content-text">
+                    <p class="content-text" data-i18n="bot.s2p1">
                         Connect to your server via SSH terminal. Ensure <code>curl</code> and <code>python3</code> are
                         installed on your server. If they aren't installed yet, run:
                     </p>
@@ -114,7 +114,7 @@
                             class="terminal-content"><code><span class="prompt">$</span> sudo apt update &amp;&amp; sudo apt install curl python3 -y</code></pre>
                     </div>
 
-                    <p class="content-text">
+                    <p class="content-text" data-i18n="bot.s2p2">
                         Create your script file using the following command:
                     </p>
 
@@ -131,7 +131,7 @@
                             class="terminal-content"><code><span class="prompt">$</span> sudo nano /usr/local/bin/telegram-ssh-login.sh</code></pre>
                     </div>
 
-                    <p class="content-text">
+                    <p class="content-text" data-i18n="bot.s2p3">
                         Paste the following configuration into the file. (Make sure to replace
                         <code>YOUR_TELEGRAM_BOT_TOKEN_HERE</code> and <code>YOUR_TELEGRAM_CHAT_ID_HERE</code> with your
                         actual Bot Token and Chat ID):
@@ -245,7 +245,7 @@ elif [ "${PAM_TYPE}" = "close_session" ]; then
 fi</code></pre>
                     </div>
 
-                    <p class="content-text">
+                    <p class="content-text" data-i18n="bot.s2p4">
                         Save the file and make it executable by running:
                     </p>
 
@@ -262,7 +262,7 @@ fi</code></pre>
                             class="terminal-content"><code><span class="prompt">$</span> sudo chmod +x /usr/local/bin/telegram-ssh-login.sh</code></pre>
                     </div>
 
-                    <p class="content-text">
+                    <p class="content-text" data-i18n="bot.s2p5">
                         Hook the script into Linux PAM by opening the SSH configuration file:
                     </p>
 
@@ -279,7 +279,7 @@ fi</code></pre>
                             class="terminal-content"><code><span class="prompt">$</span> sudo nano /etc/pam.d/sshd</code></pre>
                     </div>
 
-                    <p class="content-text">
+                    <p class="content-text" data-i18n="bot.s2p6">
                         Scroll to the very bottom of the file and add the following line:
                     </p>
 
@@ -299,32 +299,32 @@ fi</code></pre>
 
                 <!-- STEP 3 -->
                 <section class="tutorial-step">
-                    <h2 class="step-title">Step 3: Verification and Testing</h2>
+                    <h2 class="step-title" data-i18n="bot.s3">Step 3: Verification and Testing</h2>
 
                     <!-- STEP IMAGE BANNER -->
                     <div class="tutorial-media-box step-image-box">
-                        <img src="verify.webp" alt="Step 3 Image" class="tutorial-img">
+                        <img src="verify.webp" alt="Step 3 Image" class="tutorial-img" data-i18n-alt="bot.s3img">
                     </div>
 
-                    <p class="content-text">
+                    <p class="content-text" data-i18n="bot.s3p1">
                         Save the file and exit the editor. Open a new terminal tab or window and log into your server
                         via SSH.
                     </p>
-                    <p class="content-text">
+                    <p class="content-text" data-i18n="bot.s3p2">
                         Check your Telegram app—you should instantly receive a 🟢 SSH Login Alert containing detailed
                         information about the login, including:
                     </p>
 
                     <ul class="directive-list">
-                        <li>IP Address</li>
-                        <li>City / Region / Country</li>
-                        <li>ISP / Organization</li>
-                        <li>Clickable Google Maps location link</li>
+                        <li data-i18n="bot.s3l1">IP Address</li>
+                        <li data-i18n="bot.s3l2">City / Region / Country</li>
+                        <li data-i18n="bot.s3l3">ISP / Organization</li>
+                        <li data-i18n="bot.s3l4">Clickable Google Maps location link</li>
                     </ul>
 
                     <div class="callout-box info">
-                        <strong>Success:</strong> Now you can rest easy knowing you'll be alerted if anyone accesses
-                        your server!
+                        <strong data-i18n="bot.s3wlabel">Success:</strong> <span data-i18n="bot.s3wtext">Now you can rest easy knowing you'll be alerted if anyone accesses
+                        your server!</span>
                     </div>
                 </section>
 
@@ -333,7 +333,7 @@ fi</code></pre>
 
         <!-- RECOMMENDATION SECTION (DARK MINT CARDS) -->
         <section class="recommendation-section">
-            <h2 class="recommendation-heading">Recommendation</h2>
+            <h2 class="recommendation-heading" data-i18n="common.recommendation">Recommendation</h2>
 
             <div class="recommendation-grid" id="recommendationGrid"></div>
         </section>
@@ -342,6 +342,7 @@ fi</code></pre>
 
     <!-- FOOTER SECTION -->
     <div id="footer-placeholder"></div>
+    <script src="../../i18n.js" defer></script>
     <script src="../../nav.js" defer></script>
     <script src="../../footer.js" defer></script>
     <script src="../recommendations.js" defer></script>

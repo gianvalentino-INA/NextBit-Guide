@@ -3,73 +3,77 @@ const NEXTBIT_GUIDES = [
         key: "ssh",
         href: "../ssh/ssh.html",
         img: "../../Image/ssh.avif",
-        category: "DevOps",
-        title: "How to Set Up & Harden a Secure SSH Server",
-        desc: "A step-by-step guide to configuring OpenSSH, key-based authentication, and modern cryptographic rules for server security.",
+        categoryKey: "common.cat_devops",
+        titleKey: "lrn.card_ssh_title",
+        descKey: "lrn.card_ssh_desc",
         date: "2026-07-20",
-        dateLabel: "July 2026"
+        dateKey: "common.july2026"
     },
     {
         key: "claude",
         href: "../claude/claude.html",
         img: "../../Image/claude.avif",
-        category: "DevOps",
-        title: "How to Install & Configure Claude Code CLI on Linux",
-        desc: "Learn how to deploy Anthropic's terminal AI agent for terminal automation, code refactoring, and developer productivity.",
+        categoryKey: "common.cat_devops",
+        titleKey: "lrn.card_claude_title",
+        descKey: "lrn.card_claude_desc",
         date: "2026-07-20",
-        dateLabel: "July 2026"
+        dateKey: "common.july2026"
     },
     {
         key: "office",
         href: "../office/office.html",
         img: "../../Image/office.avif",
-        category: "Systems",
-        title: "How to Install/Update & Activate Microsoft Office",
-        desc: "A step-by-step guide on redeeming your license key and downloading official Office apps directly from your Microsoft account.",
+        categoryKey: "common.cat_systems",
+        titleKey: "lrn.card_office_title",
+        descKey: "lrn.card_office_desc",
         date: "2026-07-20",
-        dateLabel: "July 2026"
+        dateKey: "common.july2026"
     },
     {
         key: "os",
         href: "../os/os.html",
         img: "../../Image/os.avif",
-        category: "Systems",
-        title: "How to Clean Install Windows or Linux on Any PC",
-        desc: "A complete beginner's guide to creating bootable USB installation media, configuring BIOS settings, and partitioning drives safely.",
+        categoryKey: "common.cat_systems",
+        titleKey: "lrn.card_os_title",
+        descKey: "lrn.card_os_desc",
         date: "2026-07-20",
-        dateLabel: "July 2026"
+        dateKey: "common.july2026"
     },
     {
         key: "speed",
         href: "../speed/speed.html",
         img: "../../Image/speed.webp",
-        category: "Systems",
-        title: "How to Speed Up a Slow PC (Without Buying New Hardware)",
-        desc: "Practical system optimizations, startup management, and background service tweaks to restore your computer's speed.",
+        categoryKey: "common.cat_systems",
+        titleKey: "lrn.card_speed_title",
+        descKey: "lrn.card_speed_desc",
         date: "2026-07-20",
-        dateLabel: "July 2026"
+        dateKey: "common.july2026"
     },
     {
         key: "bot",
         href: "../bot/bot.html",
         img: "../../Image/bot.webp",
-        category: "DevOps",
-        title: "Automating Real-Time Telegram Alerts for SSH Logins on Linux",
-        desc: "Secure your VPS by triggering instant Telegram notifications whenever a user logs into your server via SSH.",
+        categoryKey: "common.cat_devops",
+        titleKey: "lrn.card_bot_title",
+        descKey: "lrn.card_bot_desc",
         date: "2026-06-28",
-        dateLabel: "June 2026"
+        dateKey: "common.june2026"
     },
     {
         key: "dhcp",
         href: "../dhcp-server-mikrotik/dhcp.html",
         img: "../../Image/dhcp.webp",
-        category: "Networks",
-        title: "Configuring a Basic DHCP Server on MikroTik RouterOS",
-        desc: "Dynamic IP assignment, IP pools, and gateway setup using WinBox.",
+        categoryKey: "common.cat_networks",
+        titleKey: "lrn.card_dhcp_title",
+        descKey: "lrn.card_dhcp_desc",
         date: "2026-06-28",
-        dateLabel: "June 2026"
+        dateKey: "common.june2026"
     }
 ];
+
+function i18nVal(key, fallback) {
+    return (window.I18N && I18N.t(key) !== key) ? I18N.t(key) : fallback;
+}
 
 function getCurrentGuideKey() {
     const parts = window.location.pathname.split("/").filter(Boolean);
@@ -98,16 +102,16 @@ function renderRecommendations() {
         <a href="${g.href}" class="card-link">
             <article class="card card--dark-mint">
                 <div class="card-img-wrapper">
-                    <img src="${g.img}" alt="${g.title}" class="card-img"
+                    <img src="${g.img}" alt="${i18nVal(g.titleKey, g.title)}" class="card-img"
                         onerror="this.src='../../Image/speed.webp'">
                 </div>
                 <div class="card-content">
                     <div class="card-meta">
-                        <span class="card-category">${g.category}</span>
-                        <time datetime="${g.date}">${g.dateLabel}</time>
+                        <span class="card-category">${i18nVal(g.categoryKey, g.category)}</span>
+                        <time datetime="${g.date}">${i18nVal(g.dateKey, g.dateLabel)}</time>
                     </div>
-                    <h3 class="card-title">${g.title}</h3>
-                    <p class="card-desc">${g.desc}</p>
+                    <h3 class="card-title">${i18nVal(g.titleKey, g.title)}</h3>
+                    <p class="card-desc">${i18nVal(g.descKey, g.desc)}</p>
                 </div>
             </article>
         </a>
@@ -115,3 +119,10 @@ function renderRecommendations() {
 }
 
 document.addEventListener("DOMContentLoaded", renderRecommendations);
+
+if (window.I18N && I18N.addTranslations) {
+    document.addEventListener("DOMContentLoaded", function () {
+        I18N.addTranslations({});
+    });
+}
+

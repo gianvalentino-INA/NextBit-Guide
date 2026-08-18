@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - NextBit Studio</title>
+    <title data-i18n-title="abt.page_title">About Us - NextBit Studio</title>
     <link rel="icon" type="image/png" sizes="500x500" href="Logo/logo.png">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="about.css">
@@ -22,21 +22,21 @@
 
         <!-- WHO WE ARE SECTION -->
         <section class="about-hero animate-on-scroll">
-            <span class="section-tag">Located in Balikpapan</span>
-            <h1 class="about-title">Who We Are?</h1>
-            <p class="about-lead">
+            <span class="section-tag" data-i18n="abt.tag">Located in Balikpapan</span>
+            <h1 class="about-title" data-i18n="abt.title">Who We Are?</h1>
+            <p class="about-lead" data-i18n="abt.lead">
                 We're a Balikpapan based freelance team offering practical, affordable tech and creative services from
                 IT support and PC builds to graphic design and web development.
             </p>
             <div class="about-bio-box">
-                <p>
+                <p data-i18n="abt.bio1">
                     Founded by <a href="https://www.linkedin.com/in/gian-valentino/" target="_blank"
                         class="gian"><strong>Gian Valentino Ampang</strong></a> a
                      vocational student who wanted to put their skills to work for real people in Balikpapan.
                      What began as helping friends and family with computer problems has
                      grown into a full range of services.
                 </p>
-                <p>
+                <p data-i18n="abt.bio2">
                     NextBit is still young under a year in but we slowly built our name on doing solid work at prices that make
                     sense for clients.
                 </p>
@@ -46,30 +46,30 @@
         <!-- WHAT WE DO SECTION (SERVICES CARDS GRID) -->
         <section class="services-section animate-on-scroll">
             <div class="section-header">
-                <h2 class="section-title">What We Do?</h2>
-                <p class="section-desc">Reliable digital & technical solutions tailored for individuals and local
+                <h2 class="section-title" data-i18n="abt.what">What We Do?</h2>
+                <p class="section-desc" data-i18n="abt.what_desc">Reliable digital & technical solutions tailored for individuals and local
                     businesses.</p>
             </div>
 
             <div class="about-grid">
                 <div class="about-card">
-                    <div class="card-badge">Tech Care</div>
+                    <div class="card-badge" data-i18n="abt.badge_tech">Tech Care</div>
                     <div class="card-icon">🛠️</div>
-                    <h3>IT Support</h3>
-                    <p>OS installation, Microsoft Office setup, game installation, troubleshooting, and general computer
+                    <h3 data-i18n="abt.title_it">IT Support</h3>
+                    <p data-i18n="abt.desc_it">OS installation, Microsoft Office setup, game installation, troubleshooting, and general computer
                         care.</p>
                 </div>
                 <div class="about-card">
-                    <div class="card-badge">Creative</div>
+                    <div class="card-badge" data-i18n="abt.badge_creative">Creative</div>
                     <div class="card-icon">🎨</div>
-                    <h3>Graphic Design</h3>
-                    <p>Eye-catching visuals that fit your brand or personal project perfectly.</p>
+                    <h3 data-i18n="abt.title_design">Graphic Design</h3>
+                    <p data-i18n="abt.desc_design">Eye-catching visuals that fit your brand or personal project perfectly.</p>
                 </div>
                 <div class="about-card">
-                    <div class="card-badge">Digital</div>
+                    <div class="card-badge" data-i18n="abt.badge_digital">Digital</div>
                     <div class="card-icon">🌐</div>
-                    <h3>Web Development</h3>
-                    <p>Simple, functional websites built for individuals and growing small businesses.</p>
+                    <h3 data-i18n="abt.title_web">Web Development</h3>
+                    <p data-i18n="abt.desc_web">Simple, functional websites built for individuals and growing small businesses.</p>
                 </div>
             </div>
         </section>
@@ -78,8 +78,8 @@
         <section class="approach-section animate-on-scroll">
             <div class="approach-grid">
                 <div class="approach-card">
-                    <h2>Our Approach</h2>
-                    <p>
+                    <h2 data-i18n="abt.approach">Our Approach</h2>
+                    <p data-i18n="abt.approach_desc">
                         We believe good tech and design help shouldn't be out of reach. As locals ourselves, we
                         understand what our community needs: a reliable service, clear communication, and pricing that
                         respects your budget. Every project, big or small, gets the same level of care.
@@ -87,15 +87,15 @@
                 </div>
 
                 <div class="location-card">
-                    <h2>Where We Work</h2>
-                    <p>
+                    <h2 data-i18n="abt.location">Where We Work</h2>
+                    <p data-i18n="abt.location_desc">
                         Based in <strong>Balikpapan, Indonesia</strong>, we proudly serve individuals and small
                         businesses in our local area.
                     </p>
                     <div class="cta-box">
-                        <p class="cta-text">Need reliable tech support that fits your budget? Reach out for a quick, hassle-free consultation.</p>
+                        <p class="cta-text" data-i18n="abt.cta_text">Need reliable tech support that fits your budget? Reach out for a quick, hassle-free consultation.</p>
                         <a href="https://wa.me/message/IECHSSXWIOSJJ1"
-                            target="_blank" class="cta-btn">Get In Touch</a>
+                            target="_blank" class="cta-btn" data-i18n="abt.cta_btn">Get In Touch</a>
                     </div>
                 </div>
             </div>
@@ -105,6 +105,7 @@
 
     <!-- FOOTER SECTION -->
     <div id="footer-placeholder"></div>
+    <script src="i18n.js" defer></script>
     <script src="nav.js" defer></script>
     <script src="footer.js" defer></script>
 

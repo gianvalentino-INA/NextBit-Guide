@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium Mockup Collection - NextBit Store</title>
+    <title data-i18n-title="prod.page_title">Premium Mockup Collection - NextBit Store</title>
     <meta name="description"
         content="Collection of premium mockup thats ready to use and edit as you want. Pay once, own forever.">
     <link rel="icon" type="image/png" sizes="500x500" href="../../Logo/logo.png">
@@ -39,16 +39,20 @@
                 </a>
 
                 <ul class="navbar-links">
-                    <li><a href="../../index.html" class="navbar-link">Home</a></li>
-                    <li><a href="../../learn.html" class="navbar-link">Learn</a></li>
-                    <li><a href="../../Store/store.html" class="navbar-link active">Store</a></li>
-                    <li><a href="../../chatbot.html" class="navbar-link">Chatbot</a></li>
-                    <li><a href="../../about.html" class="navbar-link">About</a></li>
+                    <li><a href="../../index.html" class="navbar-link" data-i18n="nav.home">Home</a></li>
+                    <li><a href="../../learn.html" class="navbar-link" data-i18n="nav.learn">Learn</a></li>
+                    <li><a href="../../Store/store.html" class="navbar-link active" data-i18n="nav.store">Store</a></li>
+                    <li><a href="../../chatbot.html" class="navbar-link" data-i18n="nav.chatbot">Chatbot</a></li>
+                    <li><a href="../../about.html" class="navbar-link" data-i18n="nav.about">About</a></li>
                 </ul>
             </div>
 
             <!-- Store Navbar Actions -->
             <div class="navbar-action">
+                <div class="lang-switch" role="group" aria-label="Language">
+                    <button type="button" class="lang-opt" data-lang="id" aria-pressed="false">ID</button>
+                    <button type="button" class="lang-opt" data-lang="en" aria-pressed="false">EN</button>
+                </div>
                 <a href="../../Store/store.html" class="nav-cart-btn" aria-label="View Shopping Cart">
                     <img src="../../Icon/cart.svg" alt="Cart" class="cart-icon">
                     <span class="cart-badge" id="cartBadge">0</span>
@@ -98,8 +102,8 @@
 
                 <!-- Gallery Footer Share Row -->
                 <div class="gallery-footer-share">
-                    <span class="share-text">Share product:</span>
-                    <button class="share-icon-btn" title="Share Product" onclick="shareProduct()">
+                    <span class="share-text" data-i18n="prod.share_product">Share product:</span>
+                    <button class="share-icon-btn" title="Share Product" data-i18n-title="prod.share_title" onclick="shareProduct()">
                         <svg class="inline-share-icon-dark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                             stroke-linejoin="round">
@@ -109,7 +113,7 @@
                             <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
                             <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
                         </svg>
-                        <span>Copy Link</span>
+                        <span data-i18n="prod.copy_link">Copy Link</span>
                     </button>
                 </div>
             </div>
@@ -119,8 +123,8 @@
 
                 <!-- Category Badge & Title Header -->
                 <div class="title-price-header">
-                    <div class="category-badge">Template</div>
-                    <h1 class="product-title">Premium Mockup Collection</h1>
+                    <div class="category-badge" data-i18n="common.cat_template">Template</div>
+                    <h1 class="product-title" data-i18n="prod.title">Premium Mockup Collection</h1>
 
                     <!-- Price Banner Container (Rupiah) -->
                     <div class="price-banner-box">
@@ -131,36 +135,36 @@
                 <!-- Product Specifications -->
                 <div class="spec-list">
                     <div class="spec-item">
-                        <span class="spec-label">Category</span>
-                        <span class="spec-value">Template</span>
+                        <span class="spec-label" data-i18n="prod.category_label">Category</span>
+                        <span class="spec-value" data-i18n="common.cat_template">Template</span>
                     </div>
                     <div class="spec-item">
-                        <span class="spec-label">Software</span>
+                        <span class="spec-label" data-i18n="prod.software_label">Software</span>
                         <span class="spec-value">Photoshop</span>
                     </div>
                     <div class="spec-item">
-                        <span class="spec-label">Delivery</span>
-                        <span class="spec-value">Instant Download Link via Email</span>
+                        <span class="spec-label" data-i18n="prod.delivery_label">Delivery</span>
+                        <span class="spec-value" data-i18n="prod.delivery_value">Instant Download Link via Email</span>
                     </div>
                     <div class="spec-item">
-                        <span class="spec-label">License</span>
-                        <span class="spec-value">Commercial & Personal Use</span>
+                        <span class="spec-label" data-i18n="prod.license_label">License</span>
+                        <span class="spec-value" data-i18n="prod.license_value">Commercial & Personal Use</span>
                     </div>
                     <div class="spec-item desktop-only-spec">
-                        <span class="spec-label">Quantity</span>
+                        <span class="spec-label" data-i18n="prod.quantity_label">Quantity</span>
                         <div class="quantity-picker">
                             <button onclick="adjustQty(-1)">-</button>
                             <input type="text" id="qtyInput" value="1" readonly>
                             <button onclick="adjustQty(1)">+</button>
-                            <span class="stock-info">IN STOCK</span>
+                            <span class="stock-info" data-i18n="prod.in_stock">IN STOCK</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- DESCRIPTION SECTION -->
                 <div class="product-description-block">
-                    <h3 class="description-heading">DESCRIPTION</h3>
-                    <p class="content-text">
+                    <h3 class="description-heading" data-i18n="prod.description_label">DESCRIPTION</h3>
+                    <p class="content-text" data-i18n="prod.description_text">
                         Elevate your portfolio and client presentations with this all-in-one branding mockup collection.
                         Built specifically for creative freelancers, agency owners, and local businesses, this
                         high-resolution Photoshop bundle gives you everything needed to showcase brand identities across
@@ -172,12 +176,12 @@
 
                 <!-- ACTION BUTTONS SECTION -->
                 <div class="action-buttons-group">
-                    <button class="add-cart-outline-btn" title="Add to Cart" onclick="addToCart()">
+                    <button class="add-cart-outline-btn" title="Add to Cart" data-i18n-title="prod.add_title" onclick="addToCart()">
                         <img src="../../Icon/cart.svg" alt="Cart" class="btn-icon">
-                        <span class="btn-text-desktop">Add to Cart</span>
+                        <span class="btn-text-desktop" data-i18n="prod.add_to_cart">Add to Cart</span>
                     </button>
 
-                    <button class="buy-now-mint-btn" onclick="buyNow()">
+                    <button class="buy-now-mint-btn" onclick="buyNow()" data-i18n="prod.buy_now">
                         BUY NOW
                     </button>
                 </div>
@@ -188,6 +192,7 @@
 
     <!-- FOOTER SECTION -->
     <div id="footer-placeholder"></div>
+    <script src="../../i18n.js" defer></script>
     <script src="../../footer.js" defer></script>
 
     <!-- JS FOR GALLERY SLIDER, SWIPE, SHARE, QUANTITY & LOCALSTORAGE CART -->
@@ -276,7 +281,7 @@
             const currentUrl = window.location.href;
             if (navigator.clipboard && window.isSecureContext) {
                 navigator.clipboard.writeText(currentUrl).then(() => {
-                    alert("Product link copied to clipboard!");
+                    alert(window.I18N ? I18N.t('prod.copied') : "Product link copied to clipboard!");
                 }).catch(() => fallbackCopy(currentUrl));
             } else {
                 fallbackCopy(currentUrl);
@@ -290,7 +295,7 @@
             tempInput.select();
             document.execCommand("copy");
             document.body.removeChild(tempInput);
-            alert("Product link copied to clipboard!");
+            alert(window.I18N ? I18N.t('prod.copied') : "Product link copied to clipboard!");
         }
 
         function adjustQty(change) {
@@ -342,7 +347,10 @@
             saveCart(cart);
 
             // Notify the user with a modern toast instead of a blocking alert
-            showToast(`✅ Added ${qty}x Premium Mockup Collection to cart!`);
+            const addedMsg = window.I18N
+                ? (I18N.getLang() === 'id' ? `✅ ${qty}x Premium Mockup Collection berhasil ditambahkan ke keranjang!` : `✅ Added ${qty}x Premium Mockup Collection to cart!`)
+                : `✅ Added ${qty}x Premium Mockup Collection to cart!`;
+            showToast(addedMsg);
         }
 
         function buyNow() {

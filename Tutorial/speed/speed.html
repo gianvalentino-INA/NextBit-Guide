@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>How to Speed Up a Slow PC (Without Buying New Hardware) - NextBit</title>
+    <title data-i18n-title="speed.page_title">How to Speed Up a Slow PC (Without Buying New Hardware) - NextBit</title>
     <link rel="icon" type="image/png" sizes="500x500" href="../../Logo/logo.png">
 
     <!-- STYLESHEETS -->
@@ -25,20 +25,20 @@
 
             <!-- HEADER BLOCK -->
             <header class="tutorial-header">
-                <h1 class="tutorial-title">How to Speed Up a Slow PC (Without Buying New Hardware)</h1>
+                <h1 class="tutorial-title" data-i18n="speed.title">How to Speed Up a Slow PC (Without Buying New Hardware)</h1>
 
                 <p class="tutorial-author">
-                    By <a href="https://www.linkedin.com/in/gian-valentino/" class="author-link" target="_blank" rel="noopener">Gian Valentino</a>
+                    <span data-i18n="common.by">By</span> <a href="https://www.linkedin.com/in/gian-valentino/" class="author-link" target="_blank" rel="noopener">Gian Valentino</a>
                 </p>
 
                 <div class="category-wrapper">
-                    <span class="category-badge">Systems</span>
+                    <span class="category-badge" data-i18n="common.cat_systems">Systems</span>
                 </div>
             </header>
 
             <!-- INTRO BANNER IMAGE -->
             <div class="tutorial-media-box intro-image-box">
-                <img src="../../Image/speed.webp" alt="How to Speed Up a Slow PC" class="tutorial-img">
+                <img src="../../Image/speed.webp" alt="How to Speed Up a Slow PC" class="tutorial-img" data-i18n-alt="speed.banner_alt">
             </div>
 
             <!-- TUTORIAL CONTENT BODY -->
@@ -46,36 +46,36 @@
 
                 <!-- INTRODUCTION SECTION -->
                 <section class="tutorial-intro">
-                    <p class="content-text">
+                    <p class="content-text" data-i18n="speed.intro1">
                         Is your Windows 10 or 11 device feeling sluggish? Over time, background processes, pre-installed bloatware, and non-optimal system settings can accumulate and drag down performance.
                     </p>
-                    <p class="content-text">
+                    <p class="content-text" data-i18n="speed.intro2">
                         This guide will walk you through safe, effective steps to optimize and debloat your operating system using free, open-source tools and built-in Windows utilities.
                     </p>
 
                     <!-- DISCLAIMER CALLOUT -->
                     <div class="callout-box warning">
-                        <strong>Disclaimer:</strong> Executing PowerShell scripts and modifying advanced system settings can alter core OS behaviors. Although the tools and methods listed below are widely trusted, always create a System Restore Point or back up critical files before proceeding. You perform these steps at your own risk.
+                        <strong data-i18n="speed.introwlabel">Disclaimer:</strong> <span data-i18n="speed.introwtext">Executing PowerShell scripts and modifying advanced system settings can alter core OS behaviors. Although the tools and methods listed below are widely trusted, always create a System Restore Point or back up critical files before proceeding. You perform these steps at your own risk.</span>
                     </div>
                 </section>
 
                 <!-- STEP 1 -->
                 <section class="tutorial-step">
-                    <h2 class="step-title">Step 1: Debloat Windows with Win11Debloat</h2>
+                    <h2 class="step-title" data-i18n="speed.s1">Step 1: Debloat Windows with Win11Debloat</h2>
 
                      <div class="tutorial-media-box step-image-box">
-                        <img src="winbloat.avif" alt="Step 1: Debloating Windows" class="tutorial-img">
+                        <img src="winbloat.avif" alt="Step 1: Debloating Windows" class="tutorial-img" data-i18n-alt="speed.s1img">
                     </div>
 
-                    <p class="content-text">
+                    <p class="content-text" data-i18n="speed.s1p1">
                         Windows comes pre-installed with numerous apps and services that consume background system resources. Win11Debloat, an open-source tool developed by Raphire, safely removes unnecessary pre-installed applications and telemetry from both Windows 11 and Windows 10.
                     </p>
 
-                    <p class="content-text">
+                    <p class="content-text" data-i18n="speed.s1p2">
                         Open PowerShell (search for PowerShell in the Start menu).
                     </p>
 
-                    <p class="content-text">
+                    <p class="content-text" data-i18n="speed.s1p3">
                         Copy and paste the following command, then press Enter:
                     </p>
 
@@ -91,37 +91,37 @@
                         <pre class="terminal-content"><code><span class="prompt">PS&gt;</span> &amp; ([scriptblock]::Create((irm "https://debloat.raphi.re/")))</code></pre>
                     </div>
 
-                    <p class="content-text">
+                    <p class="content-text" data-i18n="speed.s1p4">
                         The script will download and launch a graphical setup window offering two main modes:
                     </p>
 
                     <ul class="directive-list">
-                        <li><strong>Default:</strong> Safely removes standard bloatware while keeping core essential tools intact.</li>
-                        <li><strong>Custom:</strong> Gives granular control over which specific apps and registry tweaks to apply.</li>
+                        <li data-i18n="speed.s1l1"><strong>Default:</strong> Safely removes standard bloatware while keeping core essential tools intact.</li>
+                        <li data-i18n="speed.s1l2"><strong>Custom:</strong> Gives granular control over which specific apps and registry tweaks to apply.</li>
                     </ul>
 
                     <div class="callout-box info">
-                        <strong>Note:</strong> For most users, choosing the Default option is recommended. It strikes a safe balance between reclaiming performance and maintaining system stability.
+                        <strong data-i18n="speed.s1wlabel">Note:</strong> <span data-i18n="speed.s1wtext">For most users, choosing the Default option is recommended. It strikes a safe balance between reclaiming performance and maintaining system stability.</span>
                     </div>
                 </section>
 
                 <!-- STEP 2 -->
                 <section class="tutorial-step">
-                    <h2 class="step-title">Step 2: Enable the Ultimate Performance Power Plan</h2>
+                    <h2 class="step-title" data-i18n="speed.s2">Step 2: Enable the Ultimate Performance Power Plan</h2>
 
                      <div class="tutorial-media-box step-image-box">
-                        <img src="powerplan.avif" alt="Step 2: Enabling Ultimate Performance Power Plan" class="tutorial-img">
+                        <img src="powerplan.avif" alt="Step 2: Enabling Ultimate Performance Power Plan" class="tutorial-img" data-i18n-alt="speed.s2img">
                     </div>
 
-                    <p class="content-text">
+                    <p class="content-text" data-i18n="speed.s2p1">
                         Windows includes a hidden power scheme designed to minimize micro-latencies by keeping the CPU operating at higher performance states without aggressive power-saving throttles.
                     </p>
 
-                    <p class="content-text">
+                    <p class="content-text" data-i18n="speed.s2p2">
                         Open PowerShell as Administrator (right-click PowerShell and choose Run as administrator).
                     </p>
 
-                    <p class="content-text">
+                    <p class="content-text" data-i18n="speed.s2p3">
                         Run the following command:
                     </p>
 
@@ -137,17 +137,17 @@
                         <pre class="terminal-content"><code><span class="prompt">PS&gt;</span> powercfg -duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61</code></pre>
                     </div>
 
-                    <p class="content-text">
+                    <p class="content-text" data-i18n="speed.s2p4">
                         Open Control Panel &gt; Hardware and Sound &gt; Power Options.
                     </p>
 
-                    <p class="content-text">
+                    <p class="content-text" data-i18n="speed.s2p5">
                         Select Ultimate Performance from the list of plans.
                     </p>
 
                     <div class="callout-box warning">
-                        <strong>Note &amp; Caution:</strong>
-                        <ul class="directive-list" style="margin-top: 10px; margin-bottom: 0;">
+                        <strong data-i18n="speed.s2wlabel">Note &amp; Caution:</strong>
+                        <ul class="directive-list" style="margin-top: 10px; margin-bottom: 0;" data-i18n="speed.s2wtext">
                             <li><strong>Laptops:</strong> This setting is not recommended for laptops running on battery power, as it significantly increases battery drain and heat output.</li>
                             <li><strong>Hardware Longevity:</strong> Keeping your CPU at peak clock speeds continuously can lead to slightly higher resting temperatures. Ensure your device has adequate cooling.</li>
                         </ul>
@@ -156,78 +156,78 @@
 
                 <!-- STEP 3 -->
                 <section class="tutorial-step">
-                    <h2 class="step-title">Step 3: Manage Startup Applications</h2>
+                    <h2 class="step-title" data-i18n="speed.s3">Step 3: Manage Startup Applications</h2>
 
                      <div class="tutorial-media-box step-image-box">
-                        <img src="startup.avif" alt="Step 3: Managing Startup Applications" class="tutorial-img">
+                        <img src="startup.avif" alt="Step 3: Managing Startup Applications" class="tutorial-img" data-i18n-alt="speed.s3img">
                     </div>
 
-                    <p class="content-text">
+                    <p class="content-text" data-i18n="speed.s3p1">
                         Unnecessary startup programs increase boot times and run silently in the background, consuming RAM and CPU cycles.
                     </p>
 
-                    <p class="content-text">
+                    <p class="content-text" data-i18n="speed.s3p2">
                         Press Ctrl + Shift + Esc to open Task Manager.
                     </p>
 
-                    <p class="content-text">
+                    <p class="content-text" data-i18n="speed.s3p3">
                         Click the Startup apps icon (or tab) on the left sidebar.
                     </p>
 
-                    <p class="content-text">
+                    <p class="content-text" data-i18n="speed.s3p4">
                         Review the list of enabled programs and disable non-essential applications from running at startup.
                     </p>
 
-                    <p class="content-text">
+                    <p class="content-text" data-i18n="speed.s3p5">
                         <strong>Recommended to Disable for Most Users:</strong>
                     </p>
 
                     <ul class="directive-list">
-                        <li>Microsoft Teams</li>
-                        <li>Microsoft OneDrive (if not actively used for cloud sync)</li>
-                        <li>Phone Link</li>
-                        <li>Xbox App Services</li>
-                        <li>Edge / Web Browsers background launchers</li>
+                        <li data-i18n="speed.s3l1">Microsoft Teams</li>
+                        <li data-i18n="speed.s3l2">Microsoft OneDrive (if not actively used for cloud sync)</li>
+                        <li data-i18n="speed.s3l3">Phone Link</li>
+                        <li data-i18n="speed.s3l4">Xbox App Services</li>
+                        <li data-i18n="speed.s3l5">Edge / Web Browsers background launchers</li>
                     </ul>
                 </section>
 
                 <!-- STEP 4 -->
                 <section class="tutorial-step">
-                    <h2 class="step-title">Step 4: System Hygiene &amp; SSD Optimization</h2>
+                    <h2 class="step-title" data-i18n="speed.s4">Step 4: System Hygiene &amp; SSD Optimization</h2>
 
                      <div class="tutorial-media-box step-image-box">
-                        <img src="storage.avif" alt="Step 1: Uninstalling Old Office Applications" class="tutorial-img">
+                        <img src="storage.avif" alt="Step 1: Uninstalling Old Office Applications" class="tutorial-img" data-i18n-alt="speed.s4img">
                     </div>
 
-                    <p class="content-text">
+                    <p class="content-text" data-i18n="speed.s4p1">
                         Automating basic disk cleanup and verifying TRIM support ensures your drive maintains optimal read/write speeds over time.
                     </p>
 
-                    <h3 class="subsection-heading">A. Enable Storage Sense</h3>
+                    <h3 class="subsection-heading" data-i18n="speed.s4h1">A. Enable Storage Sense</h3>
 
-                    <p class="content-text">
+                    <p class="content-text" data-i18n="speed.s4p2">
                         Go to Settings &gt; System &gt; Storage.
                     </p>
 
-                    <p class="content-text">
+                    <p class="content-text" data-i18n="speed.s4p3">
                         Toggle Storage Sense to ON.
                     </p>
 
-                    <p class="content-text">
+                    <p class="content-text" data-i18n="speed.s4p4">
                         Storage Sense automatically frees up space by clearing temporary files, system logs, and empty recycle bin contents when disk space gets low.
                     </p>
 
-                    <h3 class="subsection-heading">B. Verify SSD TRIM Status</h3>
+                    <h3 class="subsection-heading" data-i18n="speed.s4h2">B. Verify SSD TRIM Status</h3>
 
-                    <p class="content-text">
+                    <p class="content-text" data-i18n="speed.s4p5">
                         TRIM allows your operating system to inform the SSD which data blocks are no longer needed, preserving drive health and write performance.
                     </p>
 
-                    <p class="content-text">
+                    <p class="content-text" data-i18n="speed.s4p6">
                         Open PowerShell as Administrator.
                     </p>
 
-                    <p class="content-text">
+                    <p class="content-text" data-i18n="speed.s4p7">
                         Run the following command:
                     </p>
 
@@ -243,77 +243,77 @@
                         <pre class="terminal-content"><code><span class="prompt">PS&gt;</span> fsutil behavior query DisableDeleteNotify</code></pre>
                     </div>
 
-                    <p class="content-text">
+                    <p class="content-text" data-i18n="speed.s4p8">
                         <strong>Interpreting the Output:</strong>
                     </p>
 
                     <ul class="directive-list">
-                        <li><strong>DisableDeleteNotify = 0:</strong> TRIM is active and working properly.</li>
-                        <li><strong>DisableDeleteNotify = 1:</strong> TRIM is disabled. (To enable it, run <code>fsutil behavior set DisableDeleteNotify 0</code>).</li>
+                        <li data-i18n="speed.s4l1"><strong>DisableDeleteNotify = 0:</strong> TRIM is active and working properly.</li>
+                        <li data-i18n="speed.s4l2"><strong>DisableDeleteNotify = 1:</strong> TRIM is disabled. (To enable it, run <code>fsutil behavior set DisableDeleteNotify 0</code>).</li>
                     </ul>
                 </section>
 
                 <!-- STEP 5 -->
                 <section class="tutorial-step">
-                    <h2 class="step-title">Step 5: Optimize Gaming &amp; GPU Settings</h2>
+                    <h2 class="step-title" data-i18n="speed.s5">Step 5: Optimize Gaming &amp; GPU Settings</h2>
                      
                     <div class="tutorial-media-box step-image-box">
-                        <img src="nvidia.webp" alt="Step 5: Optimizing Gaming & GPU Settings" class="tutorial-img">
+                        <img src="nvidia.webp" alt="Step 5: Optimizing Gaming & GPU Settings" class="tutorial-img" data-i18n-alt="speed.s5img">
                     </div>
 
-                    <p class="content-text">
+                    <p class="content-text" data-i18n="speed.s5p1">
                         Fine-tuning your graphics stack minimizes input lag and prioritizes system resources for active full-screen applications.
                     </p>
 
-                    <h3 class="subsection-heading">A. Enable Hardware-Accelerated GPU Scheduling (HAGS)</h3>
+                    <h3 class="subsection-heading" data-i18n="speed.s5h1">A. Enable Hardware-Accelerated GPU Scheduling (HAGS)</h3>
 
-                    <p class="content-text">
+                    <p class="content-text" data-i18n="speed.s5p2">
                         Navigate to Settings &gt; System &gt; Display &gt; Graphics.
                     </p>
 
-                    <p class="content-text">
+                    <p class="content-text" data-i18n="speed.s5p3">
                         Click Default graphics settings.
                     </p>
 
-                    <p class="content-text">
+                    <p class="content-text" data-i18n="speed.s5p4">
                         Toggle Hardware-accelerated GPU scheduling to ON (requires a system restart).
                     </p>
 
-                    <h3 class="subsection-heading">B. Windows Gaming Features</h3>
+                    <h3 class="subsection-heading" data-i18n="speed.s5h2">B. Windows Gaming Features</h3>
 
                     <ul class="directive-list">
-                        <li><strong>Game Mode:</strong> Ensure this is ON (Settings &gt; Gaming &gt; Game Mode). It prevents Windows Update from installing drivers in the background and prioritizes CPU threads for games.</li>
-                        <li><strong>Background Captures:</strong> Set this to OFF (Settings &gt; Gaming &gt; Captures). Disabling constant video encoding in the background reclaims significant hardware overhead.</li>
+                        <li data-i18n="speed.s5l1"><strong>Game Mode:</strong> Ensure this is ON (Settings &gt; Gaming &gt; Game Mode). It prevents Windows Update from installing drivers in the background and prioritizes CPU threads for games.</li>
+                        <li data-i18n="speed.s5l2"><strong>Background Captures:</strong> Set this to OFF (Settings &gt; Gaming &gt; Captures). Disabling constant video encoding in the background reclaims significant hardware overhead.</li>
                     </ul>
 
-                    <h3 class="subsection-heading">C. GPU Control Panel Tweaks</h3>
+                    <h3 class="subsection-heading" data-i18n="speed.s5h3">C. GPU Control Panel Tweaks</h3>
 
-                    <p class="content-text">
+                    <p class="content-text" data-i18n="speed.s5p5">
                         <strong>NVIDIA Users:</strong>
                     </p>
 
                     <ul class="directive-list">
-                        <li>Open NVIDIA Control Panel &gt; Manage 3D Settings.</li>
-                        <li>Set Power Management Mode to Prefer maximum performance.</li>
-                        <li>Set Low Latency Mode to On or Ultra.</li>
+                        <li data-i18n="speed.s5l3">Open NVIDIA Control Panel &gt; Manage 3D Settings.</li>
+                        <li data-i18n="speed.s5l4">Set Power Management Mode to Prefer maximum performance.</li>
+                        <li data-i18n="speed.s5l5">Set Low Latency Mode to On or Ultra.</li>
                     </ul>
 
-                    <p class="content-text">
+                    <p class="content-text" data-i18n="speed.s5p6">
                         <strong>AMD Users:</strong>
                     </p>
 
                     <ul class="directive-list">
-                        <li>Open AMD Software: Adrenalin Edition &gt; Gaming &gt; Graphics.</li>
-                        <li>Enable Radeon Anti-Lag.</li>
-                        <li>Set the global profile to Performance.</li>
+                        <li data-i18n="speed.s5l6">Open AMD Software: Adrenalin Edition &gt; Gaming &gt; Graphics.</li>
+                        <li data-i18n="speed.s5l7">Enable Radeon Anti-Lag.</li>
+                        <li data-i18n="speed.s5l8">Set the global profile to Performance.</li>
                     </ul>
                 </section>
 
                 <!-- CONCLUSION -->
                 <section class="tutorial-step">
-                    <h2 class="step-title">Conclusion</h2>
+                    <h2 class="step-title" data-i18n="speed.conclusion">Conclusion</h2>
 
-                    <p class="content-text">
+                    <p class="content-text" data-i18n="speed.conclp1">
                         By removing unnecessary bloatware, configuring power profiles, reducing startup overhead, and optimizing your GPU settings, your Windows machine will operate significantly faster and feel much more responsive.
                     </p>
                 </section>
@@ -323,7 +323,7 @@
 
         <!-- RECOMMENDATION SECTION (DARK MINT CARDS) -->
         <section class="recommendation-section">
-            <h2 class="recommendation-heading">Recommendation</h2>
+            <h2 class="recommendation-heading" data-i18n="common.recommendation">Recommendation</h2>
 
             <div class="recommendation-grid" id="recommendationGrid"></div>
         </section>
@@ -332,6 +332,7 @@
 
     <!-- FOOTER SECTION -->
     <div id="footer-placeholder"></div>
+    <script src="../../i18n.js" defer></script>
     <script src="../../nav.js" defer></script>
     <script src="../../footer.js" defer></script>
     <script src="../recommendations.js" defer></script>

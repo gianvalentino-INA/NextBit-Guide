@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Store - NextBit</title>
+    <title data-i18n-title="store.page_title">Store - NextBit</title>
     <link rel="icon" type="image/png" sizes="500x500" href="../Logo/logo.png">
 
     <link rel="stylesheet" href="../styles.css">
@@ -20,9 +20,9 @@
     <main class="learn-container">
 
         <section class="learn-header animate-on-scroll">
-            <span class="section-tag">NextBit Digital Store</span>
-            <h1 class="learn-title">Tools & Software Apps</h1>
-            <p class="learn-subtitle">
+            <span class="section-tag" data-i18n="store.tag">NextBit Digital Store</span>
+            <h1 class="learn-title" data-i18n="store.title">Tools & Software Apps</h1>
+            <p class="learn-subtitle" data-i18n="store.subtitle">
                 Pay once, own forever. Download collection of templates, automation scripts, and server tools directly
                 to your device.
             </p>
@@ -33,7 +33,7 @@
             <div class="filter-container" id="filterContainer"></div>
 
             <input type="text" id="cardSearchInput" class="store-search-input"
-                placeholder="Search products...">
+                data-i18n-ph="store.search_placeholder" placeholder="Search products...">
         </section>
 
         <!-- Product Grid (rendered from GET /api/products) -->
@@ -49,43 +49,44 @@
             <div class="cart-drawer-header">
                 <div class="cart-drawer-title">
                     <img src="../Icon/cart.svg" alt="Cart" class="cart-icon">
-                    <h2>Cart (<span id="cartDrawerCount">0</span>)</h2>
+                    <h2><span data-i18n="store.cart">Cart</span> (<span id="cartDrawerCount">0</span>)</h2>
                 </div>
                 <button class="cart-close-btn" id="closeCartBtn">&times;</button>
             </div>
 
             <div class="cart-items-body" id="cartItemsContainer">
-                <p class="cart-empty-text">Your cart is empty.</p>
+                <p class="cart-empty-text" data-i18n="store.empty_cart">Your cart is empty.</p>
             </div>
 
             <div class="cart-drawer-footer">
                 <div class="order-summary">
                     <div class="summary-row">
-                        <span>Total Items</span>
+                        <span data-i18n="store.total_items">Total Items</span>
                         <span id="summaryItemCount">0</span>
                     </div>
                     <div class="summary-row grand-total">
-                        <span>Grand Total</span>
+                        <span data-i18n="store.grand_total">Grand Total</span>
                         <span id="summaryGrandTotal">Rp 0</span>
                     </div>
                 </div>
 
                 <div class="checkout-email-group">
-                    <input type="text" id="customerName" placeholder="Your full name" autocomplete="name" required>
+                    <input type="text" id="customerName" data-i18n-ph="store.your_name" placeholder="Your full name" autocomplete="name" required>
                 </div>
 
                 <div class="checkout-email-group">
-                    <input type="email" id="customerEmail" placeholder="Enter your email address" autocomplete="email" required>
+                    <input type="email" id="customerEmail" data-i18n-ph="store.your_email" placeholder="Enter your email address" autocomplete="email" required>
                 </div>
 
-                <button class="checkout-btn" onclick="checkoutWithMidtrans()">Buy Now</button>
-                <button class="continue-btn" id="continueShoppingBtn">Continue Shopping</button>
+                <button class="checkout-btn" onclick="checkoutWithMidtrans()" data-i18n="store.buy_now">Buy Now</button>
+                <button class="continue-btn" id="continueShoppingBtn" data-i18n="store.continue_shopping">Continue Shopping</button>
             </div>
         </div>
     </div>
 
     <!-- FOOTER SECTION -->
     <div id="footer-placeholder"></div>
+    <script src="../i18n.js" defer></script>
     <script src="../nav.js" defer></script>
     <script src="../footer.js" defer></script>
     <script src="../anim.js" defer></script>
@@ -100,7 +101,7 @@
 
         async function loadProducts() {
             const grid = document.getElementById("storeGrid");
-            grid.innerHTML = `<p class="store-loading">Loading products...</p>`;
+            grid.innerHTML = `<p class="store-loading">${window.I18N ? I18N.t('store.loading') : 'Loading products...'}</p>`;
 
             try {
                 const res = await fetch('/api/products');
@@ -118,7 +119,7 @@
             } catch (err) {
                 console.error('Failed to load products:', err);
                 grid.innerHTML =
-                    `<p class="store-loading">Could not load products. Make sure the backend is running.</p>`;
+                    `<p class="store-loading">${window.I18N ? I18N.t('store.load_error') : 'Could not load products. Make sure the backend is running.'}</p>`;
             }
         }
 
@@ -135,10 +136,10 @@
                             <button class="add-cart-btn" onclick="addToCart('${product.id}')">
                                 <img src="/Icon/cart.svg" alt="Add to cart" class="cart-icon">
                             </button>
-                            <button class="buy-now-btn" onclick="buyNow('${product.id}')">Buy Now</button>
+                            <button class="buy-now-btn" onclick="buyNow('${product.id}')">${window.I18N ? I18N.t('store.buy_now') : 'Buy Now'}</button>
                         </div>
                     `
-                    : `<p class="product-unavailable">Currently unavailable</p>`;
+                    : `<p class="product-unavailable">${window.I18N ? I18N.t('store.unavailable') : 'Currently unavailable'}</p>`;
 
                 const card = document.createElement('article');
                 card.className = 'card card--dark product-card animate-on-scroll is-visible';
@@ -194,7 +195,7 @@
                         stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
                         <polyline points="20 6 9 17 4 12"></polyline>
                     </svg>
-                    <span>${cat === 'all' ? 'All Products' : productCategoryLabel(cat)}</span>
+                    <span>${cat === 'all' ? (window.I18N ? I18N.t('store.all_products') : 'All Products') : productCategoryLabel(cat)}</span>
                 `;
                 btn.addEventListener('click', () => {
                     container.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
@@ -230,7 +231,7 @@
 
             const container = document.getElementById("cartItemsContainer");
             if (cart.length === 0) {
-                container.innerHTML = `<p class="cart-empty-text">Your cart is empty.</p>`;
+                container.innerHTML = `<p class="cart-empty-text">${window.I18N ? I18N.t('store.empty_cart') : 'Your cart is empty.'}</p>`;
                 document.getElementById("summaryGrandTotal").textContent = "Rp 0";
                 return;
             }
@@ -248,7 +249,7 @@
                         <div class="cart-item-info">
                             <h4>${title}</h4>
                             <p class="cart-item-price">${catalog ? catalog.formattedPrice : 'Rp ' + price.toLocaleString("id-ID")}</p>
-                            <span class="cart-item-qty">Qty: ${item.qty}</span>
+                            <span class="cart-item-qty">${window.I18N ? I18N.t('store.qty') : 'Qty'}: ${item.qty}</span>
                         </div>
                         <button class="cart-item-remove" onclick="removeFromCart(${index})">&times;</button>
                     </div>
@@ -267,7 +268,7 @@
 
         function addToCart(id) {
             const product = products[id];
-            if (!product) return alert("Product not found.");
+            if (!product) return alert(window.I18N ? I18N.t('store.product_not_found') : "Product not found.");
 
             const existing = cart.find(item => item.id === id);
             if (existing) {
@@ -336,14 +337,14 @@
             const name = document.getElementById("customerName").value.trim();
             const email = document.getElementById("customerEmail").value.trim();
 
-            if (cart.length === 0) return alert("Your cart is empty!");
-            if (!name || name.length < 2) return alert("Please enter your full name.");
-            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return alert("Please enter a valid email address.");
+            if (cart.length === 0) return alert(window.I18N ? I18N.t('store.cart_empty') : "Your cart is empty!");
+            if (!name || name.length < 2) return alert(window.I18N ? I18N.t('store.enter_name') : "Please enter your full name.");
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return alert(window.I18N ? I18N.t('store.enter_email') : "Please enter a valid email address.");
 
             const productId = cart[0].id;
             const checkoutBtn = document.querySelector(".checkout-btn");
             checkoutBtn.disabled = true;
-            checkoutBtn.textContent = "Processing...";
+            checkoutBtn.textContent = window.I18N ? I18N.t('store.processing') : "Processing...";
 
             try {
                 const res = await fetch('/api/checkout', {
@@ -367,35 +368,32 @@
                         cart = [];
                         saveCart();
                         closeCartModal();
-                        alert(
-                            "Payment submitted. Waiting for payment confirmation...\n\n" +
-                            "Once the payment is confirmed, we will email your download link to you."
-                        );
+                        alert(window.I18N ? I18N.t('store.payment_submitted') : "Payment submitted. Waiting for payment confirmation...\n\nOnce the payment is confirmed, we will email your download link to you.");
                         pollOrderStatus(data.orderId);
                     },
                     onPending: (result) => {
                         alert(
-                            "Payment pending. Please complete the payment to continue.\n" +
+                            (window.I18N ? I18N.t('store.payment_pending') : "Payment pending. Please complete the payment to continue.") +
                             (result.status_message ? `(${result.status_message})` : '')
                         );
                     },
                     onError: (result) => {
                         alert(
-                            "Payment error. Your order was not charged.\n" +
+                            (window.I18N ? I18N.t('store.payment_error') : "Payment error. Your order was not charged.") +
                             (result.status_message ? `(${result.status_message})` : '')
                         );
                     },
                     onClose: () => {
-                        alert("Payment window closed. Your order has not been paid yet. You can retry anytime.");
+                        alert(window.I18N ? I18N.t('store.payment_closed') : "Payment window closed. Your order has not been paid yet. You can retry anytime.");
                     }
                 });
 
             } catch (err) {
                 console.error('Checkout error:', err);
-                alert(`❌ ${err.message || "Could not reach the server. Make sure the backend is running."}`);
+                alert(`❌ ${err.message || (window.I18N ? I18N.t('store.cant_reach') : "Could not reach the server. Make sure the backend is running.")}`);
             } finally {
                 checkoutBtn.disabled = false;
-                checkoutBtn.textContent = "Buy Now";
+                checkoutBtn.textContent = window.I18N ? I18N.t('store.buy_now') : "Buy Now";
             }
         }
 
@@ -414,7 +412,7 @@
                     const data = await res.json();
                     if (data.paymentStatus === 'paid' && data.fulfillmentStatus === 'fulfilled') {
                         clearInterval(timer);
-                        alert("✅ Payment confirmed! Your download link has been emailed to you.");
+                        alert(window.I18N ? I18N.t('store.payment_confirmed') : "✅ Payment confirmed! Your download link has been emailed to you.");
                     }
                 } catch (_) { /* transient failures are ignored */ }
             }, 5000);
